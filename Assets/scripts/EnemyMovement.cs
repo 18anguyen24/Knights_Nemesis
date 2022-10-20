@@ -23,6 +23,7 @@ public class EnemyMovement : MonoBehaviour
         if (!GameState.PlayerTurn)
         {
             MoveEnemy();
+            GameState.PlayerTurn = true;
         }
 
         float Speed = moveSpeed;
@@ -84,12 +85,8 @@ public class EnemyMovement : MonoBehaviour
 
 
             movePoint.position += new Vector3(MoveHorizontal * XDirection * AllowHorizontal, MoveVertical * YDirection * AllowVertical, 0);
-            GameState.PlayerTurn = true;
 
         }
-
-
-
 
 
     }
