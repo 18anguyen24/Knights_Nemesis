@@ -6,6 +6,7 @@ public class GameState
 {
     public static bool PlayerTurn = true;
     public int turnCount = 1;
+    public static int SpeedFactor = 10;
 
     //This gets called once at start, but there shouldn't be much to do here?
     void Start()
@@ -19,18 +20,19 @@ public class GameState
 
     }
 
-    Debug.Log("Currently player turn");
-    WaitWhile(PlayerTurn == true);
+    //Debug.Log("Currently player turn");
+    //WaitWhile(PlayerTurn == true);
 
     //if the player moves or attacks, set PlayerTurn to false
 
-    turnCount++;
+    //turnCount++;
 
-    Debug.Log("Currently enemy turn");
-    WaitUntil(PlayerTurn == false);
+    //Debug.Log("Currently enemy turn");
+    //WaitUntil(PlayerTurn == false);
 
     //let all enemies do their action, then set PlayerTurn to true
     //presumably this would be a for loop that goes through each enemy
 
-    turnCount++;
+    //turnCount++
+
 }
