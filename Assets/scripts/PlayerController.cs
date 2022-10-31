@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Transform movePoint;
+    public float heading;
 
     public LayerMask WhatStopsMovement;
 
@@ -63,6 +64,8 @@ public class PlayerController : MonoBehaviour
                         //if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0), .2f, WhatStopsMovement))
                         //{
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal") * AllowHorizontal, 0f, 0);
+                        heading = Mathf.Atan2(movePoint.position.y - transform.position.y, movePoint.position.x - transform.position.x);
+                        Debug.Log("The heading is " + heading);
                         GameState.PlayerTurn = false;
                         //}
                     }
@@ -72,6 +75,8 @@ public class PlayerController : MonoBehaviour
                         //if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0), .2f, WhatStopsMovement))
                         //{
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical") * AllowVertical, 0);
+                        heading = Mathf.Atan2(movePoint.position.y - transform.position.y, movePoint.position.x - transform.position.x);
+                        Debug.Log("The heading is " + heading);
                         GameState.PlayerTurn = false;
                         //}
                     }
