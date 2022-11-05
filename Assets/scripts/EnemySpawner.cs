@@ -10,6 +10,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private float enemyInterval = 3.5f;
 
+    //Specify width and height of the spawner, starting from the origin at the bottom left corner. Can just place a spawner per room, probably
+
+    public float width = 5f;
+    public float height = 7f;
 
     void Start()
     {
@@ -19,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Mathf.Round(Random.Range(-5f, 5f)), Mathf.Round(Random.Range(-6f, 6f)), 0), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0), Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }

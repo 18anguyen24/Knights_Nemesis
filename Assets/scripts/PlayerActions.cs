@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerActions : MonoBehaviour
 {
     //public variables
-    public bool infiniteTurns = true;
+    public bool infiniteTurns = false;
     public float moveSpeed = 5f;
     public Transform movePoint;
     public LayerMask WhatStopsMovement;
@@ -14,6 +14,8 @@ public class PlayerActions : MonoBehaviour
     public float changeHeading;
     public float Heading;
     public float newHeading;
+    //this does nothing yet, but the goal is to make sure the player isn't doing actions when the game isn't ready
+    public static bool canMove;
 
     //private variables
     private Vector3 fakePoint;
