@@ -551,6 +551,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1119082871}
+--- !u!1 &521505699 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 216546359600920561, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
+  m_PrefabInstance: {fileID: 2741227764749795201}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &632787283
 GameObject:
   m_ObjectHideFlags: 0
@@ -27139,10 +27144,43 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2741227763778802770, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
   m_PrefabInstance: {fileID: 2741227764749795201}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 521505699}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdd74f469e5616747b5e5757f62feac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!50 &1783065176
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521505699}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
+--- !u!114 &1783065180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521505699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1966599933
@@ -27156,7 +27194,9 @@ GameObject:
   - component: {fileID: 1966599935}
   - component: {fileID: 1966599936}
   - component: {fileID: 1966599937}
-  m_Layer: 0
+  - component: {fileID: 1966599938}
+  - component: {fileID: 1966599939}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27224,12 +27264,45 @@ MonoBehaviour:
   movePoint: {fileID: 1272597203}
   WhatStopsMovement:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 768
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
   changeHeading: 0
   Heading: 0
   newHeading: 0
+--- !u!50 &1966599938
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966599933}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
+--- !u!114 &1966599939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1966599933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2053006706
 GameObject:
   m_ObjectHideFlags: 0
@@ -27246,7 +27319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2053006707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27259,7 +27332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc486bf4f2af82543a430b8a4937f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 216546359600920561, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
+  enemyPrefab: {fileID: 521505699}
   enemyInterval: 10
 --- !u!4 &2053006708
 Transform:
@@ -27347,7 +27420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 216546359600920561, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1968318249351274168, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
       propertyPath: m_RootOrder
@@ -27443,11 +27516,11 @@ PrefabInstance:
       objectReference: {fileID: 286923890}
     - target: {fileID: 2741227763778802770, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
       propertyPath: WhatStopsMovement.m_Bits
-      value: 256
+      value: 768
       objectReference: {fileID: 0}
     - target: {fileID: 2741227763778802772, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2741227763778802772, guid: ab43f113cbfa7be4c9cf887437e58e15, type: 3}
       propertyPath: m_SpriteTilingProperty.drawMode
