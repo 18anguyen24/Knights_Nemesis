@@ -42,6 +42,7 @@ public class PlayerActions : MonoBehaviour
         Heading = 0.0f;
 
         playerHealth = this.GetComponent<Health>();
+        //playerHealth.returnHP();
 
         activeAttack = attackArea1;
         //attackArea = transform.GetChild(1).gameObject;
@@ -59,7 +60,6 @@ public class PlayerActions : MonoBehaviour
         }
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, Speed * Time.deltaTime);
 
-        
         if (attacking)
         {
             timer += Time.deltaTime;
@@ -152,8 +152,10 @@ public class PlayerActions : MonoBehaviour
                     //{
                     movePoint.position += new Vector3(MotionX, MotionY, 0);                     
                     GameState.PlayerTurn = false;
-                        //}
-                        
+                    playerHealth.Heal(1);
+
+                    //}
+
                     //}
 
                 }
@@ -166,7 +168,6 @@ public class PlayerActions : MonoBehaviour
                 GameState.PlayerTurn = false;
             }
             
-        
         }
 
 

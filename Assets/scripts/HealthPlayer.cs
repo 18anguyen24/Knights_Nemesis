@@ -1,26 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class Health : MonoBehaviour
+public class HealthPlayer : MonoBehaviour
 {
     [SerializeField] private int health = 100;
 
     private int MAX_HEALTH = 100;
 
-    public GameObject player;
-
     public HealthBar healthbar;
 
-    void Start()
-    {
-        if (gameObject.tag == "Player")
-        {
-            healthbar.SetMaxHealth(MAX_HEALTH);
-        }
-        //healthbar.SetMaxHealth(MAX_HEALTH);
-    }
+
     // Update is called once per frame
     void Update()
     {
@@ -43,10 +33,6 @@ public class Health : MonoBehaviour
         }
 
         this.health -= amount;
-        if (gameObject.tag == "Player")
-        {
-            healthbar.SetHealth(this.health);
-        }
 
         if (this.health <= 0)
         {
@@ -74,14 +60,10 @@ public class Health : MonoBehaviour
         }
     }
 
-
     private void Die()
     {
+
         Debug.Log("I am Dead!");
         Destroy(gameObject);
-        if(gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene(0);
-        }
     }
 }
