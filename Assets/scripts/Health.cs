@@ -19,8 +19,8 @@ public class Health : MonoBehaviour
         {
             healthbar.SetMaxHealth(MAX_HEALTH);
         }
-        //healthbar.SetMaxHealth(MAX_HEALTH);
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -31,7 +31,7 @@ public class Health : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Heal(10);
+            //Heal(10);
         }
     }
 
@@ -56,7 +56,6 @@ public class Health : MonoBehaviour
 
     public void Heal(int amount)
     {
-        //this.health += amount;
         if (amount < 0)
         {
             throw new System.ArgumentOutOfRangeException("Cannot have negative healing");
