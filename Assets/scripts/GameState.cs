@@ -23,14 +23,21 @@ public class GameState
     {
         if (PlayerTurn == false || PlayerDidAction == true)
         {
+            //this is where it should handle all of the enemies' turns
+            //after doing all this, set playerTurn back to true and action to false
 
+            PlayerTurn = true;
+            PlayerDidAction = false;
         }
 
-        if (PlayerAttack.attacking == true)
+        if (PlayerAttack.attacking == true || PlayerController.playerMoved == true)
         {
-            PlayerAttack.canAttack = false;
-            PlayerActions.canMove = false;
-            PlayerTurn = false;
+            PlayerDidAction = true;
+        }
+
+        if (PlayerDidAction == true)
+        {
+            //ignore player inputs now
         }
 
 

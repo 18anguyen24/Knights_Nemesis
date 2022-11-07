@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float Heading;
     public float newHeading;
     float changeHeading;
+    public static bool playerMoved = false;
 
     public LayerMask WhatStopsMovement;
 
@@ -84,6 +85,7 @@ public class PlayerController : MonoBehaviour
                         Heading = newHeading;
 
                         GameState.PlayerTurn = false;
+                        playerMoved = true;
                         //}
                     }
 
@@ -104,6 +106,7 @@ public class PlayerController : MonoBehaviour
                     Heading = newHeading;
 
                     GameState.PlayerTurn = false;
+                    playerMoved = true;
                     //}
                 }
 
