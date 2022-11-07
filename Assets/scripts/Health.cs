@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class Health : MonoBehaviour
     public GameObject player;
 
     public HealthBar healthbar;
+
+    public Image ded;
 
     void Start()
     {
@@ -77,10 +81,15 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log("I am Dead!");
-        Destroy(gameObject);
         if(gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            ded.enabled = !ded.enabled;
+            Destroy(gameObject);
+            //SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }
