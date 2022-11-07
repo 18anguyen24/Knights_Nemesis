@@ -14,9 +14,6 @@ public class EnemyAction : MonoBehaviour
     public GameObject attackArea1;
     //public GameObject attackArea2;
 
-    //public float changeHeading;
-    //public float Heading;
-    //public float newHeading;
 
     public float targetX;
     public float targetY;
@@ -32,11 +29,14 @@ public class EnemyAction : MonoBehaviour
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
+        Target = PlayerMovePoint.transform;
+        //Target = PlayerActions.player.transform;
         movePoint.parent = null;
         //Heading = 0.0f;
         targetX = 0;
@@ -48,6 +48,8 @@ public class EnemyAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Player Location" + PlayerActions.player.transform);
+
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
@@ -64,7 +66,7 @@ public class EnemyAction : MonoBehaviour
                 //Debug.Log("moving");
                 MoveEnemy();
             }
-            GameState.PlayerTurn = true;
+            //GameState.PlayerTurn = true;
         }
 
         float Speed = moveSpeed;
@@ -99,7 +101,7 @@ public class EnemyAction : MonoBehaviour
         float XDirection = 0;
         float YDirection = 0;
 
-        Debug.Log("The x and Y distaces are " + XDistance + "," + YDistance);
+        //Debug.Log("The x and Y distaces are " + XDistance + "," + YDistance);
 
         //float XDistance = Target.position.x - transform.position.x;
         if (XDistance !=0)

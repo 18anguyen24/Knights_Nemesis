@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerActions : MonoBehaviour
 {
+    
+
     //public variables
     public bool infiniteTurns = false;
     public float moveSpeed = 5f;
@@ -28,11 +30,18 @@ public class PlayerActions : MonoBehaviour
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
+    private Health playerHealth;
+
+    public static PlayerActions player;
+
     // Start is called before the first frame update
     void Start()
     {
+        PlayerActions.player = this;
         movePoint.parent = null;
         Heading = 0.0f;
+
+        playerHealth = this.GetComponent<Health>();
 
         activeAttack = attackArea1;
         //attackArea = transform.GetChild(1).gameObject;
@@ -41,6 +50,7 @@ public class PlayerActions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //playerHealth.Heal(1);
         //handles the movement of the player to the movepoint
         float Speed = moveSpeed;
         if (Input.GetMouseButton(0))

@@ -9,6 +9,9 @@ public class GameState
     //public int turnCount = 1;
     public static int SpeedFactor = 10;
 
+    [SerializeField]
+    public Transform PlayerLocation;
+
     //This gets called once at start, but there shouldn't be much to do here?
     void Start()
     {
@@ -32,10 +35,7 @@ public class GameState
 
 
     }
-
     
-    
-
     //if the player moves or attacks, set PlayerTurn to false
 
     

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+
     [SerializeField]
     private GameObject enemyPrefab;
 
@@ -12,8 +13,8 @@ public class EnemySpawner : MonoBehaviour
 
     //Specify width and height of the spawner, starting from the origin at the bottom left corner. Can just place a spawner per room, probably
 
-    public float width = 5f;
-    public float height = 7f;
+    public int width = 5;
+    public int height = 7;
 
     void Start()
     {
@@ -23,7 +24,8 @@ public class EnemySpawner : MonoBehaviour
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy, new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0), Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy,transform.position + new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0), Quaternion.identity);
+        //newEnemy.GetComponent<EnemyScriptable>().Target = Target;
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }
