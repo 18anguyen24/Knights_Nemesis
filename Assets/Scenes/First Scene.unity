@@ -27644,6 +27644,7 @@ MonoBehaviour:
   Controls: {fileID: 2020117601}
   orig: {fileID: 142348954}
   title: {fileID: 1880548834}
+  player: {fileID: 1966599933}
 --- !u!1 &1966599933
 GameObject:
   m_ObjectHideFlags: 0
@@ -27715,7 +27716,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966599933}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ea6f1c147e7a6b4e8d044ce0465c107, type: 3}
   m_Name: 
@@ -28022,6 +28023,10 @@ PrefabInstance:
     - target: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21317471609035871, guid: 52a38093779120146b62c36585e33613, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035871, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_SortingOrder

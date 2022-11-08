@@ -11,6 +11,8 @@ public class LoadScene : MonoBehaviour
     public Image Controls;
     public Canvas orig;
     public Canvas title;
+    public GameObject player;
+    public bool onTitle;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +22,16 @@ public class LoadScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (onTitle && Input.GetKeyDown(KeyCode.Space))
         {
             TitleScreen.enabled = !TitleScreen.enabled;
             Controls.enabled = !Controls.enabled;
+            onTitle = !onTitle;
         }
         if (Controls.enabled == true && Input.GetKeyDown(KeyCode.K))
         //if (Input.GetKeyDown(KeyCode.K))
         {
+            player.GetComponent<PlayerActions>().enabled = !player.GetComponent<PlayerActions>().enabled;
             orig.enabled = !orig.enabled;
             title.enabled = !title.enabled;
         }
