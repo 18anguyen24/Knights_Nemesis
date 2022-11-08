@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
 
     public HealthBar healthbar;
 
-    public Image ded;
+    public Image deathScreen;
 
     void Start()
     {
@@ -83,9 +83,8 @@ public class Health : MonoBehaviour
         
         if(gameObject.tag == "Player")
         {
-            ded.enabled = !ded.enabled;
+            deathScreen.enabled = !deathScreen.enabled;
             Destroy(gameObject);
-            //SceneManager.LoadScene(0);
         }
         else
         {

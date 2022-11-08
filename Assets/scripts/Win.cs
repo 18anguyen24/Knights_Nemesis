@@ -1,25 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Device;
 using UnityEngine.UI;
 
-
-public class ObjectCollision : MonoBehaviour
+public class Win : MonoBehaviour
 {
     public Image WinScreen;
-    private Rigidbody2D rb;
+    public Slider HealthBar;
+    public Image PlayerIcon;
     // Start is called before the first frame update
     void Start()
     {
-        rb = gameObject.AddComponent<Rigidbody2D>() as Rigidbody2D;
-        rb.bodyType = RigidbodyType2D.Kinematic;
+
     }
 
     // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit detected");
-        rb.velocity = new Vector2(0.0f, 0f);
+        if (other.gameObject.CompareTag("Win"))
+        {
+            WinScreen.enabled = !WinScreen.enabled;
+            Debug.Log("WIN");
+            Destroy(gameObject);
+        }
     }
 }

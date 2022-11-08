@@ -7,6 +7,8 @@ TagManager:
   - PlayerLocation
   - Unmoved
   - Moved
+  - Enemy
+  - Win
   layers:
   - Default
   - TransparentFX

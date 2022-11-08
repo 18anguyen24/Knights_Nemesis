@@ -29,7 +29,6 @@ public class LoadScene : MonoBehaviour
             onTitle = !onTitle;
         }
         if (Controls.enabled == true && Input.GetKeyDown(KeyCode.K))
-        //if (Input.GetKeyDown(KeyCode.K))
         {
             player.GetComponent<PlayerActions>().enabled = !player.GetComponent<PlayerActions>().enabled;
             orig.enabled = !orig.enabled;
