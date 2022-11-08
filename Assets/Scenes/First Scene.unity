@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
 --- !u!60 &632787286
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7535,7 +7535,7 @@ MonoBehaviour:
   health: 100
   player: {fileID: 0}
   healthbar: {fileID: 1076107057}
-  deathScreen: {fileID: 0}
+  deathScreen: {fileID: 149626032}
 --- !u!114 &1119082875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7712,7 +7712,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.3301887, b: 0.07932173, a: 0.38431373}
+  m_Color: {r: 0, g: 0.3301887, b: 0.07932173, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -27826,8 +27826,8 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
-  maxEnemies: 10
-  chanceToSpawn: 90
+  maxEnemies: 8
+  chanceToSpawn: 10
   width: 45
   height: 45
 --- !u!4 &2053006708
@@ -27931,6 +27931,10 @@ PrefabInstance:
     - target: {fileID: 21317471609035868, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_Name
       value: player_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21317471609035868, guid: 52a38093779120146b62c36585e33613, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035868, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_TagString

@@ -25,7 +25,7 @@ public class Win : MonoBehaviour
         if (other.gameObject.CompareTag("Win"))
         {
             WinScreen.enabled = !WinScreen.enabled;
-            Debug.Log("WIN");
+            //Debug.Log("WIN");
             Destroy(gameObject);
         }
     }

@@ -19,7 +19,7 @@ public class ObjectCollision : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("hit detected");
+        //Debug.Log("hit detected");
         rb.velocity = new Vector2(0.0f, 0f);
     }
 }

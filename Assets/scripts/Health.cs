@@ -90,7 +90,7 @@ public class Health : MonoBehaviour
         {
             Destroy(gameObject);
             GameState.EnemyCount--;
-            Debug.Log("Enemy count" + GameState.EnemyCount);
+            //Debug.Log("Enemy count" + GameState.EnemyCount);
         }
     }
 }

@@ -20,31 +20,36 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(spawnEnemy(enemyInterval, enemyPrefab));
+        newEnemy();
+        newEnemy();
+        newEnemy();
     }
 
 
 
     public void newEnemy() {
+        
         Vector3 enemyDrop = new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0);
         enemyDrop += transform.position;
 
 
-        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.EnemyCount <maxEnemies)
+        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.EnemyCount < maxEnemies)
         {
+            //Debug.Log("Spawning new enemy");
             GameObject newEnemy = Instantiate(enemyPrefab, enemyDrop, Quaternion.identity);
             GameState.EnemyCount++;
         }
     }
 
+    /*
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         
-        yield return new WaitForSeconds(interval);
+        //yield return new WaitForSeconds(interval);
         
         //GameObject newEnemy = Instantiate(enemy, transform.position + new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0), Quaternion.identity);
         //GameState.EnemyCount++;
         //StartCoroutine(spawnEnemy(interval, enemy));
         
-    }
+    }*/
 }

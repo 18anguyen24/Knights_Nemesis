@@ -39,6 +39,22 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         PlayerActions.player = this;
+        
+        bool spawned = false;
+
+        while (spawned == false) {
+            Vector3 spawnPoint = new Vector3(Mathf.Round(Random.Range(-15, 15)), Mathf.Round(Random.Range(-20, 0)), 0);
+            spawnPoint += transform.position;
+
+
+            if (!Physics2D.OverlapCircle(spawnPoint, .2f, WhatStopsMovement))
+            {
+                transform.position = spawnPoint;
+                spawned = true;
+            }
+        }
+        
+
         movePoint.parent = null;
         Heading = 0.0f;
 

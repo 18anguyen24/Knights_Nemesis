@@ -21,7 +21,7 @@ public class GameState
     //This gets called every frame
     public static void PlayerMoved()
     {
-        Debug.Log("Enemy turn");
+        //Debug.Log("Enemy turn");
 
             for (int i = 0; i < EnemyCount; i++) {
                 GameObject EnemyPoint = GameObject.FindWithTag("Moved");
@@ -29,7 +29,7 @@ public class GameState
 
             }
         //EnemySpawner.newEnemy();
-        Debug.Log("Player turn");
+        //Debug.Log("Player turn");
         PlayerTurn = true;
     }
     
