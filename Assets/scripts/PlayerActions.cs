@@ -22,10 +22,10 @@ public class PlayerActions : MonoBehaviour
 
     //private variables
     private Vector3 fakePoint;
-    
-   
 
-    
+    public EnemySpawner spawner;
+
+
     private GameObject activeAttack;
     private bool attacking = false;
     private float timeToAttack = 0.25f;
@@ -157,11 +157,10 @@ public class PlayerActions : MonoBehaviour
                     //if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0), .2f, WhatStopsMovement))
                     //{
                     movePoint.position += new Vector3(MotionX, MotionY, 0);                     
-                    GameState.PlayerTurn = false;
-                    playerHealth.Heal(1);
-
+                    //GameState.PlayerTurn = false;
+                    GameState.PlayerMoved();
                     //}
-
+                    spawner.newEnemy();
                     //}
 
                 }
@@ -171,7 +170,9 @@ public class PlayerActions : MonoBehaviour
             {
                 //Debug.Log("Player is attempting an attack");
                 Attack();
-                GameState.PlayerTurn = false;
+                //GameState.PlayerTurn = false;
+                GameState.PlayerMoved();
+                
             }
             
         }

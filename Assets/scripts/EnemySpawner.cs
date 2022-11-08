@@ -8,8 +8,10 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private GameObject enemyPrefab;
 
-    [SerializeField]
-    private float enemyInterval = 3.5f;
+    public LayerMask WhatStopsMovement;
+
+    public int maxEnemies;
+    public int chanceToSpawn;
 
     //Specify width and height of the spawner, starting from the origin at the bottom left corner. Can just place a spawner per room, probably
 
@@ -18,14 +20,31 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(spawnEnemy(enemyInterval, enemyPrefab));
+        //StartCoroutine(spawnEnemy(enemyInterval, enemyPrefab));
+    }
+
+
+
+    public void newEnemy() {
+        Vector3 enemyDrop = new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0);
+        enemyDrop += transform.position;
+
+
+        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.EnemyCount <maxEnemies)
+        {
+            GameObject newEnemy = Instantiate(enemyPrefab, enemyDrop, Quaternion.identity);
+            GameState.EnemyCount++;
+        }
     }
 
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
+        
         yield return new WaitForSeconds(interval);
-        GameObject newEnemy = Instantiate(enemy,transform.position + new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0), Quaternion.identity);
-        //newEnemy.GetComponent<EnemyScriptable>().Target = Target;
-        StartCoroutine(spawnEnemy(interval, enemy));
+        
+        //GameObject newEnemy = Instantiate(enemy, transform.position + new Vector3(Mathf.Round(Random.Range(0, width)), Mathf.Round(Random.Range(0, height)), 0), Quaternion.identity);
+        //GameState.EnemyCount++;
+        //StartCoroutine(spawnEnemy(interval, enemy));
+        
     }
 }

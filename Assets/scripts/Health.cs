@@ -80,7 +80,7 @@ public class Health : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("I am Dead!");
+        
         if(gameObject.tag == "Player")
         {
             ded.enabled = !ded.enabled;
@@ -90,6 +90,8 @@ public class Health : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            GameState.EnemyCount--;
+            Debug.Log("Enemy count" + GameState.EnemyCount);
         }
     }
 }

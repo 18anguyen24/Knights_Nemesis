@@ -48,25 +48,17 @@ public class EnemyAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player Location" + PlayerActions.player.transform);
+        //Debug.Log("Player Location" + PlayerActions.player.transform);
 
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
-        if (!GameState.PlayerTurn)
+        if (movePoint.tag == "Unmoved")
         {
-            if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)
-            {
-                //Debug.Log("attacking");
-                Attack();
-                //GameState.PlayerTurn = false;
-            }
-            else
-            {
-                //Debug.Log("moving");
-                MoveEnemy();
-            }
-            //GameState.PlayerTurn = true;
+
+            EnemyTurn();
+           
+            movePoint.tag = "Moved";
         }
 
         float Speed = moveSpeed;
@@ -91,6 +83,22 @@ public class EnemyAction : MonoBehaviour
 
         }
     }
+
+    public void EnemyTurn() {
+        if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)
+        {
+            //Debug.Log("attacking");
+            Attack();
+            //GameState.PlayerTurn = false;
+        }
+        else
+        {
+            //Debug.Log("moving");
+            MoveEnemy();
+        }
+        movePoint.tag = "Moved";
+    }
+
 
     private void MoveEnemy()
     {
@@ -159,10 +167,13 @@ public class EnemyAction : MonoBehaviour
 
     }
 
+   
     private void Attack()
     {
         attacking = true;
         activeAttack.SetActive(attacking);
     }
+
+
 
 }

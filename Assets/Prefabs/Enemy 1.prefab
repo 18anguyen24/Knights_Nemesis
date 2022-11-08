@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 1705401359449007341}
   m_Layer: 0
   m_Name: TestMovePoint
-  m_TagString: Untagged
+  m_TagString: Moved
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,6 +599,7 @@ MonoBehaviour:
   health: 50
   player: {fileID: 0}
   healthbar: {fileID: 0}
+  ded: {fileID: 0}
 --- !u!61 &1705401359458806462
 BoxCollider2D:
   m_ObjectHideFlags: 0
