@@ -95,7 +95,10 @@ public class PlayerActions : UnitController
 
         if (Input.GetKeyDown(KeyCode.R))
         {
+            GameState.PlayerTurn = true;
+            GameState.EnemyCount = 0;
             SceneManager.LoadScene(0);
+            
         }
 
 
@@ -209,6 +212,7 @@ public class PlayerActions : UnitController
             }
 
         }
+        Debug.Log("Number of Enemies: " + GameState.EnemyCount);
         GameState.PlayerTurn = true;
         GameState.PlayerTurn = true;
     }

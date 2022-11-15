@@ -27626,7 +27626,7 @@ MonoBehaviour:
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
   deathScreen: {fileID: 0}
-  turnDelay: 0
+  turnDelay: 0.3
   spawner: {fileID: 2053006707}
 --- !u!50 &1966599938
 Rigidbody2D:
@@ -27771,8 +27771,8 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
-  maxEnemies: 4
-  chanceToSpawn: 10
+  maxEnemies: 8
+  chanceToSpawn: 15
   width: 45
   height: 40
 --- !u!4 &2053006708
