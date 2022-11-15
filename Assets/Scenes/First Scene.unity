@@ -638,7 +638,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -662,12 +662,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.1, z: -10.076036}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1966599935}
-  m_RootOrder: 2
+  m_Father: {fileID: 1119082871}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -7520,60 +7520,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
   m_PrefabInstance: {fileID: 21317472644220201}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1119082874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119082869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9db5e4dd0fdbb24899ca62ef0175029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 100
-  player: {fileID: 0}
-  healthbar: {fileID: 1076107057}
-  deathScreen: {fileID: 149626032}
---- !u!114 &1119082875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119082869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60f11526f62acf347a7a67841b4d90bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!61 &1119082878
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119082869}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.48}
-    newSize: {x: 0.48, y: 0.48}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
-  m_EdgeRadius: 0
 --- !u!114 &1119082881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7648,7 +7594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1272597203}
   - component: {fileID: 1272597204}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player MovePoint
   m_TagString: PlayerLocation
   m_Icon: {fileID: 0}
@@ -7710,9 +7656,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.3301887, b: 0.07932173, a: 0}
+  m_Color: {r: 0, g: 0.3301887, b: 0.07932173, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7767,7 +7713,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 16.5}
+  m_Offset: {x: 0, y: 16}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -27608,9 +27554,9 @@ GameObject:
   - component: {fileID: 1966599937}
   - component: {fileID: 1966599938}
   - component: {fileID: 1966599939}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27629,7 +27575,6 @@ Transform:
   m_Children:
   - {fileID: 1119082871}
   - {fileID: 1272597203}
-  - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27643,7 +27588,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -27657,7 +27602,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.75, y: 0.75}
   m_EdgeRadius: 0
 --- !u!114 &1966599937
 MonoBehaviour:
@@ -27671,6 +27616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea6f1c147e7a6b4e8d044ce0465c107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   infiniteTurns: 0
   moveSpeed: 5
   movePoint: {fileID: 1272597203}
@@ -27679,9 +27625,8 @@ MonoBehaviour:
     m_Bits: 768
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
-  changeHeading: 0
-  Heading: 0
-  newHeading: 0
+  deathScreen: {fileID: 0}
+  turnDelay: 0
   spawner: {fileID: 2053006707}
 --- !u!50 &1966599938
 Rigidbody2D:
@@ -27826,10 +27771,10 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
-  maxEnemies: 8
+  maxEnemies: 4
   chanceToSpawn: 10
   width: 45
-  height: 45
+  height: 40
 --- !u!4 &2053006708
 Transform:
   m_ObjectHideFlags: 0
@@ -27930,7 +27875,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 21317471609035868, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_Name
-      value: player_0
+      value: Player Sprite
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035868, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_IsActive
@@ -27990,8 +27935,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035871, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 21317471609035857, guid: 52a38093779120146b62c36585e33613, type: 3}
+    - {fileID: 21317471609035856, guid: 52a38093779120146b62c36585e33613, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 52a38093779120146b62c36585e33613, type: 3}

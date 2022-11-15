@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PlayerActions : MonoBehaviour
+public class PlayerActions : UnitController
 {
-    
+
 
     //public variables
     public bool infiniteTurns = false;
@@ -14,14 +15,12 @@ public class PlayerActions : MonoBehaviour
     public LayerMask WhatStopsMovement;
     public GameObject attackArea1;
     public GameObject attackArea2;
-    public float changeHeading;
-    public float Heading;
-    public float newHeading;
-    //this does nothing yet, but the goal is to make sure the player isn't doing actions when the game isn't ready
-    public static bool canMove;
 
-    //private variables
-    private Vector3 fakePoint;
+    public Image deathScreen;
+
+    public float turnDelay;
+
+
 
     public EnemySpawner spawner;
 
@@ -31,7 +30,7 @@ public class PlayerActions : MonoBehaviour
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
-    private Health playerHealth;
+    private float Speed;
 
     public static PlayerActions player;
 
@@ -39,10 +38,24 @@ public class PlayerActions : MonoBehaviour
     void Start()
     {
         PlayerActions.player = this;
-        
+
+        //randomSpawn();
+
+
+        movePoint.parent = null;
+
+
+
+        activeAttack = attackArea1;
+
+    }
+
+    private void randomSpawn()
+    {
         bool spawned = false;
 
-        while (spawned == false) {
+        while (spawned == false)
+        {
             Vector3 spawnPoint = new Vector3(Mathf.Round(Random.Range(-15, 15)), Mathf.Round(Random.Range(-20, 0)), 0);
             spawnPoint += transform.position;
 
@@ -53,16 +66,6 @@ public class PlayerActions : MonoBehaviour
                 spawned = true;
             }
         }
-        
-
-        movePoint.parent = null;
-        Heading = 0.0f;
-
-        playerHealth = this.GetComponent<Health>();
-        //playerHealth.returnHP();
-
-        activeAttack = attackArea1;
-        //attackArea = transform.GetChild(1).gameObject;
     }
 
     // Update is called once per frame
@@ -70,7 +73,7 @@ public class PlayerActions : MonoBehaviour
     {
         //playerHealth.Heal(1);
         //handles the movement of the player to the movepoint
-        float Speed = moveSpeed;
+        Speed = moveSpeed;
         if (Input.GetMouseButton(0))
         {
             Speed = Speed * GameState.SpeedFactor;
@@ -113,84 +116,66 @@ public class PlayerActions : MonoBehaviour
         }
 
         if (Input.GetMouseButton(1))
-        { //right click pauses actions
-            //fakePoint = transform.position + new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
-            //newHeading = Mathf.Atan2(fakePoint.y - transform.position.y, fakePoint.x - transform.position.x);
-            //Debug.Log("The heading is " + newHeading);
-            //if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
-              //  newHeading = Mathf.Rad2Deg * newHeading;
-                //changeHeading = newHeading - Heading;
-                //transform.RotateAround(transform.position, Vector3.forward, changeHeading);
-                //Heading = newHeading;
-            //}
+        {
 
         }
-        else if (GameState.PlayerTurn){ //list of actions, makes sure its player turn
+        else if (GameState.PlayerTurn)
+        { //list of actions, makes sure its player turn
 
             //handles player movement and movement takes precedent over other actions
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
-            { 
+            {
                 if (Vector3.Distance(transform.position, movePoint.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
                 {
-                    
+
                     //Checks to see if motion is allowed first to prevent going through corners
                     float AllowVertical = 1;
                     float AllowHorizontal = 1;
                     float AllowDiagonal = 1;
 
-                    
+
                     if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0), .2f, WhatStopsMovement))
                     {
                         AllowHorizontal = 0;
-                    } else {
-                        //AllowHorizontal = 1;
                     }
                     if (Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0), .2f, WhatStopsMovement))
                     {
                         AllowVertical = 0;
                     }
-                    else
-                    {
-                        //AllowVertical = 1;
-                    }
+
                     if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0), .2f, WhatStopsMovement))
                     {
                         AllowDiagonal = 0;
-
-
                     }
                     float MotionX = Input.GetAxisRaw("Horizontal") * AllowHorizontal;
                     float MotionY = Input.GetAxisRaw("Vertical") * AllowVertical;
 
-                    if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0) {
+                    if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
+                    {
                         MotionX = 0;
                         MotionY = 0;
                     }
 
-                    //if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
-                    //{
+                    movePoint.position += new Vector3(MotionX, MotionY, 0);
+                    GameState.PlayerTurn = false;
 
-                    //if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0), .2f, WhatStopsMovement))
-                    //{
-                    movePoint.position += new Vector3(MotionX, MotionY, 0);                     
-                    //GameState.PlayerTurn = false;
-                    GameState.PlayerMoved();
-                    //}
+                    StartCoroutine(enemyLoop());
+
                     spawner.newEnemy();
-                    //}
 
+                    Heal(1);
                 }
             }
 
-            else if (Input.GetKeyDown(KeyCode.Space)) 
+            else if (Input.GetKeyDown(KeyCode.Space))
             {
                 //Debug.Log("Player is attempting an attack");
                 Attack();
-                //GameState.PlayerTurn = false;
-                GameState.PlayerMoved();
-                
+                GameState.PlayerTurn = false;
+
+                StartCoroutine(enemyLoop());
             }
-            
+
         }
 
 
@@ -201,4 +186,31 @@ public class PlayerActions : MonoBehaviour
         attacking = true;
         activeAttack.SetActive(attacking);
     }
+
+    public override void OnDeath()
+    {
+        deathScreen.enabled = !deathScreen.enabled;
+        Destroy(gameObject);
+        Destroy(movePoint);
+        Debug.Log("Player Died");
+    }
+
+
+    IEnumerator enemyLoop()
+    {
+        yield return new WaitForSeconds(turnDelay / Speed);
+        for (int i = 0; i < GameState.EnemyCount; i++)
+        {
+            GameObject EnemyPoint = GameObject.FindWithTag("Moved");
+            EnemyPoint.gameObject.tag = "Unmoved";
+            if (Vector3.Distance(transform.position, EnemyPoint.transform.position) < 6)
+            {
+                yield return new WaitForSeconds(turnDelay / Speed);
+            }
+
+        }
+        GameState.PlayerTurn = true;
+        GameState.PlayerTurn = true;
+    }
+
 }

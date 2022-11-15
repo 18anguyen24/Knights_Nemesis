@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705401359353670249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.2885, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -131,22 +131,22 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0}
+  m_Offset: {x: -0.2, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 4, y: 0.5}
+    newSize: {x: 2.3083844, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.5, y: 0.25}
+    - - {x: 1, y: 0.25}
       - {x: -0.5, y: 0.25}
       - {x: -0.5, y: -0.25}
-      - {x: 2.5, y: -0.25}
+      - {x: 1, y: -0.25}
 --- !u!114 &1705401359353670254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 4, y: 0.5}
+  m_Size: {x: 2.3083844, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 1705401359449007342}
   - component: {fileID: 1705401359449007341}
   m_Layer: 0
-  m_Name: TestMovePoint
+  m_Name: Enemy Movepoint
   m_TagString: Moved
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,7 +286,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
@@ -483,10 +483,8 @@ GameObject:
   - component: {fileID: 3094217742039621714}
   - component: {fileID: 1705401359458806458}
   - component: {fileID: 1705401359458806456}
-  - component: {fileID: 1705401359458806463}
   - component: {fileID: 1705401359458806462}
   - component: {fileID: 1705401359196875571}
-  - component: {fileID: 1705401359196875575}
   m_Layer: 9
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -575,31 +573,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd74f469e5616747b5e5757f62feac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
   moveSpeed: 5
-  movePoint: {fileID: 1705401359449007342}
+  movePoint: {fileID: 1705401359449007343}
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
   Target: {fileID: 0}
   attackArea1: {fileID: 1705401360116653337}
+  attackArea2: {fileID: 1705401359353670249}
   targetX: 0
   targetY: 0
---- !u!114 &1705401359458806463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648287766272362779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9db5e4dd0fdbb24899ca62ef0175029, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  player: {fileID: 0}
-  healthbar: {fileID: 0}
-  deathScreen: {fileID: 0}
 --- !u!61 &1705401359458806462
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -610,7 +594,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -647,16 +631,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!114 &1705401359196875575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3648287766272362779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinScreen: {fileID: 0}

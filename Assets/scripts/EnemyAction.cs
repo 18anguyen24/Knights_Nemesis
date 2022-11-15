@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAction : MonoBehaviour
+public class EnemyAction : UnitController
 {
     //public variables
     public float moveSpeed = 5f;
-    public Transform movePoint;
+    public GameObject movePoint;
 
     public LayerMask WhatStopsMovement;
     public Transform Target;
 
     public GameObject attackArea1;
-    //public GameObject attackArea2;
+    public GameObject attackArea2;
 
 
     public float targetX;
@@ -21,15 +21,15 @@ public class EnemyAction : MonoBehaviour
     //private Variables
     private float XDistance;
     private float YDistance;
-    
-    
+
+
 
     private GameObject activeAttack;
     private bool attacking = false;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class EnemyAction : MonoBehaviour
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
         //Target = PlayerActions.player.transform;
-        movePoint.parent = null;
+        movePoint.transform.parent = null;
         //Heading = 0.0f;
         targetX = 0;
         targetY = 0;
@@ -53,12 +53,12 @@ public class EnemyAction : MonoBehaviour
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
-        if (movePoint.tag == "Unmoved")
+        if (movePoint.transform.tag == "Unmoved")
         {
 
             EnemyTurn();
-           
-            movePoint.tag = "Moved";
+
+            movePoint.transform.tag = "Moved";
         }
 
         float Speed = moveSpeed;
@@ -68,7 +68,7 @@ public class EnemyAction : MonoBehaviour
             Speed = Speed * GameState.SpeedFactor;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
 
         if (attacking)
         {
@@ -84,10 +84,17 @@ public class EnemyAction : MonoBehaviour
         }
     }
 
-    public void EnemyTurn() {
-        if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)
+    public void EnemyTurn()
+    {
+        if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2)
+        {
+            activeAttack = attackArea2;
+            Attack();
+        }
+        else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)
         {
             //Debug.Log("attacking");
+            activeAttack = attackArea1;
             Attack();
             //GameState.PlayerTurn = false;
         }
@@ -96,8 +103,10 @@ public class EnemyAction : MonoBehaviour
             //Debug.Log("moving");
             MoveEnemy();
         }
-        movePoint.tag = "Moved";
+
     }
+
+
 
 
     private void MoveEnemy()
@@ -112,7 +121,7 @@ public class EnemyAction : MonoBehaviour
         //Debug.Log("The x and Y distaces are " + XDistance + "," + YDistance);
 
         //float XDistance = Target.position.x - transform.position.x;
-        if (XDistance !=0)
+        if (XDistance != 0)
             XDirection = Mathf.Abs(XDistance) / XDistance;
         //float YDistance = Target.position.y - transform.position.y;
         if (YDistance != 0)
@@ -130,7 +139,7 @@ public class EnemyAction : MonoBehaviour
         //targetX = XDirection * MoveHorizontal;
         //targetY = YDirection * MoveVertical;
 
-        if (Vector3.Distance(transform.position, movePoint.position) <= .05f)//should be unnecessary with multiple enemies
+        if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
 
             //Checks to see if motion is allowed first to prevent going through corners
@@ -138,15 +147,15 @@ public class EnemyAction : MonoBehaviour
             float AllowHorizontal = 1;
             float AllowDiagonal = 1;
 
-            if (Physics2D.OverlapCircle(movePoint.position + new Vector3(XDirection * MoveHorizontal, 0f, 0), .2f, WhatStopsMovement))
+            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, 0f, 0), .2f, WhatStopsMovement))
             {
                 AllowHorizontal = 0;
             }
-            if (Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
+            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(0f, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
             {
                 AllowVertical = 0;
             }
-            if (Physics2D.OverlapCircle(movePoint.position + new Vector3(XDirection * MoveHorizontal, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
+            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
             {
                 AllowDiagonal = 0;
             }
@@ -160,20 +169,25 @@ public class EnemyAction : MonoBehaviour
                 MotionY = 0;
             }
 
-            movePoint.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
+            movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
 
         }
 
 
     }
 
-   
+
     private void Attack()
     {
         attacking = true;
         activeAttack.SetActive(attacking);
     }
 
-
+    public override void OnDeath()
+    {
+        Destroy(gameObject);
+        Destroy(movePoint);
+        GameState.EnemyCount--;
+    }
 
 }

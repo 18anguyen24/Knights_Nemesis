@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class UnitController : MonoBehaviour
 {
+    [SerializeField]
     private int health = 100;
 
     private int MAX_HEALTH = 100;
+
+    //contain variable for stats (attack, defense, xp etc...)
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,7 @@ public class UnitController : MonoBehaviour
     {
 
     }
+
     public void Damage(int amount)
     {
         if (amount < 0)
