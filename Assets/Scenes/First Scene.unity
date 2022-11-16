@@ -748,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 100
 --- !u!60 &632787286
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7582,8 +7582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c3a97c84436bf94193e322ec6b7ae98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heading: 0
-  newHeading: 0
 --- !u!1 &1272597202
 GameObject:
   m_ObjectHideFlags: 0
@@ -27616,17 +27614,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea6f1c147e7a6b4e8d044ce0465c107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  infiniteTurns: 0
   moveSpeed: 5
-  movePoint: {fileID: 1272597203}
+  movePoint: {fileID: 1272597202}
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
+  health: 100
+  infiniteTurns: 0
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
   deathScreen: {fileID: 0}
-  turnDelay: 0.3
+  turnDelay: 0.5
   spawner: {fileID: 2053006707}
 --- !u!50 &1966599938
 Rigidbody2D:
@@ -27772,7 +27770,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   maxEnemies: 8
-  chanceToSpawn: 15
+  chanceToSpawn: 25
   width: 45
   height: 40
 --- !u!4 &2053006708

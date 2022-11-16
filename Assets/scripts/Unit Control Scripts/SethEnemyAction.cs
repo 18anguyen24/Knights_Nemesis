@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAction : UnitController
+public class SethEnemyAction : UnitController
 {
     //public variables
+    /*
     public float moveSpeed = 5f;
     public GameObject movePoint;
 
     public LayerMask WhatStopsMovement;
-    public Transform Target;
+    */
 
     public GameObject attackArea1;
     public GameObject attackArea2;
+    
 
+    public Transform Target;
 
     public float targetX;
     public float targetY;
@@ -24,21 +27,23 @@ public class EnemyAction : UnitController
 
 
 
-    private GameObject activeAttack;
+    /*private GameObject activeAttack;
     private bool attacking = false;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
-
+    */
 
 
     // Start is called before the first frame update
     void Start()
     {
+        GameState.EnemyCount++;
+
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
-        //Target = PlayerActions.player.transform;
+        
         movePoint.transform.parent = null;
-        //Heading = 0.0f;
+     
         targetX = 0;
         targetY = 0;
 
@@ -48,8 +53,6 @@ public class EnemyAction : UnitController
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("Player Location" + PlayerActions.player.transform);
-
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
@@ -59,8 +62,10 @@ public class EnemyAction : UnitController
             EnemyTurn();
 
             movePoint.transform.tag = "Moved";
+
         }
 
+        
         float Speed = moveSpeed;
 
         if (Input.GetMouseButton(0))
@@ -69,6 +74,7 @@ public class EnemyAction : UnitController
         }
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
+        
 
         if (attacking)
         {
@@ -82,26 +88,26 @@ public class EnemyAction : UnitController
             }
 
         }
+        
     }
 
+
+    //Implement different Enemies controls here: this is the basic code for the current Enemy
     public void EnemyTurn()
     {
-        if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2)
+        if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) //Checks if the player is two diagonal tiles away
         {
-            activeAttack = attackArea2;
-            Attack();
+            activeAttack = attackArea2; //Sets to attack 2
+            Attack();   //Attacks
         }
-        else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)
+        else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
-            //Debug.Log("attacking");
-            activeAttack = attackArea1;
-            Attack();
-            //GameState.PlayerTurn = false;
+            activeAttack = attackArea1; //Sets to attack 1
+            Attack();   //Attacks
         }
         else
         {
-            //Debug.Log("moving");
-            MoveEnemy();
+            MoveEnemy();  //Moves
         }
 
     }
@@ -109,10 +115,11 @@ public class EnemyAction : UnitController
 
 
 
-    private void MoveEnemy()
+    private void MoveEnemy()    //Currently finds the direction the player is in, then calls move to move in that direction 
+                                //Move is in UnitController, and will check for collision
     {
-        float MoveVertical = 1;
-        float MoveHorizontal = 1;
+        //float MoveVertical = 1;
+        //float MoveHorizontal = 1;
 
 
         float XDirection = 0;
@@ -141,7 +148,9 @@ public class EnemyAction : UnitController
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            Move(XDirection, YDirection);
 
+            /*
             //Checks to see if motion is allowed first to prevent going through corners
             float AllowVertical = 1;
             float AllowHorizontal = 1;
@@ -170,18 +179,18 @@ public class EnemyAction : UnitController
             }
 
             movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
-
+            */
         }
 
 
     }
 
-
+    /*
     private void Attack()
     {
         attacking = true;
         activeAttack.SetActive(attacking);
-    }
+    }*/
 
     public override void OnDeath()
     {

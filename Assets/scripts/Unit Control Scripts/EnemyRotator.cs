@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyRotator : MonoBehaviour
 {
-    public EnemyAction directional;
+    //public EnemyAction directional;
 
     private Transform target;
     private Vector3 fakePoint;
@@ -15,7 +15,7 @@ public class EnemyRotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = directional.Target;
+        target = PlayerActions.player.transform;
     }
 
     // Update is called once per frame

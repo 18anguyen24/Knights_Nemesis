@@ -6,8 +6,8 @@ public class Rotator : MonoBehaviour
 {
     //public PlayerActions action;
     private Vector3 fakePoint;
-    public float Heading;
-    public float newHeading;
+    private float Heading;
+    private float newHeading;
     private float changeHeading;
 
     // Start is called before the first frame update

@@ -10,9 +10,11 @@ public class PlayerActions : UnitController
 
     //public variables
     public bool infiniteTurns = false;
+    /*
     public float moveSpeed = 5f;
     public Transform movePoint;
     public LayerMask WhatStopsMovement;
+    */
     public GameObject attackArea1;
     public GameObject attackArea2;
 
@@ -24,13 +26,14 @@ public class PlayerActions : UnitController
 
     public EnemySpawner spawner;
 
-
-    private GameObject activeAttack;
+    /*
+    //private GameObject activeAttack;
     private bool attacking = false;
     private float timeToAttack = 0.25f;
     private float timer = 0f;
 
     private float Speed;
+    */
 
     public static PlayerActions player;
 
@@ -42,7 +45,7 @@ public class PlayerActions : UnitController
         //randomSpawn();
 
 
-        movePoint.parent = null;
+        movePoint.transform.parent = null;
 
 
 
@@ -71,14 +74,13 @@ public class PlayerActions : UnitController
     // Update is called once per frame
     void Update()
     {
-        //playerHealth.Heal(1);
-        //handles the movement of the player to the movepoint
+        
         Speed = moveSpeed;
         if (Input.GetMouseButton(0))
         {
             Speed = Speed * GameState.SpeedFactor;
         }
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.position, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
 
         if (attacking)
         {
@@ -128,9 +130,10 @@ public class PlayerActions : UnitController
             //handles player movement and movement takes precedent over other actions
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
-                if (Vector3.Distance(transform.position, movePoint.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
+                if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
                 {
-
+                    Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                    /*
                     //Checks to see if motion is allowed first to prevent going through corners
                     float AllowVertical = 1;
                     float AllowHorizontal = 1;
@@ -160,6 +163,8 @@ public class PlayerActions : UnitController
                     }
 
                     movePoint.position += new Vector3(MotionX, MotionY, 0);
+                    */
+
                     GameState.PlayerTurn = false;
 
                     StartCoroutine(enemyLoop());
@@ -184,11 +189,12 @@ public class PlayerActions : UnitController
 
 
     }
+    /*
     private void Attack()
     {
         attacking = true;
         activeAttack.SetActive(attacking);
-    }
+    }*/
 
     public override void OnDeath()
     {

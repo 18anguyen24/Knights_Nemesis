@@ -20,9 +20,9 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
-        newEnemy();
-        newEnemy();
-        newEnemy();
+        //newEnemy();
+        //newEnemy();
+        //newEnemy();
     }
 
 
@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         {
             //Debug.Log("Spawning new enemy");
             GameObject newEnemy = Instantiate(enemyPrefab, enemyDrop, Quaternion.identity);
-            GameState.EnemyCount++;
+            //GameState.EnemyCount++;
         }
     }
 
