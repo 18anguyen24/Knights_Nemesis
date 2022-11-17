@@ -6,7 +6,8 @@ using UnityEngine.UI;
 public class Win : MonoBehaviour
 {
     public Image WinScreen;
-    public Slider HealthBar;
+    public Image HealthBarFill;
+    public Image HealthBarBorder;
     public Image PlayerIcon;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,9 @@ public class Win : MonoBehaviour
         if (other.gameObject.CompareTag("Win"))
         {
             WinScreen.enabled = !WinScreen.enabled;
+            HealthBarFill.enabled = !HealthBarFill.enabled;
+            HealthBarBorder.enabled = !HealthBarBorder.enabled;
+            PlayerIcon.enabled = !PlayerIcon.enabled;
             //Debug.Log("WIN");
             Destroy(gameObject);
         }

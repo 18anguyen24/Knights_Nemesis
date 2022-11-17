@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Device;
-using UnityEngine.UI;
 
 
 public class ObjectCollision : MonoBehaviour
 {
-    public Image WinScreen;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
