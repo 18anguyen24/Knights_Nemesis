@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
         enemyDrop += transform.position;
 
 
-        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.EnemyCount < maxEnemies)
+        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.Enemies.Count < maxEnemies)
         {
             //Debug.Log("Spawning new enemy");
             GameObject newEnemy = Instantiate(enemyPrefab, enemyDrop, Quaternion.identity);

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DylanEnemyAction : UnitController
+public class DylanEnemyAction : UnitController, EnemyInterface
 {
     //public variables
     /*
@@ -37,7 +37,7 @@ public class DylanEnemyAction : UnitController
     // Start is called before the first frame update
     void Start()
     {
-        GameState.EnemyCount++;
+        GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
@@ -194,9 +194,13 @@ public class DylanEnemyAction : UnitController
 
     public override void OnDeath()
     {
+        GameState.Enemies.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
-        GameState.EnemyCount--;
     }
 
+    public Vector3 EnemyLocation()
+    {
+        return transform.position;
+    }
 }

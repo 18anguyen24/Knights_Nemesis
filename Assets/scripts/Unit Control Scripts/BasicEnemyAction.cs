@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyAction : UnitController
+public class BasicEnemyAction : UnitController, EnemyInterface
 {
     //public variables
     /*
@@ -37,7 +37,7 @@ public class BasicEnemyAction : UnitController
     // Start is called before the first frame update
     void Start()
     {
-        GameState.EnemyCount++;
+        GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
@@ -48,6 +48,8 @@ public class BasicEnemyAction : UnitController
         targetY = 0;
 
         activeAttack = attackArea1;
+
+        
     }
 
     // Update is called once per frame
@@ -194,9 +196,13 @@ public class BasicEnemyAction : UnitController
 
     public override void OnDeath()
     {
+        GameState.Enemies.Remove(this);
         Destroy(gameObject);
-        Destroy(movePoint);
-        GameState.EnemyCount--;
+        Destroy(movePoint);  
     }
 
+    public Vector3 EnemyLocation()
+    {
+        return transform.position;
+    }
 }

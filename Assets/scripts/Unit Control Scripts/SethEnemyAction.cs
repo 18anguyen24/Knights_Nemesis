@@ -2,16 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SethEnemyAction : UnitController
+public class SethEnemyAction : UnitController, EnemyInterface
 {
-    //public variables
-    /*
-    public float moveSpeed = 5f;
-    public GameObject movePoint;
-
-    public LayerMask WhatStopsMovement;
-    */
-
+    
     public GameObject attackArea1;
     public GameObject attackArea2;
     
@@ -25,7 +18,8 @@ public class SethEnemyAction : UnitController
     private float XDistance;
     private float YDistance;
 
-
+    private bool primed = false;
+    private bool truant = true;
 
     /*private GameObject activeAttack;
     private bool attacking = false;
@@ -37,7 +31,8 @@ public class SethEnemyAction : UnitController
     // Start is called before the first frame update
     void Start()
     {
-        GameState.EnemyCount++;
+        MAX_HEALTH = health;
+        GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
@@ -85,29 +80,55 @@ public class SethEnemyAction : UnitController
                 timer = 0;
                 attacking = false;
                 activeAttack.SetActive(attacking);
+                if (activeAttack == attackArea2) {
+                    OnDeath();
+                }
             }
 
         }
         
     }
 
+    public void GetEnemyLocation() { 
+    
+    }
 
     //Implement different Enemies controls here: this is the basic code for the current Enemy
     public void EnemyTurn()
     {
-        if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) //Checks if the player is two diagonal tiles away
+        if (Mathf.Abs(XDistance) < 2 && Mathf.Abs(YDistance) < 2 && health < (MAX_HEALTH/3)) 
         {
-            activeAttack = attackArea2; //Sets to attack 2
-            Attack();   //Attacks
+            if (primed == false)
+            {
+                Debug.Log("Priming: " + health);
+                primed = true;
+            }
+            else {
+                activeAttack = attackArea2; //Sets to attack 2
+                Attack();   //Attacks
+                
+                //OnDeath();
+            }
         }
         else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
             activeAttack = attackArea1; //Sets to attack 1
             Attack();   //Attacks
+            truant = true;
         }
         else
         {
-            MoveEnemy();  //Moves
+            
+            if (truant == false)
+            {
+                truant = true;
+            }
+            else
+            {
+                MoveEnemy();  //Moves
+                truant = false;
+            }
+            
         }
 
     }
@@ -150,53 +171,23 @@ public class SethEnemyAction : UnitController
         {
             Move(XDirection, YDirection);
 
-            /*
-            //Checks to see if motion is allowed first to prevent going through corners
-            float AllowVertical = 1;
-            float AllowHorizontal = 1;
-            float AllowDiagonal = 1;
-
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, 0f, 0), .2f, WhatStopsMovement))
-            {
-                AllowHorizontal = 0;
-            }
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(0f, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
-            {
-                AllowVertical = 0;
-            }
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
-            {
-                AllowDiagonal = 0;
-            }
-
-            float MotionX = XDirection * AllowHorizontal;
-            float MotionY = YDirection * AllowVertical;
-
-            if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
-            {
-                MotionX = 0;
-                MotionY = 0;
-            }
-
-            movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
-            */
+            
         }
 
 
     }
 
-    /*
-    private void Attack()
-    {
-        attacking = true;
-        activeAttack.SetActive(attacking);
-    }*/
-
     public override void OnDeath()
     {
+        GameState.Enemies.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
-        GameState.EnemyCount--;
+        
+
     }
 
+    public Vector3 EnemyLocation()
+    {
+        return transform.position;
+    }
 }

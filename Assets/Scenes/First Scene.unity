@@ -7540,7 +7540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1076107056}
-  playerActions: {fileID: 0}
+  playerActions: {fileID: 1345622047}
 --- !u!4 &1119082871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
@@ -7618,8 +7618,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272597202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.16666667, z: -0.076036334}
-  m_LocalScale: {x: 0.083333336, y: 0.083333336, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0, z: -0.076036334}
+  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.59999996}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1119082871}
@@ -7667,7 +7667,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.32941177, b: 0.0811748, a: 0}
+  m_Color: {r: 0, g: 0.32941177, b: 0.0811748, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7862,7 +7862,7 @@ MonoBehaviour:
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
   deathScreen: {fileID: 149626032}
-  turnDelay: 0
+  turnDelay: 0.75
   spawner: {fileID: 2053006707}
 --- !u!114 &1345622048
 MonoBehaviour:
@@ -7887,7 +7887,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345622044}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
   m_Name: 
@@ -27810,8 +27810,8 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
-  maxEnemies: 8
-  chanceToSpawn: 25
+  maxEnemies: 4
+  chanceToSpawn: 15
   width: 45
   height: 40
 --- !u!4 &2053006708
@@ -27957,7 +27957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_LocalPosition.z

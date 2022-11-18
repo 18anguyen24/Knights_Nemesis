@@ -123,7 +123,14 @@ public class PlayerActions : UnitController
 
         if (Input.GetMouseButton(1))
         {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //Debug.Log("Player is attempting an attack");
+                Attack();
+                GameState.PlayerTurn = false;
 
+                StartCoroutine(enemyLoop());
+            }
         }
         else if (GameState.PlayerTurn)
         { //list of actions, makes sure its player turn
@@ -133,6 +140,10 @@ public class PlayerActions : UnitController
             {
                 if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
                 {
+                    if (Input.GetAxisRaw("Vertical") == -1) {
+                        Debug.Log("Moving down");
+                    
+                    }
                     Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                     animator.SetBool("isMovingRight", true);
                     /*
@@ -214,19 +225,17 @@ public class PlayerActions : UnitController
 
     IEnumerator enemyLoop()
     {
-        yield return new WaitForSeconds(turnDelay / Speed);
-        for (int i = 0; i < GameState.EnemyCount; i++)
+        yield return new WaitForSeconds(turnDelay/Speed);
+        for (int i = 0; i < GameState.Enemies.Count; i++)
         {
-            GameObject EnemyPoint = GameObject.FindWithTag("Moved");
-            EnemyPoint.gameObject.tag = "Unmoved";
-            if (Vector3.Distance(transform.position, EnemyPoint.transform.position) < 6)
-            {
-                yield return new WaitForSeconds(turnDelay / Speed);
-            }
 
+            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].EnemyLocation()) < 6)
+            {
+                yield return new WaitForSeconds(turnDelay/Speed);
+            }
+            GameState.Enemies[i].EnemyTurn();
         }
-        Debug.Log("Number of Enemies: " + GameState.EnemyCount);
-        GameState.PlayerTurn = true;
+        Debug.Log("Number of Enemies: " + GameState.Enemies.Count);
         GameState.PlayerTurn = true;
     }
 
