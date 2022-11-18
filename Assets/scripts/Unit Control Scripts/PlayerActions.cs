@@ -22,9 +22,10 @@ public class PlayerActions : UnitController
 
     public float turnDelay;
 
-
-
     public EnemySpawner spawner;
+
+    Rigidbody2D rb;
+    Animator animator;
 
     /*
     //private GameObject activeAttack;
@@ -44,12 +45,12 @@ public class PlayerActions : UnitController
 
         //randomSpawn();
 
-
         movePoint.transform.parent = null;
 
-
-
         activeAttack = attackArea1;
+
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -133,6 +134,7 @@ public class PlayerActions : UnitController
                 if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
                 {
                     Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                    animator.SetBool("isMovingRight", true);
                     /*
                     //Checks to see if motion is allowed first to prevent going through corners
                     float AllowVertical = 1;
@@ -173,8 +175,9 @@ public class PlayerActions : UnitController
 
                     Heal(1);
                 }
-            }
+                
 
+            }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
                 //Debug.Log("Player is attempting an attack");
@@ -182,6 +185,10 @@ public class PlayerActions : UnitController
                 GameState.PlayerTurn = false;
 
                 StartCoroutine(enemyLoop());
+            }
+            else
+            {
+                animator.SetBool("isMovingRight", false);
             }
 
         }
