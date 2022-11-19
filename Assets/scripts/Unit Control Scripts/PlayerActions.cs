@@ -26,6 +26,7 @@ public class PlayerActions : UnitController
 
     Rigidbody2D rb;
     Animator animator;
+    SpriteRenderer spriteRenderer;
 
     /*
     //private GameObject activeAttack;
@@ -51,6 +52,7 @@ public class PlayerActions : UnitController
 
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -145,39 +147,10 @@ public class PlayerActions : UnitController
                     
                     }
                     Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+                    //run animation
                     animator.SetBool("isMovingRight", true);
-                    /*
-                    //Checks to see if motion is allowed first to prevent going through corners
-                    float AllowVertical = 1;
-                    float AllowHorizontal = 1;
-                    float AllowDiagonal = 1;
-
-
-                    if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0), .2f, WhatStopsMovement))
-                    {
-                        AllowHorizontal = 0;
-                    }
-                    if (Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0), .2f, WhatStopsMovement))
-                    {
-                        AllowVertical = 0;
-                    }
-
-                    if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0), .2f, WhatStopsMovement))
-                    {
-                        AllowDiagonal = 0;
-                    }
-                    float MotionX = Input.GetAxisRaw("Horizontal") * AllowHorizontal;
-                    float MotionY = Input.GetAxisRaw("Vertical") * AllowVertical;
-
-                    if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
-                    {
-                        MotionX = 0;
-                        MotionY = 0;
-                    }
-
-                    movePoint.position += new Vector3(MotionX, MotionY, 0);
-                    */
-
+                  
                     GameState.PlayerTurn = false;
 
                     StartCoroutine(enemyLoop());
@@ -186,7 +159,6 @@ public class PlayerActions : UnitController
 
                     Heal(1);
                 }
-                
 
             }
             else if (Input.GetKeyDown(KeyCode.Space))
@@ -199,6 +171,33 @@ public class PlayerActions : UnitController
             }
             else
             {
+                animator.SetBool("isMovingRight", false);
+            }
+
+            if(Input.GetAxisRaw("Horizontal") < 0)
+            {
+                animator.SetBool("isFacingBack", false);
+                animator.SetBool("isFacingFront", false);
+                animator.SetBool("isMovingRight", true);
+                spriteRenderer.flipX = true;
+            }
+            else if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                animator.SetBool("isFacingBack", false);
+                animator.SetBool("isFacingFront", false);
+                animator.SetBool("isMovingRight", true);
+                spriteRenderer.flipX = false;
+            }
+            else if(Input.GetAxisRaw("Vertical") > 0)
+            {
+                animator.SetBool("isFacingBack", true);
+                animator.SetBool("isFacingFront", false);
+                animator.SetBool("isMovingRight", false);
+            }
+            else if(Input.GetAxisRaw("Vertical") < 0)
+            {
+                animator.SetBool("isFacingBack", false);
+                animator.SetBool("isFacingFront", true);
                 animator.SetBool("isMovingRight", false);
             }
 

@@ -27,6 +27,10 @@ public class LoadScene : MonoBehaviour
             TitleScreen.enabled = !TitleScreen.enabled;
             Controls.enabled = !Controls.enabled;
             onTitle = !onTitle;
+            if(orig.enabled)
+            {
+                orig.enabled = !orig.enabled;
+            }
         }
         if (Controls.enabled == true && Input.GetKeyDown(KeyCode.K))
         {
