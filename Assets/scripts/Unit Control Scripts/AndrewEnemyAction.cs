@@ -26,6 +26,11 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
     private float YDistance;
 
 
+    //Animation
+    SpriteRenderer sr;
+    Animator animator;
+
+
 
     /*private GameObject activeAttack;
     private bool attacking = false;
@@ -48,6 +53,10 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         targetY = 0;
 
         activeAttack = attackArea1;
+
+        //setting up animation
+        sr = GetComponentInChildren<SpriteRenderer>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -129,7 +138,17 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
 
         //float XDistance = Target.position.x - transform.position.x;
         if (XDistance != 0)
+        {
             XDirection = Mathf.Abs(XDistance) / XDistance;
+            if(XDirection < 0)
+            {
+                sr.flipX = true;
+            }
+            else if (XDirection > 0)
+            {
+                sr.flipX = false;
+            }
+        }    
         //float YDistance = Target.position.y - transform.position.y;
         if (YDistance != 0)
             YDirection = Mathf.Abs(YDistance) / YDistance;

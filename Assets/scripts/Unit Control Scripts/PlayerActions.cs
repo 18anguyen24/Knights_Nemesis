@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class PlayerActions : UnitController
 {
@@ -24,9 +25,13 @@ public class PlayerActions : UnitController
 
     public EnemySpawner spawner;
 
+    //for animations
     Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
+
+    //for audio
+    public AudioSource source;
 
     /*
     //private GameObject activeAttack;
@@ -165,6 +170,7 @@ public class PlayerActions : UnitController
             {
                 //Debug.Log("Player is attempting an attack");
                 Attack();
+                source.Play();
                 GameState.PlayerTurn = false;
 
                 StartCoroutine(enemyLoop());
