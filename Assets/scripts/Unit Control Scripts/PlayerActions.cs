@@ -103,13 +103,13 @@ public class PlayerActions : UnitController
 
         }
 
+        /*
         if (Input.GetKeyDown(KeyCode.R))
         {
-            GameState.PlayerTurn = true;
-            GameState.EnemyCount = 0;
+            GameState.clear();
             SceneManager.LoadScene(0);
             
-        }
+        }*/
 
 
 
@@ -233,12 +233,12 @@ public class PlayerActions : UnitController
         yield return new WaitForSeconds(turnDelay/Speed);
         for (int i = 0; i < GameState.Enemies.Count; i++)
         {
-
+            GameState.Enemies[i].EnemyTurn();
             if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].EnemyLocation()) < 6)
             {
                 yield return new WaitForSeconds(turnDelay/Speed);
             }
-            GameState.Enemies[i].EnemyTurn();
+            
         }
         Debug.Log("Number of Enemies: " + GameState.Enemies.Count);
         GameState.PlayerTurn = true;

@@ -18,5 +18,11 @@ public class GameState
 
     }
 
+    public static void clear() {
+        PlayerTurn = true;
+        EnemyCount = 0;
+        Enemies.Clear();
+    }
+
    
 }
