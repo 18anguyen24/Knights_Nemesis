@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AndrewEnemyAction : UnitController, EnemyInterface
+public class BossActions : UnitController, EnemyInterface
 {
     //public variables
     /*
@@ -112,6 +112,7 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
             activeAttack = attackArea1; //Sets to attack 1
+            MoveEnemyD(2);
             Attack();   //Attacks
         }
         else
@@ -120,6 +121,47 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         }
 
     }
+
+    private void MoveEnemyD(int spaces)    //Currently finds the direction the player is in, then calls move to move in that direction 
+                                //Move is in UnitController, and will check for collision
+    {
+        float XDirection = 0;
+        float YDirection = 0;
+
+        if (XDistance != 0)
+        {
+            XDirection = Mathf.Abs(XDistance + spaces) / XDistance;
+            if (XDirection < 0)
+            {
+                sr.flipX = true;
+            }
+            else if (XDirection > 0)
+            {
+                sr.flipX = false;
+            }
+        }
+        //float YDistance = Target.position.y - transform.position.y;
+        if (YDistance != 0)
+            YDirection = Mathf.Abs(YDistance - spaces) / YDistance;
+
+        if (Mathf.Abs(XDistance) > 3 * Mathf.Abs(YDistance))
+        {
+            //MoveVertical = 0;
+        }
+        if (Mathf.Abs(XDistance) * 3 < Mathf.Abs(YDistance))
+        {
+            //MoveHorizontal = 0;
+        }
+
+
+        if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
+        {
+            Move(XDirection, YDirection);
+        }
+
+
+    }
+
 
 
 

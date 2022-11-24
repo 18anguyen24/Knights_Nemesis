@@ -15,12 +15,14 @@ public class EnemyRotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = PlayerActions.player.transform;
+        //target = PlayerActions.player.transform;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        target = PlayerActions.player.transform;
         float XDistance = target.position.x - transform.position.x;
         float YDistance = target.position.y - transform.position.y;
 
