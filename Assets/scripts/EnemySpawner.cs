@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -34,6 +35,15 @@ public class EnemySpawner : MonoBehaviour
         type4SpawnRate += type3SpawnRate;
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            GameState.clear();
+            SceneManager.LoadScene(0);
+
+        }
+    }
 
 
     public void newEnemy() {

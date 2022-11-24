@@ -22,7 +22,9 @@ public class EnemyRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        target = PlayerActions.player.transform;
+        if (target == null){
+            target = PlayerActions.player.transform;
+        }
         float XDistance = target.position.x - transform.position.x;
         float YDistance = target.position.y - transform.position.y;
 
@@ -34,7 +36,7 @@ public class EnemyRotator : MonoBehaviour
 
         if (XDistance != 0)
             XDirection = Mathf.Abs(XDistance) / XDistance;
-        //float YDistance = Target.position.y - transform.position.y;
+       
         if (YDistance != 0)
             YDirection = Mathf.Abs(YDistance) / YDistance;
 
@@ -53,9 +55,7 @@ public class EnemyRotator : MonoBehaviour
 
         fakePoint = transform.position + new Vector3(targetX, targetY, 0);
         newHeading = Mathf.Atan2(fakePoint.y - transform.position.y, fakePoint.x - transform.position.x);
-        //Debug.Log("The heading is " + newHeading);
-        //if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
-        //{
+        
         newHeading = Mathf.Rad2Deg * newHeading;
         changeHeading = newHeading - Heading;
         transform.RotateAround(transform.position, Vector3.forward, changeHeading);
