@@ -23,6 +23,8 @@ public class EnemySpawner : MonoBehaviour
     public int maxEnemies;
     public int chanceToSpawn;
 
+    //public bool DEATH = false;
+
     //Specify width and height of the spawner, starting from the origin at the bottom left corner. 
 
     public int width = 5;
@@ -80,6 +82,13 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
+    public void DEATH() {
+        Debug.Log("Du Duh Du Dun");
+
+        //For now just have it increase max and spawn rate
+        maxEnemies *= 2;
+        chanceToSpawn += 10;
+    }
     /*
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {

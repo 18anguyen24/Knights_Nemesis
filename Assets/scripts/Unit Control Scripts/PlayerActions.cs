@@ -147,10 +147,7 @@ public class PlayerActions : UnitController
             {
                 if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
                 {
-                    if (Input.GetAxisRaw("Vertical") == -1) {
-                        Debug.Log("Moving down");
-                    
-                    }
+                   
                     Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
                     //run animation
@@ -231,16 +228,25 @@ public class PlayerActions : UnitController
     IEnumerator enemyLoop()
     {
         yield return new WaitForSeconds(turnDelay/Speed);
+        for (int i = 0; i < GameState.NPCs.Count; i++)
+        {
+            GameState.NPCs[i].NPCTurn();
+            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.NPCs[i].NPCLocation()) < 6)
+            {
+                yield return new WaitForSeconds(turnDelay / Speed);
+            }
+
+        }
         for (int i = 0; i < GameState.Enemies.Count; i++)
         {
-            GameState.Enemies[i].EnemyTurn();
-            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].EnemyLocation()) < 6)
+            GameState.Enemies[i].NPCTurn();
+            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].NPCLocation()) < 6)
             {
                 yield return new WaitForSeconds(turnDelay/Speed);
             }
             
         }
-        Debug.Log("Number of Enemies: " + GameState.Enemies.Count);
+        //Debug.Log("Number of Enemies: " + GameState.Enemies.Count);
         GameState.PlayerTurn = true;
     }
 

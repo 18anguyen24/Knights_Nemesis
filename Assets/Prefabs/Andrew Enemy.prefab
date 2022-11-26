@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 8480662993246197365}
   - component: {fileID: 171245200925274000}
   - component: {fileID: 398234880896206038}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Temp Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,7 +504,7 @@ GameObject:
   - component: {fileID: 8480662993664445738}
   - component: {fileID: 8480662993664445739}
   - component: {fileID: 7498917448091070830}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Andrew Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -610,7 +610,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8480662993700281161}
   - component: {fileID: 8480662993700281162}
-  m_Layer: 0
+  - component: {fileID: 644844875647023224}
+  m_Layer: 9
   m_Name: Enemy Movepoint
   m_TagString: Moved
   m_Icon: {fileID: 0}
@@ -684,3 +685,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &644844875647023224
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480662993700281163}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5

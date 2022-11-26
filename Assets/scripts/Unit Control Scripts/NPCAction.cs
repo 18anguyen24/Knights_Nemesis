@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SethEnemyAction : UnitController, NPCInterface
+public class NPCAction : UnitController, NPCInterface
 {
-    
-    public GameObject attackArea1;
-    public GameObject attackArea2;
-    
+    //This NPC won't have any attacks, but others might?
+    //public GameObject attackArea1;
+    //public GameObject attackArea2;
 
-    public Transform Target;
+    public EnemySpawner spawner;
+
+    public Vector3 Target;
 
     public float targetX;
     public float targetY;
@@ -18,40 +19,37 @@ public class SethEnemyAction : UnitController, NPCInterface
     private float XDistance;
     private float YDistance;
 
-    private bool primed = false;
-    private bool truant = true;
+    private int steps = 0;
+    private int stepsneeded = 0;
 
-    /*private GameObject activeAttack;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-    */
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
         MAX_HEALTH = health;
-        GameState.Enemies.Add(this);
+        GameState.NPCs.Add(this);
 
-        GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
-        Target = PlayerMovePoint.transform;
+        //Only initializing target as player
+        //GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
+        Target = new Vector3(0,.5f,0);
         
+
         movePoint.transform.parent = null;
-     
+
         targetX = 0;
         targetY = 0;
 
-        activeAttack = attackArea1;
+        //activeAttack = attackArea1;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        XDistance = Target.position.x - transform.position.x;
-        YDistance = Target.position.y - transform.position.y;
+        XDistance = Target.x - transform.position.x;
+        YDistance = Target.y - transform.position.y;
 
-        
         float Speed = moveSpeed;
 
         if (Input.GetMouseButton(0))
@@ -60,7 +58,7 @@ public class SethEnemyAction : UnitController, NPCInterface
         }
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
-        
+
 
         if (attacking)
         {
@@ -71,59 +69,29 @@ public class SethEnemyAction : UnitController, NPCInterface
                 timer = 0;
                 attacking = false;
                 activeAttack.SetActive(attacking);
-                if (activeAttack == attackArea2) {
-                    OnDeath();
-                }
             }
 
         }
+
+    }
+    private void randomTarget()
+    {
+        Target = transform.position + new Vector3(Mathf.Round(Random.Range(-5, 5)), Mathf.Round(Random.Range(-5, 5)), 0);
         
+
     }
 
     //Implement different Enemies controls here: this is the basic code for the current Enemy
     public void NPCTurn()
     {
-        if (Mathf.Abs(XDistance) < 2 && Mathf.Abs(YDistance) < 2 && health < (MAX_HEALTH/3)) 
-        {
-            if (primed == false)
-            {
-                Debug.Log("Priming: " + health);
-                primed = true;
-            }
-            else {
-                activeAttack = attackArea2; //Sets to attack 2
-                Attack();   //Attacks
-                
-                //OnDeath();
-            }
-        }
-        else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
-        {
-            activeAttack = attackArea1; //Sets to attack 1
-            Attack();   //Attacks
-            truant = true;
-        }
-        else
-        {
-            
-            if (truant == false)
-            {
-                truant = true;
-            }
-            else
-            {
-                MoveEnemy();  //Moves
-                truant = false;
-            }
-            
-        }
+        MoveNPC();
 
     }
 
 
 
 
-    private void MoveEnemy()    //Currently finds the direction the player is in, then calls move to move in that direction 
+    private void MoveNPC()    //Currently finds the direction the player is in, then calls move to move in that direction 
                                 //Move is in UnitController, and will check for collision
     {
         //float MoveVertical = 1;
@@ -156,8 +124,14 @@ public class SethEnemyAction : UnitController, NPCInterface
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            
             Move(XDirection, YDirection);
-
+            steps++;
+            if (steps >= stepsneeded) {
+                steps = 0;
+                stepsneeded = Random.Range(1, 4);
+                randomTarget();
+            }
             
         }
 
@@ -166,11 +140,10 @@ public class SethEnemyAction : UnitController, NPCInterface
 
     public override void OnDeath()
     {
-        GameState.Enemies.Remove(this);
+        GameState.NPCs.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
-        
-
+        spawner.DEATH();
     }
 
     public Vector3 NPCLocation()

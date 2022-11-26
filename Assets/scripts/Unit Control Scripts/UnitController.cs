@@ -45,20 +45,23 @@ public class UnitController : MonoBehaviour
         float AllowHorizontal = 1;
         float AllowDiagonal = 1;
 
-
+        if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(X, Y, 0), .2f, WhatStopsMovement))
+        {
+            //Debug.Log("Blocked from moving diagonal");
+            AllowDiagonal = 0;
+        }
         if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(X, 0f, 0), .2f, WhatStopsMovement))
         {
+            //Debug.Log("Blocked from moving horizontal");
             AllowHorizontal = 0;
         }
         if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(0f, Y, 0), .2f, WhatStopsMovement))
         {
+            //Debug.Log("Blocked from moving vertical");
             AllowVertical = 0;
         }
 
-        if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(X, Y, 0), .2f, WhatStopsMovement))
-        {
-            AllowDiagonal = 0;
-        }
+        
         float MotionX = X * AllowHorizontal;
         float MotionY = Y * AllowVertical;
 

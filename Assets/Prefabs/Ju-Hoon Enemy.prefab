@@ -266,7 +266,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647014031054592355}
   - component: {fileID: 647014031054592352}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Temp Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,8 @@ GameObject:
   m_Component:
   - component: {fileID: 647014031343651095}
   - component: {fileID: 647014031343651094}
-  m_Layer: 0
+  - component: {fileID: 5612500563938347675}
+  m_Layer: 9
   m_Name: Enemy Movepoint
   m_TagString: Moved
   m_Icon: {fileID: 0}
@@ -471,6 +472,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &5612500563938347675
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647014031343651089}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
 --- !u!1 &647014031556653830
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +500,7 @@ GameObject:
   - component: {fileID: 647014031556653828}
   - component: {fileID: 647014031556653831}
   - component: {fileID: 8186997913594639434}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Ju-Hoon Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -573,6 +590,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   health: 100
+  MAX_HEALTH: 0
   attackArea1: {fileID: 647014029888326600}
   attackArea2: {fileID: 647014030143041911}
   Target: {fileID: 0}

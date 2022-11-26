@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JuHoonEnemyAction : UnitController, EnemyInterface
+public class JuHoonEnemyAction : UnitController, NPCInterface
 {
     //public variables
     /*
@@ -37,6 +37,7 @@ public class JuHoonEnemyAction : UnitController, EnemyInterface
     // Start is called before the first frame update
     void Start()
     {
+        MAX_HEALTH = health;
         GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
@@ -56,16 +57,6 @@ public class JuHoonEnemyAction : UnitController, EnemyInterface
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
-        if (movePoint.transform.tag == "Unmoved")
-        {
-
-            EnemyTurn();
-
-            movePoint.transform.tag = "Moved";
-
-        }
-
-        
         float Speed = moveSpeed;
 
         if (Input.GetMouseButton(0))
@@ -93,7 +84,7 @@ public class JuHoonEnemyAction : UnitController, EnemyInterface
 
 
     //Implement different Enemies controls here: this is the basic code for the current Enemy
-    public void EnemyTurn()
+    public void NPCTurn()
     {
         if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) //Checks if the player is two diagonal tiles away
         {
@@ -199,7 +190,7 @@ public class JuHoonEnemyAction : UnitController, EnemyInterface
         Destroy(movePoint);
     }
 
-    public Vector3 EnemyLocation()
+    public Vector3 NPCLocation()
     {
         return transform.position;
     }

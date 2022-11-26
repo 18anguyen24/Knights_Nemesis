@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9039032018511563637}
   - component: {fileID: 9039032018777983736}
   - component: {fileID: 3272635678001850187}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Seth Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7699987934280853603}
   - component: {fileID: 7699987934280853602}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Temp Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9039032018560353573}
   - component: {fileID: 9039032018560353574}
-  m_Layer: 0
+  - component: {fileID: 6231778730891441434}
+  m_Layer: 9
   m_Name: Enemy Movepoint
   m_TagString: Moved
   m_Icon: {fileID: 0}
@@ -535,6 +536,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &6231778730891441434
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9039032018560353572}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.5
 --- !u!1 &9039032018926521250
 GameObject:
   m_ObjectHideFlags: 0

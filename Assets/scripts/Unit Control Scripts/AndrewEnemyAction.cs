@@ -2,19 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AndrewEnemyAction : UnitController, EnemyInterface
+public class AndrewEnemyAction : UnitController, NPCInterface
 {
     //public variables
     /*
     public float moveSpeed = 5f;
     public GameObject movePoint;
-
     public LayerMask WhatStopsMovement;
     */
 
     public GameObject attackArea1;
     public GameObject attackArea2;
-    
+
 
     public Transform Target;
 
@@ -65,16 +64,6 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
-        if (movePoint.transform.tag == "Unmoved")
-        {
-
-            EnemyTurn();
-
-            movePoint.transform.tag = "Moved";
-
-        }
-
-        
         float Speed = moveSpeed;
 
         if (Input.GetMouseButton(0))
@@ -83,7 +72,7 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         }
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
-        
+
 
         if (attacking)
         {
@@ -97,12 +86,12 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
             }
 
         }
-        
+
     }
 
 
     //Implement different Enemies controls here: this is the basic code for the current Enemy
-    public void EnemyTurn()
+    public void NPCTurn()
     {
         if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) //Checks if the player is two diagonal tiles away
         {
@@ -139,7 +128,7 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         if (XDistance != 0)
         {
             XDirection = Mathf.Abs(XDistance) / XDistance;
-            if(XDirection < 0)
+            if (XDirection < 0)
             {
                 sr.flipX = true;
             }
@@ -147,7 +136,7 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
             {
                 sr.flipX = false;
             }
-        }    
+        }
         //float YDistance = Target.position.y - transform.position.y;
         if (YDistance != 0)
             YDirection = Mathf.Abs(YDistance) / YDistance;
@@ -173,7 +162,6 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
             float AllowVertical = 1;
             float AllowHorizontal = 1;
             float AllowDiagonal = 1;
-
             if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, 0f, 0), .2f, WhatStopsMovement))
             {
                 AllowHorizontal = 0;
@@ -186,16 +174,13 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
             {
                 AllowDiagonal = 0;
             }
-
             float MotionX = XDirection * AllowHorizontal;
             float MotionY = YDirection * AllowVertical;
-
             if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
             {
                 MotionX = 0;
                 MotionY = 0;
             }
-
             movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
             */
         }
@@ -215,10 +200,10 @@ public class AndrewEnemyAction : UnitController, EnemyInterface
         GameState.Enemies.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
-        
+
     }
 
-    public Vector3 EnemyLocation()
+    public Vector3 NPCLocation()
     {
         return transform.position;
     }
