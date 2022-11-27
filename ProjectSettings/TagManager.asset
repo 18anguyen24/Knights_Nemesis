@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Win
   - NPC
+  - Attack3
   layers:
   - Default
   - TransparentFX

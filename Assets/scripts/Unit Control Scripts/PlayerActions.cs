@@ -18,10 +18,16 @@ public class PlayerActions : UnitController
     */
     public GameObject attackArea1;
     public GameObject attackArea2;
+    public GameObject attackArea3;
+
+    public GameObject UnlockAttack3;
+    public GameObject Attack3UI;
 
     public Image deathScreen;
     public Image Attack1Selected;
     public Image Attack2Selected;
+    public Image Attack3Selected;
+    
 
     public float turnDelay;
 
@@ -129,16 +135,28 @@ public class PlayerActions : UnitController
         {
             activeAttack = attackArea2;
         }
+        else if (UnlockAttack3.active == true && Input.GetKey("3"))
+        {
+            activeAttack = attackArea3;
+        }
 
         if (activeAttack == attackArea1)
         {
             Attack1Selected.enabled = true;
             Attack2Selected.enabled = false;
+            Attack3Selected.enabled = false;
         }
         else if (activeAttack == attackArea2)
         {
-            Attack2Selected.enabled = true;
             Attack1Selected.enabled = false;
+            Attack2Selected.enabled = true;
+            Attack3Selected.enabled = false;
+        }
+        else if (activeAttack == attackArea3)
+        {
+            Attack1Selected.enabled = false;
+            Attack2Selected.enabled = false;
+            Attack3Selected.enabled = true;
         }
 
         if (Input.GetMouseButton(1))
@@ -263,4 +281,12 @@ public class PlayerActions : UnitController
         GameState.PlayerTurn = true;
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Attack3"))
+        {
+            UnlockAttack3.SetActive(true);
+            Attack3UI.SetActive(true);
+        }
+    }
 }

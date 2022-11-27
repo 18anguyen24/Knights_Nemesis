@@ -13,7 +13,6 @@ public class DylanEnemyAction : UnitController, NPCInterface
     */
 
     public GameObject attackArea1;
-    public GameObject attackArea2;
     
 
     public Transform Target;
@@ -86,14 +85,8 @@ public class DylanEnemyAction : UnitController, NPCInterface
     //Implement different Enemies controls here: this is the basic code for the current Enemy
     public void NPCTurn()
     {
-        if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) //Checks if the player is two diagonal tiles away
+        if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
-            activeAttack = attackArea2; //Sets to attack 2
-            Attack();   //Attacks
-        }
-        else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
-        {
-            activeAttack = attackArea1; //Sets to attack 1
             Attack();   //Attacks
         }
         else
