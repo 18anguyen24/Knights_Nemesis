@@ -20,6 +20,8 @@ public class PlayerActions : UnitController
     public GameObject attackArea2;
 
     public Image deathScreen;
+    public Image Attack1Selected;
+    public Image Attack2Selected;
 
     public float turnDelay;
 
@@ -126,6 +128,17 @@ public class PlayerActions : UnitController
         else if (Input.GetKey("2"))
         {
             activeAttack = attackArea2;
+        }
+
+        if (activeAttack == attackArea1)
+        {
+            Attack1Selected.enabled = true;
+            Attack2Selected.enabled = false;
+        }
+        else if (activeAttack == attackArea2)
+        {
+            Attack2Selected.enabled = true;
+            Attack1Selected.enabled = false;
         }
 
         if (Input.GetMouseButton(1))
