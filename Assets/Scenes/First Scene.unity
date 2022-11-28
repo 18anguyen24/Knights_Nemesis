@@ -8697,6 +8697,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1319931239}
   - component: {fileID: 1319931240}
+  - component: {fileID: 1319931241}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Win
@@ -8745,6 +8746,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1319931241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319931238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63f07a30a0444b499e552698296c0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current: First Scene
+  nextLevel: Level 3
 --- !u!1 &1333465756
 GameObject:
   m_ObjectHideFlags: 0
@@ -8882,22 +8897,6 @@ MonoBehaviour:
   turnDelay: 0.5
   spawner: {fileID: 2053006707}
   source: {fileID: 1982247474}
---- !u!114 &1345622048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345622044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406b96899dfc6c846955b442e3f763dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinScreen: {fileID: 315558920}
-  HealthBarFill: {fileID: 303410744}
-  HealthBarBorder: {fileID: 1629153785}
-  PlayerIcon: {fileID: 1454396950}
 --- !u!114 &1345622049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8905,7 +8904,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345622044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
   m_Name: 
@@ -29246,6 +29245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc486bf4f2af82543a430b8a4937f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  current: First Scene
+  next: Level 3
   enemyType1: {fileID: 6375558160036423888, guid: dac018ffae4fce14a97871b5f04411c9, type: 3}
   type1SpawnRate: 20
   enemyType2: {fileID: 8480662993664445748, guid: 6fbadfe17e2dcd6448ae1e142188a74e, type: 3}

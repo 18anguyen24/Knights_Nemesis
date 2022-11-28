@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
-
+    
     //Cumulative chance, each enemy type should be increasingly more likely
     public GameObject enemyType1;
     public int type1SpawnRate;
@@ -39,12 +39,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            GameState.clear();
-            SceneManager.LoadScene(0);
-
-        }
+        
     }
 
 
