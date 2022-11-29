@@ -1491,7 +1491,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668756329}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1, y: 0, z: 0}
+  m_LocalPosition: {x: 0.10000001, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8897,18 +8897,6 @@ MonoBehaviour:
   turnDelay: 0.5
   spawner: {fileID: 2053006707}
   source: {fileID: 1982247474}
---- !u!114 &1345622049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345622044}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1345622051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29245,8 +29233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc486bf4f2af82543a430b8a4937f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: First Scene
-  next: Level 3
   enemyType1: {fileID: 6375558160036423888, guid: dac018ffae4fce14a97871b5f04411c9, type: 3}
   type1SpawnRate: 20
   enemyType2: {fileID: 8480662993664445748, guid: 6fbadfe17e2dcd6448ae1e142188a74e, type: 3}

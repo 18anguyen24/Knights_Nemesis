@@ -20,7 +20,7 @@ public class PlayerActions : UnitController
     public GameObject attackArea2;
     public GameObject attackArea3;
 
-    public GameObject UnlockAttack3;
+    private bool UnlockAttack3 = false;
     public GameObject Attack3UI;
 
     public Image deathScreen;
@@ -127,18 +127,6 @@ public class PlayerActions : UnitController
         }
 
         //this is a tedious way to do it but imma try it
-        if (Input.GetKey("1"))
-        {
-            activeAttack = attackArea1;
-        }
-        else if (Input.GetKey("2"))
-        {
-            activeAttack = attackArea2;
-        }
-        else if (UnlockAttack3.active == true && Input.GetKey("3"))
-        {
-            activeAttack = attackArea3;
-        }
 
         if (activeAttack == attackArea1)
         {
@@ -172,6 +160,18 @@ public class PlayerActions : UnitController
         }
         else if (GameState.PlayerTurn)
         { //list of actions, makes sure its player turn
+            if (Input.GetKey("1"))
+            {
+                activeAttack = attackArea1;
+            }
+            else if (Input.GetKey("2"))
+            {
+                activeAttack = attackArea2;
+            }
+            else if (UnlockAttack3 == true && Input.GetKey("3"))
+            {
+                activeAttack = attackArea3;
+            }
 
             //handles player movement and movement takes precedent over other actions
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
@@ -285,7 +285,7 @@ public class PlayerActions : UnitController
     {
         if (other.gameObject.CompareTag("Attack3"))
         {
-            UnlockAttack3.SetActive(true);
+            UnlockAttack3 = true;
             Attack3UI.SetActive(true);
         }
     }

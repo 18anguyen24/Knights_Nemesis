@@ -52,7 +52,7 @@ public class EnemySpawner : MonoBehaviour
         if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.Enemies.Count < maxEnemies)
         {
             int enemyType = (Random.Range(0, 99));
-            Debug.Log("Odd: " + enemyType);
+            
             if (enemyType < type1SpawnRate) {
                 GameObject newEnemy = Instantiate(enemyType1, enemyDrop, Quaternion.identity);
             } else if (enemyType < type2SpawnRate)

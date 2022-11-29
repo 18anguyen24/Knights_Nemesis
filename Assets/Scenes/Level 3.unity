@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &93174755
 Transform:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93174753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 9.5, z: 0}
+  m_LocalPosition: {x: 5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -191,7 +191,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -416,7 +416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &151367045
 Transform:
   m_ObjectHideFlags: 0
@@ -445,7 +445,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 3, y: 4}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1495,8 +1495,8 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1380117440}
-  m_RootOrder: 0
+  m_Father: {fileID: 1243209618}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &668756331
 SpriteRenderer:
@@ -1544,7 +1544,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 0.5, y: 4}
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1576,22 +1576,26 @@ PolygonCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 3.3, y: 4.7}
-    newSize: {x: 0.5, y: 4}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.5, y: 0.25}
-      - {x: -0.5, y: 0.25}
-      - {x: -0.5, y: -0.25}
-      - {x: 2.5, y: -0.25}
+    - - {x: -1.1, y: 0.75}
+      - {x: 0.5, y: 0.75}
+      - {x: 0.5, y: -0.75}
+      - {x: -1.1, y: -0.75}
+      - {x: -1.1, y: -0.25}
+      - {x: -0.1, y: -0.25}
+      - {x: -0.1, y: 0.25}
+      - {x: -1.1, y: 0.25}
 --- !u!1 &708459181
 GameObject:
   m_ObjectHideFlags: 0
@@ -36280,6 +36284,7 @@ Transform:
   m_Children:
   - {fileID: 234668239}
   - {fileID: 632787284}
+  - {fileID: 668756330}
   - {fileID: 1689414804}
   m_Father: {fileID: 1119082871}
   m_RootOrder: 0
@@ -36407,13 +36412,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1319931239}
   - component: {fileID: 1319931240}
+  - component: {fileID: 1319931241}
   m_Layer: 0
   m_Name: Goal
   m_TagString: Win
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1319931239
 Transform:
   m_ObjectHideFlags: 0
@@ -36422,7 +36428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319931238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4, y: 17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36455,6 +36461,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &1319931241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319931238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63f07a30a0444b499e552698296c0f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  current: Level 3
+  nextLevel: Level 3
 --- !u!1 &1333465756
 GameObject:
   m_ObjectHideFlags: 0
@@ -36492,7 +36512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1333465756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36583,7 +36603,6 @@ MonoBehaviour:
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
   attackArea3: {fileID: 668756329}
-  UnlockAttack3: {fileID: 1380117439}
   Attack3UI: {fileID: 648959975}
   deathScreen: {fileID: 149626032}
   Attack1Selected: {fileID: 1044419363}
@@ -36592,34 +36611,6 @@ MonoBehaviour:
   turnDelay: 0.5
   spawner: {fileID: 2053006707}
   source: {fileID: 1982247474}
---- !u!114 &1345622048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345622044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 406b96899dfc6c846955b442e3f763dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WinScreen: {fileID: 315558920}
-  HealthBarFill: {fileID: 303410744}
-  HealthBarBorder: {fileID: 1629153785}
-  PlayerIcon: {fileID: 1454396950}
---- !u!114 &1345622049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1345622044}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a8b2675c393274aa5cfff6422b2823, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1345622051
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36722,51 +36713,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354050142}
   m_CullTransparentMesh: 1
---- !u!1 &1380117439
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1380117440}
-  - component: {fileID: 1380117441}
-  m_Layer: 0
-  m_Name: Unlockable Attack 3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1380117440
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380117439}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 668756330}
-  m_Father: {fileID: 1119082871}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1380117441
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380117439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c3a97c84436bf94193e322ec6b7ae98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1454396948
 GameObject:
   m_ObjectHideFlags: 0
@@ -108440,7 +108386,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1243209618}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!212 &1689414805
 SpriteRenderer:
@@ -108824,8 +108770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc486bf4f2af82543a430b8a4937f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  current: Level 3
-  next: Boss Room
   enemyType1: {fileID: 6375558160036423888, guid: dac018ffae4fce14a97871b5f04411c9, type: 3}
   type1SpawnRate: 20
   enemyType2: {fileID: 8480662993664445748, guid: 6fbadfe17e2dcd6448ae1e142188a74e, type: 3}
@@ -108840,8 +108784,8 @@ MonoBehaviour:
     m_Bits: 768
   maxEnemies: 4
   chanceToSpawn: 15
-  width: 45
-  height: 40
+  width: 120
+  height: 70
 --- !u!4 &2053006708
 Transform:
   m_ObjectHideFlags: 0
@@ -108850,7 +108794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053006706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24, y: -18.5, z: 0}
+  m_LocalPosition: {x: -35, y: -25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -108894,11 +108838,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 21317471609035870, guid: 52a38093779120146b62c36585e33613, type: 3}
       propertyPath: m_LocalPosition.z
