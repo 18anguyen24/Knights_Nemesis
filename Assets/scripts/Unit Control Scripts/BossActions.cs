@@ -88,6 +88,7 @@ public class BossActions : UnitController, NPCInterface
 
         }
         
+        
     }
 
 
@@ -146,6 +147,7 @@ public class BossActions : UnitController, NPCInterface
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            moveSpeed = 10f;
             Move(XDirection, YDirection);
         }
 
