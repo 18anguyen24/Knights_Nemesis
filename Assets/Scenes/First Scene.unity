@@ -29242,9 +29242,9 @@ MonoBehaviour:
   enemyType4: {fileID: 647014031556653830, guid: a5e80b24e9528fe4bac989273b5ebae2, type: 3}
   type4SpawnRate: 20
   enemyType5: {fileID: 3648287766272362779, guid: f4cb383e2bc3e8545a3ac7e5bb2a32db, type: 3}
-  WhatStopsMovement:
+  WhatStopsSpawning:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 1792
   maxEnemies: 4
   chanceToSpawn: 15
   width: 45

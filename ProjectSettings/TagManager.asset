@@ -11,6 +11,8 @@ TagManager:
   - Win
   - NPC
   - Attack3
+  - Launcher
+  - Receiver
   layers:
   - Default
   - TransparentFX
@@ -22,7 +24,7 @@ TagManager:
   - 
   - Walls
   - Unit
-  - 
+  - NoSpawning
   - 
   - 
   - 

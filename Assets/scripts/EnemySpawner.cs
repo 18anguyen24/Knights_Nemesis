@@ -18,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemyType5;
     //private int type5SpawnRate = 100;
 
-    public LayerMask WhatStopsMovement;
+    public LayerMask WhatStopsSpawning;
 
     public int maxEnemies;
     public int chanceToSpawn;
@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
         enemyDrop += transform.position;
 
 
-        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsMovement) && Random.Range(0, 100) < chanceToSpawn && GameState.Enemies.Count < maxEnemies)
+        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsSpawning) && Random.Range(0, 100) < chanceToSpawn && GameState.Enemies.Count < maxEnemies)
         {
             int enemyType = (Random.Range(0, 99));
             
