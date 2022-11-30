@@ -127,7 +127,20 @@ public class PlayerActions : UnitController
         }
 
         //this is a tedious way to do it but imma try it
-
+        if (attacking == false) {
+            if (Input.GetKey("1"))
+            {
+                activeAttack = attackArea1;
+            }
+            else if (Input.GetKey("2"))
+            {
+                activeAttack = attackArea2;
+            }
+            else if (UnlockAttack3.activeSelf && Input.GetKey("3"))
+            {
+                activeAttack = attackArea3;
+            }
+        }
         if (activeAttack == attackArea1)
         {
             Attack1Selected.enabled = true;
@@ -160,18 +173,7 @@ public class PlayerActions : UnitController
         }
         else if (GameState.PlayerTurn)
         { //list of actions, makes sure its player turn
-            if (Input.GetKey("1"))
-            {
-                activeAttack = attackArea1;
-            }
-            else if (Input.GetKey("2"))
-            {
-                activeAttack = attackArea2;
-            }
-            else if (UnlockAttack3.activeSelf && Input.GetKey("3"))
-            {
-                activeAttack = attackArea3;
-            }
+            
 
             //handles player movement and movement takes precedent over other actions
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
