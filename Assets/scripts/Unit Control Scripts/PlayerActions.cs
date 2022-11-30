@@ -20,7 +20,7 @@ public class PlayerActions : UnitController
     public GameObject attackArea2;
     public GameObject attackArea3;
 
-    private bool UnlockAttack3 = false;
+    public GameObject UnlockAttack3;
     public GameObject Attack3UI;
 
     public Image deathScreen;
@@ -168,7 +168,7 @@ public class PlayerActions : UnitController
             {
                 activeAttack = attackArea2;
             }
-            else if (UnlockAttack3 == true && Input.GetKey("3"))
+            else if (UnlockAttack3.activeSelf && Input.GetKey("3"))
             {
                 activeAttack = attackArea3;
             }
@@ -285,7 +285,7 @@ public class PlayerActions : UnitController
     {
         if (other.gameObject.CompareTag("Attack3"))
         {
-            UnlockAttack3 = true;
+            UnlockAttack3.SetActive(true);
             Attack3UI.SetActive(true);
         }
     }

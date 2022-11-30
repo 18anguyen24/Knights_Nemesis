@@ -91,6 +91,7 @@ public class DylanEnemyAction : UnitController, NPCInterface
         }
         else
         {
+            MoveEnemy();
             MoveEnemy();  //Moves
         }
 
@@ -130,8 +131,8 @@ public class DylanEnemyAction : UnitController, NPCInterface
         //targetX = XDirection * MoveHorizontal;
         //targetY = YDirection * MoveVertical;
 
-        if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
-        {
+        //if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
+        //{
             Move(XDirection, YDirection);
 
             /*
@@ -164,7 +165,7 @@ public class DylanEnemyAction : UnitController, NPCInterface
 
             movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
             */
-        }
+        //}
 
 
     }

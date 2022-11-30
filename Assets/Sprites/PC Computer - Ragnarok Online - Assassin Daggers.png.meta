@@ -1,0 +1,1400 @@
+fileFormatVersion: 2
+guid: 66628857d850d2849a1958ef745f3afa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 632
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3acf53c1ab6b9d4382870e8f5b6bcd4
+      internalID: 339469120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 631
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73a18edd15c4da49a9ac3a9dfb4bac5
+      internalID: 204080650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 634
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d19148a3859934dbc37674b04a6a46
+      internalID: -1255045216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_3
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 628
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc0568abe263324d9a82422c4083ae9
+      internalID: -928294581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_7
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 594
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4a49897b83d5040866af2094efcc29
+      internalID: 2143907686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_8
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 598
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be15b0cebaecbd54fa986954fc4a0f5c
+      internalID: -498544432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_9
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 595
+        width: 23
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18fa619393fab5049ba17e6231bdef42
+      internalID: -867341846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_10
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 599
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384e9b58aa244384e88c841f85062018
+      internalID: -75203805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_11
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 593
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a0466a10e0db35498b7a93417bb2733
+      internalID: 1445714222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_13
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 548
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a681ec1b4af9bb243934903673b9d843
+      internalID: -1962450098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_14
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 547
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6809c0e4733271445beb33682f17e322
+      internalID: 445595298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_15
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 551
+        width: 24
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f835eeda60e1c41852141b25dc7e32
+      internalID: -1291496430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_16
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 545
+        width: 19
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246e2295313813e4cb1b92e7db5bcdc2
+      internalID: 315041992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_20
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 511
+        width: 9
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef789318d1de75449dbec0f6b07091e
+      internalID: 1431271892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_21
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 513
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65aded5a3671d8a448dc4cdfa91b7a63
+      internalID: 380834403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_22
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 511
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e737ac188408d9840ae4b3e81d61f708
+      internalID: 1901821615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 461
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216439f6d38796e47b2acc567c9ea732
+      internalID: -1858300693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_25
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 461
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f06001e726be1e4e94d030aa883cf05
+      internalID: 1320599087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_26
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 464
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003abc20dd6d43844a66f830f271a920
+      internalID: 1598909142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_27
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 461
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096164f922f99e747921f5557e08250e
+      internalID: 413493470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_31
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 428
+        width: 23
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6fce7935061ca5438f7455a7ca945d1
+      internalID: 1905464270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_32
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 423
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ce53a57ae0650448ea03de08acd9b5
+      internalID: -2068227396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_33
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 428
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e23d50b1480da74f961f232f249d078
+      internalID: 940480973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_35
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 376
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c992ee1f5864eea4cbaca4f56e7e0c67
+      internalID: 921554227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_36
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 376
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a3942b2d03ad946a4b56c91c24e692
+      internalID: 1266729992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_37
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 379
+        width: 22
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e814ffa7fdba4994ea26bcc5cb7e585f
+      internalID: 1887999363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_38
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 377
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d38affa8e2c2894e9708b282d9bb56c
+      internalID: -1360182040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_42
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 343
+        width: 21
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b5db0a99e5dee4fb31d8e5ca62627a
+      internalID: -314092144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_43
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 339
+        width: 25
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18aca64c2538864180a284fceb72887
+      internalID: 1052760754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_44
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 344
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3fc3f0346a52e74293ad61db50c9dd9
+      internalID: -1545739321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_46
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 285
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2533a18b80cd6e45a44c639258256ee
+      internalID: 150043810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_47
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 284
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20a0f980153e2b488424873db6ff385
+      internalID: -539787628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_48
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 287
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fab08a3dc64384418a5c7454bc83e68
+      internalID: -1673347721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_49
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 281
+        width: 18
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd3bf2df3c3162e448fdffb5b47740e9
+      internalID: 176052528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_51
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 238
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d32e6396649234bbe99cfbcb1818f4
+      internalID: -2060281814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_52
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 240
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c6182c48f042a47bb584ca192602e4
+      internalID: -1508050244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_53
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 239
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9892507f325646c4cb9f081fc124558c
+      internalID: 530650214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_54
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 239
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ae3ecbd1a8d734c86f9c1c68ff5c6a
+      internalID: 1594197904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_56
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 243
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 090d5316393983c4bbf61a37e0baec02
+      internalID: -1391669982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_57
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 244
+        width: 4
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52836af0a6d64c49a71e67c1f42b051
+      internalID: 481322765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_58
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 245
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3325860149dc6cd4b887a32ab939884d
+      internalID: 1702471207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_61
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 89
+        width: 104
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bfb792c0f8dd024c9eb55cdad9e3691
+      internalID: -1869842617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_62
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 103
+        width: 54
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b1797d6f3023b4bb98af535817dc41
+      internalID: 1645888998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_63
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 120
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb9faef7203b9f4f9d4dfcd444dbf50
+      internalID: 1384242290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_64
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 129
+        width: 35
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5af0cf53a30be0949a0fd66376432789
+      internalID: -242849575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_65
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 134
+        width: 21
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79aa519be1847b5408f8de10e9f731ec
+      internalID: 859093219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_66
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 157
+        width: 19
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7c63b11795b36742b15a00d42ffd23f
+      internalID: 743536109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_67
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 143
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc51e9c1428fe124abb2a96824688391
+      internalID: 315309432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_69
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 120
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af80338d75c93c342b519d304c6de911
+      internalID: -1647184845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_70
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 91
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fece7016c6fa04d42af822f1bead66a3
+      internalID: 846748742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_71
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 97
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed836b63c00850946b16dd3c7bd4ef6a
+      internalID: 1906841427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_73
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 12
+        width: 90
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7eee132d564f3549b2c25c4715d48f2
+      internalID: -2008951234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_74
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 21
+        width: 95
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0459c2fa7dae44c8a9907ab246f596
+      internalID: -759709118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_75
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 29
+        width: 98
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0530cfb5d9d0dc49b0a830e79e8eb2f
+      internalID: 676128952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_76
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 9
+        width: 50
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c7a4ad59eecf34096f358f43fc86e7
+      internalID: 905665522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_77
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 8
+        width: 53
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31520cfed472dd41a7fbbd5646393fd
+      internalID: -901571767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Assassin Daggers_78
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 8
+        width: 29
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74fd2d0e445c7064c98de2a3a08b4ab3
+      internalID: -1892848631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Ragnarok Online - Assassin Daggers_63: 1384242290
+      PC Computer - Ragnarok Online - Assassin Daggers_32: -2068227396
+      PC Computer - Ragnarok Online - Assassin Daggers_41: 108183721
+      PC Computer - Ragnarok Online - Assassin Daggers_61: -1869842617
+      PC Computer - Ragnarok Online - Assassin Daggers_68: 23544784
+      PC Computer - Ragnarok Online - Assassin Daggers_19: -574825469
+      PC Computer - Ragnarok Online - Assassin Daggers_2: -1255045216
+      PC Computer - Ragnarok Online - Assassin Daggers_70: 846748742
+      PC Computer - Ragnarok Online - Assassin Daggers_49: 176052528
+      PC Computer - Ragnarok Online - Assassin Daggers_5: 1159710869
+      PC Computer - Ragnarok Online - Assassin Daggers_36: 1266729992
+      PC Computer - Ragnarok Online - Assassin Daggers_65: 859093219
+      PC Computer - Ragnarok Online - Assassin Daggers_18: -1543874219
+      PC Computer - Ragnarok Online - Assassin Daggers_58: 1702471207
+      PC Computer - Ragnarok Online - Assassin Daggers_76: 905665522
+      PC Computer - Ragnarok Online - Assassin Daggers_3: -928294581
+      PC Computer - Ragnarok Online - Assassin Daggers_8: -498544432
+      PC Computer - Ragnarok Online - Assassin Daggers_16: 315041992
+      PC Computer - Ragnarok Online - Assassin Daggers_29: 1343945989
+      PC Computer - Ragnarok Online - Assassin Daggers_24: -1858300693
+      PC Computer - Ragnarok Online - Assassin Daggers_25: 1320599087
+      PC Computer - Ragnarok Online - Assassin Daggers_30: 466230451
+      PC Computer - Ragnarok Online - Assassin Daggers_74: -759709118
+      PC Computer - Ragnarok Online - Assassin Daggers_60: -207965847
+      PC Computer - Ragnarok Online - Assassin Daggers_0: 339469120
+      PC Computer - Ragnarok Online - Assassin Daggers_40: -2083871082
+      PC Computer - Ragnarok Online - Assassin Daggers_62: 1645888998
+      PC Computer - Ragnarok Online - Assassin Daggers_27: 413493470
+      PC Computer - Ragnarok Online - Assassin Daggers_67: 315309432
+      PC Computer - Ragnarok Online - Assassin Daggers_43: 1052760754
+      PC Computer - Ragnarok Online - Assassin Daggers_23: -1811197833
+      PC Computer - Ragnarok Online - Assassin Daggers_21: 380834403
+      PC Computer - Ragnarok Online - Assassin Daggers_46: 150043810
+      PC Computer - Ragnarok Online - Assassin Daggers_47: -539787628
+      PC Computer - Ragnarok Online - Assassin Daggers_15: -1291496430
+      PC Computer - Ragnarok Online - Assassin Daggers_31: 1905464270
+      PC Computer - Ragnarok Online - Assassin Daggers_35: 921554227
+      PC Computer - Ragnarok Online - Assassin Daggers_55: -107964397
+      PC Computer - Ragnarok Online - Assassin Daggers_9: -867341846
+      PC Computer - Ragnarok Online - Assassin Daggers_20: 1431271892
+      PC Computer - Ragnarok Online - Assassin Daggers_37: 1887999363
+      PC Computer - Ragnarok Online - Assassin Daggers_22: 1901821615
+      PC Computer - Ragnarok Online - Assassin Daggers_4: -878203722
+      PC Computer - Ragnarok Online - Assassin Daggers_28: 1945590694
+      PC Computer - Ragnarok Online - Assassin Daggers_69: -1647184845
+      PC Computer - Ragnarok Online - Assassin Daggers_11: 1445714222
+      PC Computer - Ragnarok Online - Assassin Daggers_51: -2060281814
+      PC Computer - Ragnarok Online - Assassin Daggers_71: 1906841427
+      PC Computer - Ragnarok Online - Assassin Daggers_1: 204080650
+      PC Computer - Ragnarok Online - Assassin Daggers_12: -481485415
+      PC Computer - Ragnarok Online - Assassin Daggers_17: 1578137403
+      PC Computer - Ragnarok Online - Assassin Daggers_64: -242849575
+      PC Computer - Ragnarok Online - Assassin Daggers_73: -2008951234
+      PC Computer - Ragnarok Online - Assassin Daggers_75: 676128952
+      PC Computer - Ragnarok Online - Assassin Daggers_39: -1809123365
+      PC Computer - Ragnarok Online - Assassin Daggers_7: 2143907686
+      PC Computer - Ragnarok Online - Assassin Daggers_57: 481322765
+      PC Computer - Ragnarok Online - Assassin Daggers_33: 940480973
+      PC Computer - Ragnarok Online - Assassin Daggers_42: -314092144
+      PC Computer - Ragnarok Online - Assassin Daggers_48: -1673347721
+      PC Computer - Ragnarok Online - Assassin Daggers_54: 1594197904
+      PC Computer - Ragnarok Online - Assassin Daggers_6: 216395822
+      PC Computer - Ragnarok Online - Assassin Daggers_14: 445595298
+      PC Computer - Ragnarok Online - Assassin Daggers_77: -901571767
+      PC Computer - Ragnarok Online - Assassin Daggers_50: -1362964460
+      PC Computer - Ragnarok Online - Assassin Daggers_10: -75203805
+      PC Computer - Ragnarok Online - Assassin Daggers_72: -298702022
+      PC Computer - Ragnarok Online - Assassin Daggers_38: -1360182040
+      PC Computer - Ragnarok Online - Assassin Daggers_56: -1391669982
+      PC Computer - Ragnarok Online - Assassin Daggers_34: -318138223
+      PC Computer - Ragnarok Online - Assassin Daggers_26: 1598909142
+      PC Computer - Ragnarok Online - Assassin Daggers_45: -1998571765
+      PC Computer - Ragnarok Online - Assassin Daggers_53: 530650214
+      PC Computer - Ragnarok Online - Assassin Daggers_79: -1173724955
+      PC Computer - Ragnarok Online - Assassin Daggers_59: -1552371196
+      PC Computer - Ragnarok Online - Assassin Daggers_44: -1545739321
+      PC Computer - Ragnarok Online - Assassin Daggers_52: -1508050244
+      PC Computer - Ragnarok Online - Assassin Daggers_13: -1962450098
+      PC Computer - Ragnarok Online - Assassin Daggers_66: 743536109
+      PC Computer - Ragnarok Online - Assassin Daggers_78: -1892848631
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

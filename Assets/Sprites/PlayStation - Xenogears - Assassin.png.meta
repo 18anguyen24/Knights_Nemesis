@@ -1,0 +1,1113 @@
+fileFormatVersion: 2
+guid: 56b239e6c92c09b40a08dff4a881cb32
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 199
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb551fbd2dd76df4b902853770ca50e2
+      internalID: 280416830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 199
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f434a8c6f7c07194cb69abf9a296605c
+      internalID: -1148576870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 201
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f7b607edb179447a31a00d81f2bf6f
+      internalID: -838103143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 200
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c607091b543074ea7401591921a081
+      internalID: -625751795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 199
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bee926f363ecd6489c12d72ae8271a1
+      internalID: -780735287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 200
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d184c9e76692149a5f47abf171b1ce
+      internalID: -1843286879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 200
+        width: 27
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba60c0719949c54b9202d0eb38f8dcb
+      internalID: 599773253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_7
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 200
+        width: 27
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88b40ebc62d725546a9ab430f04bfbec
+      internalID: -877975393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 196
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b06eae6c54ff04fb5724063dbfe94a
+      internalID: 225787426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_9
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 202
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5fde2f3077cc34888fbd1765664106
+      internalID: -239682041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_10
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 153
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1a22281af1e6a4e86ce4b7444771a6
+      internalID: -1667060510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 152
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5603fcb6d5a9134ebafe24a043be5da
+      internalID: -225095629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_12
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 156
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 322e80239257f2049b19d4ea0180f6f2
+      internalID: -703745293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_13
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 157
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6164f8058b5be459d66e361a0cc3f3
+      internalID: -558216278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_14
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 155
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09362fc40c202c345aa90e53064af54b
+      internalID: 2099704977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_15
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 154
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9a91fe625612941a4b73d77e8dc2ea
+      internalID: 302073175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_16
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 153
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0152bb2b66663746bcca510b64b3d3b
+      internalID: 1243827917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_17
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 149
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94895df7e8414204b9fb39443a34f8e8
+      internalID: 1583095735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_18
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 158
+        width: 39
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7e4518d46338945bf4b8564df09fe7
+      internalID: -1446738989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_19
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 158
+        width: 37
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79729b70da90f0469b91c7abf07d087
+      internalID: -1316318490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_20
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 108
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 901ff5c49229b0c48a52fc60d3f8253d
+      internalID: -1136059511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_21
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 107
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad7996ba0ac30040b92d9d2ada5ed47
+      internalID: -903588047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_22
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 108
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ddf85447bd6beb4c894b534b106fde2
+      internalID: -1459838841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_23
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 108
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b82f24a46be9164b8669c957cb051dc
+      internalID: 1051822492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_24
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 108
+        width: 37
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff6a6f974d0d9044692e289a96178fa9
+      internalID: -554079392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_25
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 108
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b174480e1fc82774aa519c55261a3609
+      internalID: 1893865902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_26
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 105
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f119f49a9b78840b44c8edae542271
+      internalID: -52409828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_27
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 108
+        width: 35
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add844e067aa157459d0fc5b13af481b
+      internalID: 1067778876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_28
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 109
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df9fa937c821f9941800963fa8a63887
+      internalID: -765562598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_29
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 110
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fea0e266c7756424aa0c478d30d00b6b
+      internalID: -74574170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_30
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 58
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1273f63dbde09d04b91ec67db62a2247
+      internalID: 495918410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_31
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 56
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b41b5a3af1f6241b851ed5c1e58bb7
+      internalID: -1782227154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_32
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 59
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3476af3d03e09745bcf717017e4fc1b
+      internalID: 280116003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_33
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 61
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cc633ad7e377a4eaae191af0c04c1e
+      internalID: -1727243622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_34
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 63
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547a8986e02e57f418c3012d00620cc7
+      internalID: 896143834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_35
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 59
+        width: 30
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d66d997932a04a4696d32399bc9b94e
+      internalID: 1086611427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_36
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 55
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9888e2b99d15f4d4e80bef57e830dc47
+      internalID: -1914988796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_37
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 56
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23881b11ce9f59e4cb8db7a44eb35ed4
+      internalID: 1353099150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_38
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 58
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97342c2c221716a4881fdcbb58800812
+      internalID: 1734173874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_39
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 56
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a56f27a795076741ad2aafc74174b08
+      internalID: -1103184656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_40
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 7
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99f1e9a66d0992b40a6e52506ae707dd
+      internalID: -1304319667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_41
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 8
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1433a3b2fa5b7c04e94182edd3ff7908
+      internalID: -1283285207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_42
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 9
+        width: 23
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b329b70667ec354eb8d1f1479ac51d4
+      internalID: -1905003473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_43
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 9
+        width: 23
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aed2a2d09cd376342b16ac13cf1ff1af
+      internalID: -1687846907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayStation - Xenogears - Assassin_44
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 10
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329f334b76e5320479acd65025fb4348
+      internalID: -395341287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PlayStation - Xenogears - Assassin_4: -780735287
+      PlayStation - Xenogears - Assassin_37: 1353099150
+      PlayStation - Xenogears - Assassin_10: -1667060510
+      PlayStation - Xenogears - Assassin_26: -52409828
+      PlayStation - Xenogears - Assassin_7: -877975393
+      PlayStation - Xenogears - Assassin_32: 280116003
+      PlayStation - Xenogears - Assassin_42: -1905003473
+      PlayStation - Xenogears - Assassin_21: -903588047
+      PlayStation - Xenogears - Assassin_6: 599773253
+      PlayStation - Xenogears - Assassin_15: 302073175
+      PlayStation - Xenogears - Assassin_8: 225787426
+      PlayStation - Xenogears - Assassin_13: -558216278
+      PlayStation - Xenogears - Assassin_16: 1243827917
+      PlayStation - Xenogears - Assassin_22: -1459838841
+      PlayStation - Xenogears - Assassin_27: 1067778876
+      PlayStation - Xenogears - Assassin_44: -395341287
+      PlayStation - Xenogears - Assassin_1: -1148576870
+      PlayStation - Xenogears - Assassin_43: -1687846907
+      PlayStation - Xenogears - Assassin_2: -838103143
+      PlayStation - Xenogears - Assassin_31: -1782227154
+      PlayStation - Xenogears - Assassin_40: -1304319667
+      PlayStation - Xenogears - Assassin_12: -703745293
+      PlayStation - Xenogears - Assassin_34: 896143834
+      PlayStation - Xenogears - Assassin_20: -1136059511
+      PlayStation - Xenogears - Assassin_0: 280416830
+      PlayStation - Xenogears - Assassin_3: -625751795
+      PlayStation - Xenogears - Assassin_9: -239682041
+      PlayStation - Xenogears - Assassin_17: 1583095735
+      PlayStation - Xenogears - Assassin_29: -74574170
+      PlayStation - Xenogears - Assassin_30: 495918410
+      PlayStation - Xenogears - Assassin_25: 1893865902
+      PlayStation - Xenogears - Assassin_39: -1103184656
+      PlayStation - Xenogears - Assassin_14: 2099704977
+      PlayStation - Xenogears - Assassin_23: 1051822492
+      PlayStation - Xenogears - Assassin_24: -554079392
+      PlayStation - Xenogears - Assassin_28: -765562598
+      PlayStation - Xenogears - Assassin_19: -1316318490
+      PlayStation - Xenogears - Assassin_35: 1086611427
+      PlayStation - Xenogears - Assassin_33: -1727243622
+      PlayStation - Xenogears - Assassin_38: 1734173874
+      PlayStation - Xenogears - Assassin_36: -1914988796
+      PlayStation - Xenogears - Assassin_11: -225095629
+      PlayStation - Xenogears - Assassin_18: -1446738989
+      PlayStation - Xenogears - Assassin_5: -1843286879
+      PlayStation - Xenogears - Assassin_41: -1283285207
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
