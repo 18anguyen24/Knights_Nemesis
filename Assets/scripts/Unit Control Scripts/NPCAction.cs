@@ -144,6 +144,7 @@ public class NPCAction : UnitController, NPCInterface
         Destroy(gameObject);
         Destroy(movePoint);
         spawner.DEATH();
+        GameState.PlayerXP += XPDropped;
     }
 
     public Vector3 NPCLocation()

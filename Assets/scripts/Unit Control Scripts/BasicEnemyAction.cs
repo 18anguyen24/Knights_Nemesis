@@ -87,7 +87,7 @@ public class BasicEnemyAction : UnitController, NPCInterface
     //Implement different Enemies controls here: this is the basic code for the current Enemy
     public void NPCTurn()
     {
-        if (Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) //Checks if the player is two diagonal tiles away
+        if ((Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) || ((XDistance == 0) && Mathf.Abs(YDistance) == 2) || ((YDistance == 0) && Mathf.Abs(XDistance) == 2)) //Checks if the player is two diagonal tiles away
         {
             activeAttack = attackArea2; //Sets to attack 2
             Attack();   //Attacks

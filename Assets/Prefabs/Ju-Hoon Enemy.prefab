@@ -565,7 +565,7 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
-  health: 100
+  health: 50
   MAX_HEALTH: 0
   XPDropped: 15
   attackArea1: {fileID: 647014029888326600}

@@ -236,7 +236,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0, g: 0.32941177, b: 0.0811748, a: 1}
   m_FlipX: 0
@@ -455,6 +455,7 @@ MonoBehaviour:
   turnDelay: 0.25
   spawner: {fileID: 0}
   source: {fileID: 0}
+  StepsToHeal: 2
 --- !u!1 &1968835021424183346
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 20
   PlayerAttack: 1
 --- !u!212 &1968835021690318299
 SpriteRenderer:
@@ -747,7 +748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 100
+  damage: 10
   PlayerAttack: 1
 --- !u!212 &1968835021726340583
 SpriteRenderer:
@@ -877,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 30
   PlayerAttack: 1
 --- !u!212 &1968835022124450914
 SpriteRenderer:

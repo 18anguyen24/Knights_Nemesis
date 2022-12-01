@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 15
+  damage: 10
   PlayerAttack: 0
 --- !u!212 &1705401359353670255
 SpriteRenderer:
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 15
   PlayerAttack: 0
 --- !u!212 &1705401360116653343
 SpriteRenderer:
@@ -596,7 +596,7 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
-  health: 50
+  health: 40
   MAX_HEALTH: 0
   XPDropped: 10
   attackArea1: {fileID: 1705401360116653337}
