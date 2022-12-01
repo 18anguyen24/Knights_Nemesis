@@ -14,7 +14,7 @@ public class UnitController : MonoBehaviour
     protected float timeToAttack = 0.25f;
     protected float timer = 0f;
 
-    protected float Speed;
+    protected int Speed = 1;
 
 
 

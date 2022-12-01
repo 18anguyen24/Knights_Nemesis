@@ -25,8 +25,6 @@ public class BasicEnemyAction : UnitController, NPCInterface
     private float XDistance;
     private float YDistance;
 
-
-
     /*private GameObject activeAttack;
     private bool attacking = false;
     private float timeToAttack = 0.25f;
@@ -60,21 +58,21 @@ public class BasicEnemyAction : UnitController, NPCInterface
         YDistance = Target.position.y - transform.position.y;
 
         
-        float Speed = moveSpeed;
+        Speed = 1;
 
         if (Input.GetMouseButton(0))
         {
-            Speed = Speed * GameState.SpeedFactor;
+            Speed = GameState.SpeedFactor;
         }
 
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * moveSpeed* Time.deltaTime);
         
 
         if (attacking)
         {
             timer += Time.deltaTime;
 
-            if (timer >= timeToAttack)
+            if (timer >= timeToAttack/Speed)
             {
                 timer = 0;
                 attacking = false;

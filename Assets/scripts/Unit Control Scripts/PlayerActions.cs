@@ -41,17 +41,10 @@ public class PlayerActions : UnitController
     //for audio
     public AudioSource source;
 
-    /*
-    //private GameObject activeAttack;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-
-    private float Speed;
-    */
-
     public static PlayerActions player;
 
+    public int StepsToHeal;
+    private int steps;
     // Start is called before the first frame update
     void Start()
     {
@@ -99,19 +92,19 @@ public class PlayerActions : UnitController
             GameState.XPtoLevel *= 1.5f;
             Debug.Log("LEVEL UP");
         }
-        Speed = moveSpeed;
+        Speed = 1;
         if (Input.GetMouseButton(0))
         {
-            Speed = Speed * GameState.SpeedFactor;
+            Speed = GameState.SpeedFactor;
         }
         //Debug.Log("Speed " + Speed);
-        transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * moveSpeed * Time.deltaTime);
 
         if (attacking)
         {
             timer += Time.deltaTime;
 
-            if (timer >= timeToAttack)
+            if (timer >= timeToAttack/Speed)
             {
                 timer = 0;
                 attacking = false;
@@ -201,7 +194,14 @@ public class PlayerActions : UnitController
 
                     spawner.newEnemy();
 
-                    Heal(1);
+                    steps++;
+                    if (steps >= StepsToHeal)
+                    {
+                        steps = 0;
+                        Heal(1);
+                    }
+
+                    
                 }
 
             }
