@@ -261,10 +261,11 @@ public class PlayerActions : UnitController
     IEnumerator enemyLoop()
     {
         yield return new WaitForSeconds(turnDelay/Speed);
+        //Debug.Log("Time Delay: " + turnDelay/Speed);
         for (int i = 0; i < GameState.NPCs.Count; i++)
         {
             GameState.NPCs[i].NPCTurn();
-            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.NPCs[i].NPCLocation()) < 6)
+            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.NPCs[i].NPCLocation()) < 5)
             {
                 yield return new WaitForSeconds(turnDelay / Speed);
             }
@@ -273,7 +274,7 @@ public class PlayerActions : UnitController
         for (int i = 0; i < GameState.Enemies.Count; i++)
         {
             GameState.Enemies[i].NPCTurn();
-            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].NPCLocation()) < 6)
+            if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].NPCLocation()) < 5)
             {
                 yield return new WaitForSeconds(turnDelay/Speed);
             }
