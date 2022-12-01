@@ -23,6 +23,9 @@ public class UnitController : MonoBehaviour
     public int health = 100;
     public int MAX_HEALTH;
 
+    [SerializeField]
+    public int XPDropped;
+
     //contain variable for stats (attack, defense, xp etc...)
 
 

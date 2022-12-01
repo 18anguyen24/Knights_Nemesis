@@ -200,7 +200,7 @@ public class AndrewEnemyAction : UnitController, NPCInterface
         GameState.Enemies.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
-
+        GameState.PlayerXP += XPDropped;
     }
 
     public Vector3 NPCLocation()

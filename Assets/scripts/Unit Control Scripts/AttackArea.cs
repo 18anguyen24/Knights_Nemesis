@@ -5,6 +5,7 @@ using UnityEngine;
 public class AttackArea : MonoBehaviour
 {
     public int damage;
+    public bool PlayerAttack = false;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -12,7 +13,14 @@ public class AttackArea : MonoBehaviour
         UnitController uc = other.GetComponent<UnitController>();
         if (uc != null)
         {
-            uc.Damage(damage);
+            if (PlayerAttack == true) {
+                uc.Damage(damage * Mathf.RoundToInt((float)(1 + .05 * GameState.PlayerLevel)));
+                Debug.Log("damage dealt: " + Mathf.RoundToInt((float)(damage * (1 + .05 * GameState.PlayerLevel))));
+            } else {
+                uc.Damage(damage);
+                Debug.Log("damage dealt: " + damage);
+            }
+            
             //Destroy(gameObject);
         }
 

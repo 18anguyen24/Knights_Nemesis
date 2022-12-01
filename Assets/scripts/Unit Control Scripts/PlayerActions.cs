@@ -55,6 +55,7 @@ public class PlayerActions : UnitController
     // Start is called before the first frame update
     void Start()
     {
+        MAX_HEALTH = MAX_HEALTH + (GameState.PlayerLevel * 5);
         PlayerActions.player = this;
 
         //randomSpawn();
@@ -90,12 +91,20 @@ public class PlayerActions : UnitController
     // Update is called once per frame
     void Update()
     {
-        
+        if (GameState.PlayerXP >= GameState.XPtoLevel) {
+            //Debug.Log("Max health is now: " + MAX_HEALTH);
+            GameState.PlayerLevel++;
+            MAX_HEALTH += 5;
+            GameState.PlayerXP = GameState.PlayerXP - GameState.XPtoLevel;
+            GameState.XPtoLevel *= 1.5f;
+            Debug.Log("LEVEL UP");
+        }
         Speed = moveSpeed;
         if (Input.GetMouseButton(0))
         {
             Speed = Speed * GameState.SpeedFactor;
         }
+        //Debug.Log("Speed " + Speed);
         transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
 
         if (attacking)

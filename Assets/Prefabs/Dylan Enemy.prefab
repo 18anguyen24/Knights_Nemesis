@@ -462,6 +462,7 @@ MonoBehaviour:
     m_Bits: 768
   health: 100
   MAX_HEALTH: 0
+  XPDropped: 15
   attackArea1: {fileID: 3894792699490226748}
   Target: {fileID: 0}
   targetX: 0
