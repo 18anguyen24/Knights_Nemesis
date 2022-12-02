@@ -82,6 +82,7 @@ public class AndrewEnemyAction : UnitController, NPCInterface
                 timer = 0;
                 attacking = false;
                 activeAttack.SetActive(attacking);
+                
             }
 
         }
@@ -107,6 +108,11 @@ public class AndrewEnemyAction : UnitController, NPCInterface
             MoveEnemy();  //Moves
         }
 
+    }
+
+    IEnumerator Wait(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
     }
 
 

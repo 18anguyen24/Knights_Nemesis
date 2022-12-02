@@ -16,6 +16,8 @@ public class UnitController : MonoBehaviour
 
     protected int Speed = 1;
 
+    public GameObject damageText;
+
 
 
 
@@ -98,6 +100,8 @@ public class UnitController : MonoBehaviour
         }
 
         this.health -= amount;
+        DamagePopup indicator = Instantiate(damageText, transform.position, Quaternion.identity).GetComponent<DamagePopup>();
+        indicator.SetDamageText(amount);
 
         if (health <= 0)
         {
