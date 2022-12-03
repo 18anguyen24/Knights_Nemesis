@@ -48,9 +48,13 @@ public class PlayerActions : UnitController
     // Start is called before the first frame update
     void Start()
     {
+        if (GameState.PlayerHP != 0) {
+            health = GameState.PlayerHP;
+            Debug.Log("Players Health: " + health);
+        }
         MAX_HEALTH = MAX_HEALTH + (GameState.PlayerLevel * 5);
         PlayerActions.player = this;
-
+        
         //randomSpawn();
 
         movePoint.transform.parent = null;
@@ -61,6 +65,11 @@ public class PlayerActions : UnitController
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        GameState.PlayerTurn = true;
+
+        if (GameState.UnlockAttack3 == true) {
+            Attack3UI.SetActive(true);
+        }
     }
 
     private void randomSpawn()
@@ -139,7 +148,7 @@ public class PlayerActions : UnitController
             {
                 activeAttack = attackArea2;
             }
-            else if (UnlockAttack3.activeSelf && Input.GetKey("3"))
+            else if (GameState.UnlockAttack3 == true && Input.GetKey("3"))
             {
                 activeAttack = attackArea3;
             }
@@ -181,6 +190,8 @@ public class PlayerActions : UnitController
             //handles player movement and movement takes precedent over other actions
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
+                GameState.PlayerHP = health;
+
                 if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
                 {
                    
@@ -262,6 +273,7 @@ public class PlayerActions : UnitController
     public override void OnDeath()
     {
         deathScreen.enabled = !deathScreen.enabled;
+        GameState.PlayerHP = MAX_HEALTH / 2;
         Destroy(gameObject);
         Destroy(movePoint);
         Debug.Log("Player Died");
@@ -298,7 +310,7 @@ public class PlayerActions : UnitController
     {
         if (other.gameObject.CompareTag("Attack3"))
         {
-            UnlockAttack3.SetActive(true);
+            GameState.UnlockAttack3 = true;
             Attack3UI.SetActive(true);
         }
     }

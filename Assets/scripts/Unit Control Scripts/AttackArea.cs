@@ -14,8 +14,10 @@ public class AttackArea : MonoBehaviour
         if (uc != null)
         {
             if (PlayerAttack == true) {
-                uc.Damage(damage * Mathf.RoundToInt((float)(1 + .05 * GameState.PlayerLevel)));
-                Debug.Log("damage dealt: " + Mathf.RoundToInt((float)(damage * (1 + .05 * GameState.PlayerLevel))));
+                int damageDealt = Mathf.RoundToInt(damage * (float)(1 + .05 * GameState.PlayerLevel));
+                uc.Damage(damageDealt);
+                //uc.Damage(damage * Mathf.RoundToInt((float)(1 + .05 * GameState.PlayerLevel)));
+                Debug.Log("damage dealt: " + damageDealt);
             } else {
                 uc.Damage(damage);
                 Debug.Log("damage dealt: " + damage);
