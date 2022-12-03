@@ -84,7 +84,7 @@ public class PlayerActions : UnitController
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(GameState.PlayerXP + "/" + GameState.XPtoLevel);
+        //Debug.Log(GameState.PlayerXP + "/" + GameState.XPtoLevel);
         if (GameState.PlayerXP >= GameState.XPtoLevel) {
             //Debug.Log("Max health is now: " + MAX_HEALTH);
             GameState.PlayerLevel++;
