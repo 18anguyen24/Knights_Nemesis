@@ -175,8 +175,10 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
+  damageText: {fileID: 0}
   health: 100
   MAX_HEALTH: 0
+  XPDropped: 0
   spawner: {fileID: 2053006707}
   Target: {x: 0, y: 0, z: 0}
   targetX: 0
@@ -263,7 +265,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142348951}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 519420031}
@@ -722,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
+  PlayerAttack: 0
 --- !u!212 &234668242
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1267,6 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  PlayerAttack: 0
 --- !u!60 &632787286
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1523,6 +1527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
+  PlayerAttack: 0
 --- !u!60 &668756333
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1562,6 +1567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708459182}
   - component: {fileID: 708459183}
+  - component: {fileID: 708459184}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -1633,6 +1639,44 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1839735485 &708459184
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708459181}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!1 &790737260
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,8 +2391,10 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
+  damageText: {fileID: 0}
   health: 100
   MAX_HEALTH: 100
+  XPDropped: 0
   infiniteTurns: 0
   attackArea1: {fileID: 234668238}
   attackArea2: {fileID: 632787283}
@@ -2362,6 +2408,7 @@ MonoBehaviour:
   turnDelay: 0.5
   spawner: {fileID: 2053006707}
   source: {fileID: 1982247474}
+  StepsToHeal: 0
 --- !u!61 &1345622051
 BoxCollider2D:
   m_ObjectHideFlags: 0

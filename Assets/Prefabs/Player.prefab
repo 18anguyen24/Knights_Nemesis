@@ -439,6 +439,7 @@ MonoBehaviour:
   WhatStopsMovement:
     serializedVersion: 2
     m_Bits: 768
+  damageText: {fileID: 910635060592470086, guid: 8f13880bf53245141922a66e90b0e991, type: 3}
   health: 100
   MAX_HEALTH: 100
   XPDropped: 100
