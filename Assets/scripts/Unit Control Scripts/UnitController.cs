@@ -80,6 +80,12 @@ public class UnitController : MonoBehaviour
         
     }
 
+    public virtual void Dash(GameObject objectDashing, GameObject objectDashedThrough)
+    {
+        movePoint.transform.position = Vector2.MoveTowards(objectDashing.transform.position, 
+                    objectDashedThrough.transform.position, Time.deltaTime * moveSpeed * 10);
+    }
+
     protected void Attack()
     {
         attacking = true;

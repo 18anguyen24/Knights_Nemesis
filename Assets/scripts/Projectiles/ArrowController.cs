@@ -11,7 +11,6 @@ public class ArrowController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         Coroutine startSpawn = StartCoroutine(ArrowRoutine());
     }
 

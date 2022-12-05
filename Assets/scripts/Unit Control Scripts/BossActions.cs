@@ -30,6 +30,8 @@ public class BossActions : UnitController, NPCInterface
     SpriteRenderer sr;
     Animator animator;
 
+    public GameObject player;
+    public GameObject PlayerMovePoint;
 
 
     /*private GameObject activeAttack;
@@ -44,7 +46,7 @@ public class BossActions : UnitController, NPCInterface
     {
         GameState.Enemies.Add(this);
 
-        GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
+        PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
 
         movePoint.transform.parent = null;
@@ -53,6 +55,8 @@ public class BossActions : UnitController, NPCInterface
         targetY = 0;
 
         activeAttack = attackArea1;
+
+        player = GameObject.FindGameObjectWithTag("Player");
 
         //setting up animation
         sr = GetComponentInChildren<SpriteRenderer>();
@@ -103,8 +107,8 @@ public class BossActions : UnitController, NPCInterface
         else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
             activeAttack = attackArea1; //Sets to attack 1
-            MoveEnemyD(2);
-            Attack();   //Attacks
+            Attack();
+            Dash(gameObject, PlayerMovePoint);
         }
         else
         {
@@ -113,47 +117,7 @@ public class BossActions : UnitController, NPCInterface
 
     }
 
-    private void MoveEnemyD(int spaces)    //Currently finds the direction the player is in, then calls move to move in that direction 
-                                //Move is in UnitController, and will check for collision
-    {
-        float XDirection = 0;
-        float YDirection = 0;
-
-        if (XDistance != 0)
-        {
-            XDirection = Mathf.Abs(XDistance + spaces) / XDistance;
-            if (XDirection < 0)
-            {
-                sr.flipX = true;
-            }
-            else if (XDirection > 0)
-            {
-                sr.flipX = false;
-            }
-        }
-        //float YDistance = Target.position.y - transform.position.y;
-        if (YDistance != 0)
-            YDirection = Mathf.Abs(YDistance - spaces) / YDistance;
-
-        if (Mathf.Abs(XDistance) > 3 * Mathf.Abs(YDistance))
-        {
-            //MoveVertical = 0;
-        }
-        if (Mathf.Abs(XDistance) * 3 < Mathf.Abs(YDistance))
-        {
-            //MoveHorizontal = 0;
-        }
-
-
-        if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
-        {
-            moveSpeed = 10f;
-            Move(XDirection, YDirection);
-        }
-
-
-    }
-
+    
 
 
 
