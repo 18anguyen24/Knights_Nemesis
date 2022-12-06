@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7789357934542739999}
   m_Layer: 9
   m_Name: NPC
-  m_TagString: Attack3
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   damageText: {fileID: 910635060592470086, guid: bbd67aeb5fb419848bf9e7d7d57dc2cd, type: 3}
-  health: 75
+  health: 70
   MAX_HEALTH: 0
   XPDropped: 150
   spawner: {fileID: 0}

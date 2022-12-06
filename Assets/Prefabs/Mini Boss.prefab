@@ -598,9 +598,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   damageText: {fileID: 910635060592470086, guid: 8f13880bf53245141922a66e90b0e991, type: 3}
-  health: 200
+  health: 225
   MAX_HEALTH: 0
-  XPDropped: 300
+  XPDropped: 500
   attackArea1: {fileID: 1705401360116653337}
   attackArea2: {fileID: 1705401359353670249}
   Target: {fileID: 0}

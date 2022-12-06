@@ -26,7 +26,7 @@ public class UnitController : MonoBehaviour
     public int MAX_HEALTH;
 
     [SerializeField]
-    public int XPDropped;
+    public float XPDropped;
 
     //contain variable for stats (attack, defense, xp etc...)
 
@@ -35,7 +35,7 @@ public class UnitController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MAX_HEALTH = health;
+        //MAX_HEALTH = health;
         
     }
 

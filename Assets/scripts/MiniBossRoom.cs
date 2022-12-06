@@ -21,8 +21,11 @@ public class MiniBossRoom : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        Wall.SetActive(true);
-        MiniBoss.SetActive(true);
-        Destroy(this);
+        if (collider.gameObject.CompareTag("Player"))
+        {
+            Wall.SetActive(true);
+            MiniBoss.SetActive(true);
+            Destroy(this);
+        }
     }
 }

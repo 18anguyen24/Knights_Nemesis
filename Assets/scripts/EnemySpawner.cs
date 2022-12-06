@@ -82,7 +82,7 @@ public class EnemySpawner : MonoBehaviour
 
         //For now just have it increase max and spawn rate
         maxEnemies *= 2;
-        chanceToSpawn += 10;
+        chanceToSpawn += 15;
     }
     /*
     private IEnumerator spawnEnemy(float interval, GameObject enemy)

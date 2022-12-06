@@ -260,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 7
   PlayerAttack: 0
 --- !u!212 &9039032017089051860
 SpriteRenderer:
@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 65
   PlayerAttack: 0
 --- !u!212 &9039032018926521252
 SpriteRenderer:

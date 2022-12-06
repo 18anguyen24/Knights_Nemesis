@@ -41,6 +41,10 @@ public class AndrewEnemyAction : UnitController, NPCInterface
     // Start is called before the first frame update
     void Start()
     {
+        health = health + GameState.FloorNumber * 5;
+        MAX_HEALTH = health;
+        XPDropped = XPDropped * (1 + .2f * GameState.FloorNumber);
+
         GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");

@@ -12,6 +12,9 @@ public class PlayerActions : UnitController
 
     //public variables
     public bool infiniteTurns = false;
+
+    public int RandSpawnX;
+    public int RandSpawnY;
     /*
     public float moveSpeed = 5f;
     public Transform movePoint;
@@ -57,7 +60,7 @@ public class PlayerActions : UnitController
         MAX_HEALTH = MAX_HEALTH + (GameState.PlayerLevel * 5);
         PlayerActions.player = this;
         
-        //randomSpawn();
+        randomSpawn();
 
         movePoint.transform.parent = null;
 
@@ -81,7 +84,7 @@ public class PlayerActions : UnitController
 
         while (spawned == false)
         {
-            Vector3 spawnPoint = new Vector3(Mathf.Round(Random.Range(-15, 15)), Mathf.Round(Random.Range(-20, 0)), 0);
+            Vector3 spawnPoint = new Vector3(Mathf.Round(Random.Range(0, RandSpawnX)), Mathf.Round(Random.Range(0, RandSpawnY)), 0);
             spawnPoint += transform.position;
 
 

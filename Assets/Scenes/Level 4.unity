@@ -342,7 +342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &151367045
 Transform:
   m_ObjectHideFlags: 0
@@ -37459,7 +37459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: Level 4
-  nextLevel: Level 4
+  nextLevel: Tutorial
 --- !u!1 &1333465756
 GameObject:
   m_ObjectHideFlags: 0
@@ -125683,6 +125683,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 648959975}
     - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
+      propertyPath: RandSpawnX
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
+      propertyPath: RandSpawnY
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: deathScreen
       value: 
       objectReference: {fileID: 149626032}
@@ -125708,11 +125716,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1968835021206494663, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34
+      value: -23
       objectReference: {fileID: 0}
     - target: {fileID: 1968835021206494663, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -55
       objectReference: {fileID: 0}
     - target: {fileID: 1968835021206494663, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -126078,20 +126086,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc486bf4f2af82543a430b8a4937f387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyType1: {fileID: 6375558160036423888, guid: dac018ffae4fce14a97871b5f04411c9, type: 3}
-  type1SpawnRate: 20
+  enemyType1: {fileID: 3894792699822780570, guid: 281f720166d3ab44888f1f40634ae85e, type: 3}
+  type1SpawnRate: 10
   enemyType2: {fileID: 8480662993664445748, guid: 6fbadfe17e2dcd6448ae1e142188a74e, type: 3}
   type2SpawnRate: 20
   enemyType3: {fileID: 3894792699822780570, guid: 2ca1a8d6637bbe94c811be5865922720, type: 3}
-  type3SpawnRate: 20
-  enemyType4: {fileID: 647014031556653830, guid: a5e80b24e9528fe4bac989273b5ebae2, type: 3}
-  type4SpawnRate: 20
+  type3SpawnRate: 25
+  enemyType4: {fileID: 6375558160036423888, guid: dac018ffae4fce14a97871b5f04411c9, type: 3}
+  type4SpawnRate: 25
   enemyType5: {fileID: 3648287766272362779, guid: f4cb383e2bc3e8545a3ac7e5bb2a32db, type: 3}
   WhatStopsSpawning:
     serializedVersion: 2
     m_Bits: 1792
-  maxEnemies: 10
-  chanceToSpawn: 15
+  maxEnemies: 15
+  chanceToSpawn: 20
   width: 75
   height: 75
 --- !u!4 &2053006708

@@ -125,7 +125,7 @@ public class MiniBoss : UnitController, NPCInterface
 
         }
         else {
-            Heal(5);
+            Heal(3);
         }
 
     }

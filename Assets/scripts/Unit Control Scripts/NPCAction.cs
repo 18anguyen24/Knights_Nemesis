@@ -26,7 +26,10 @@ public class NPCAction : UnitController, NPCInterface
     // Start is called before the first frame update
     void Start()
     {
+        health = health + GameState.FloorNumber * 5;
         MAX_HEALTH = health;
+        XPDropped = XPDropped * (1 + .15f * GameState.FloorNumber);
+
         GameState.NPCs.Add(this);
 
         //Only initializing target as player

@@ -437,7 +437,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 768
   damageText: {fileID: 910635060592470086, guid: 8f13880bf53245141922a66e90b0e991, type: 3}
-  health: 30
+  health: 25
   MAX_HEALTH: 0
   XPDropped: 15
   attackArea1: {fileID: 3894792699490226748}

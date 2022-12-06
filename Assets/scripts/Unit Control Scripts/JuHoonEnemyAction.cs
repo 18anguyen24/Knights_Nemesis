@@ -36,7 +36,10 @@ public class JuHoonEnemyAction : UnitController, NPCInterface
     // Start is called before the first frame update
     void Start()
     {
+        health = health + GameState.FloorNumber * 3;
         MAX_HEALTH = health;
+        XPDropped = XPDropped * (1 + .15f * GameState.FloorNumber);
+
         GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
