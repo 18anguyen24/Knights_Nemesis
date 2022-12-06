@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using TMPro;
 
 public class PlayerActions : UnitController
 {
@@ -27,7 +28,8 @@ public class PlayerActions : UnitController
     public Image Attack1Selected;
     public Image Attack2Selected;
     public Image Attack3Selected;
-    
+
+    public TextMeshProUGUI PlayerLevel;
 
     public float turnDelay;
 
@@ -70,6 +72,7 @@ public class PlayerActions : UnitController
         if (GameState.UnlockAttack3 == true) {
             Attack3UI.SetActive(true);
         }
+        PlayerLevel.text = "Level:\n" + (GameState.PlayerLevel);
     }
 
     private void randomSpawn()
@@ -101,6 +104,7 @@ public class PlayerActions : UnitController
             GameState.PlayerXP = GameState.PlayerXP - GameState.XPtoLevel;
             GameState.XPtoLevel *= 1.5f;
             Debug.Log("LEVEL UP");
+            PlayerLevel.text = "Level:\n" + (GameState.PlayerLevel);
         }
         Speed = 1;
         if (Input.GetMouseButton(0))
