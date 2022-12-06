@@ -427,6 +427,7 @@ MonoBehaviour:
   Attack1Selected: {fileID: 0}
   Attack2Selected: {fileID: 0}
   Attack3Selected: {fileID: 0}
+  PlayerLevel: {fileID: 0}
   turnDelay: 0.25
   spawner: {fileID: 0}
   source: {fileID: 0}
