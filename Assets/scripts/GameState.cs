@@ -18,7 +18,7 @@ public class GameState
     public static int PlayerLevel = 0;
     public static float XPtoLevel = 50;
 
-    public static int FloorNumber = 3;
+    public static int FloorNumber = 0;
 
     public static bool UnlockAttack3 = false;
 

@@ -43,7 +43,10 @@ public class MiniBoss : UnitController, NPCInterface
     // Start is called before the first frame update
     void Start()
     {
+        health = health + GameState.FloorNumber * 5;
         MAX_HEALTH = health;
+        XPDropped = XPDropped * (1 + .2f * GameState.FloorNumber);
+
         GameState.Enemies.Add(this);
 
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
@@ -102,17 +105,18 @@ public class MiniBoss : UnitController, NPCInterface
 
             if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
             {
-                int hits = (int)Mathf.Round(Random.Range(1, 3));
+                int hits = (int)Mathf.Round(Random.Range(2, 4));
                 activeAttack = attackArea1; //Sets to attack 1
                 StartCoroutine(MultiHit(hits));
             }
             
             else if (health < MAX_HEALTH / 4)
             {
-                Heal(40);
+                Heal(80);
             }
 
-            else if ((Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) || ((XDistance == 0) && Mathf.Abs(YDistance) == 2) || ((YDistance == 0) && Mathf.Abs(XDistance) == 2)) //Checks if the player is two diagonal tiles away
+            //else if ((Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) || ((XDistance == 0) && Mathf.Abs(YDistance) == 2) || ((YDistance == 0) && Mathf.Abs(XDistance) == 2)) //Checks if the player is two diagonal tiles away
+            else if (Mathf.Abs(XDistance) < 3 && Mathf.Abs(YDistance) < 3)
             {
                 activeAttack = attackArea2; //Sets to attack 2
                 Attack();   //Attacks
@@ -125,7 +129,7 @@ public class MiniBoss : UnitController, NPCInterface
 
         }
         else {
-            Heal(3);
+            Heal(2);
         }
 
     }

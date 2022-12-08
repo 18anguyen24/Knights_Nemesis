@@ -75,7 +75,7 @@ public class PlayerActions : UnitController
         if (GameState.UnlockAttack3 == true) {
             Attack3UI.SetActive(true);
         }
-        PlayerLevel.text = "Level:\n" + (GameState.PlayerLevel);
+        PlayerLevel.text = "Lvl: " + (GameState.PlayerLevel);
     }
 
     private void randomSpawn()
@@ -105,9 +105,9 @@ public class PlayerActions : UnitController
             GameState.PlayerLevel++;
             MAX_HEALTH += 5;
             GameState.PlayerXP = GameState.PlayerXP - GameState.XPtoLevel;
-            GameState.XPtoLevel *= 1.5f;
+            GameState.XPtoLevel *= 1.3f;
             Debug.Log("LEVEL UP");
-            PlayerLevel.text = "Level:\n" + (GameState.PlayerLevel);
+            PlayerLevel.text = "Lvl: " + (GameState.PlayerLevel);
         }
         Speed = 1;
         if (Input.GetMouseButton(0))

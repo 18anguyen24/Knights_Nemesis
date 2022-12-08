@@ -22157,6 +22157,8 @@ MonoBehaviour:
   MAX_HEALTH: 100
   XPDropped: 0
   infiniteTurns: 0
+  RandSpawnX: 2
+  RandSpawnY: 2
   attackArea1: {fileID: 1398238711}
   attackArea2: {fileID: 580704202}
   attackArea3: {fileID: 1492534584}
@@ -22166,6 +22168,7 @@ MonoBehaviour:
   Attack1Selected: {fileID: 1128240830}
   Attack2Selected: {fileID: 710619270}
   Attack3Selected: {fileID: 844431750}
+  PlayerLevel: {fileID: 0}
   turnDelay: 0.5
   spawner: {fileID: 0}
   source: {fileID: 1203486100}
