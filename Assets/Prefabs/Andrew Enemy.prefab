@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8480662993246197365}
   - component: {fileID: 171245200925274000}
-  - component: {fileID: 398234880896206038}
+  - component: {fileID: 534300756858013939}
   m_Layer: 0
   m_Name: Temp Sprite
   m_TagString: Untagged
@@ -345,7 +345,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &398234880896206038
+--- !u!95 &534300756858013939
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ Animator:
   m_GameObject: {fileID: 8480662993246197366}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e201399471608e142b33f8cb9b4244df, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

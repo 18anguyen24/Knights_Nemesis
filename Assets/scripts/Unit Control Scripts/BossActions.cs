@@ -108,7 +108,7 @@ public class BossActions : UnitController, NPCInterface
         {
             activeAttack = attackArea1; //Sets to attack 1
             Attack();
-            Dash(gameObject, PlayerMovePoint);
+            //Dash(gameObject, PlayerMovePoint);
         }
         else
         {
