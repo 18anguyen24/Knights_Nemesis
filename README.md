@@ -5,7 +5,16 @@ Semester Project for CS 4700
 
 
 Contributions:
-  Andrew-
+  Andrew- 
+    Player and enemy health script and bars: Created health script of a maximum HP and universal damage and heal functions,  later added to the UnitController by Seth.  Applied sprite for health and created slider and fill box to denote the player's HP.  
+    Boss room and a final boss stage: used different assets for tilemap and different attack functions.
+      created arrow system that launches continuous arrows across the map during the boss fight
+    Level 4 - designed and implemented maze route 
+    Player animations and design: located dark knight icon to use as portrait for player, and found a top-down sprite sheet that had the shape of a knight, and drew over the spritesheet to fit our corrupted knight design.  Created and implemented animations for the cardinal directions of the player, including running animations for the left and right.  
+    Music and attack SFX: chose and added audio system to use the tracks I felt fit the theme of the game.  
+    Damage UI - created universal damage numbers UI that spawn when the player or enemy receives damage from any source.  
+    
+    
     
   Dylan-
     
