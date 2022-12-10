@@ -17378,7 +17378,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -63059,13 +63059,13 @@ MonoBehaviour:
   enemyType3: {fileID: 3894792699822780570, guid: 2ca1a8d6637bbe94c811be5865922720, type: 3}
   type3SpawnRate: 0
   enemyType4: {fileID: 647014031556653830, guid: a5e80b24e9528fe4bac989273b5ebae2, type: 3}
-  type4SpawnRate: 100
-  enemyType5: {fileID: 3648287766272362779, guid: f4cb383e2bc3e8545a3ac7e5bb2a32db, type: 3}
+  type4SpawnRate: 80
+  enemyType5: {fileID: 3894792699822780570, guid: 281f720166d3ab44888f1f40634ae85e, type: 3}
   WhatStopsSpawning:
     serializedVersion: 2
     m_Bits: 1792
-  maxEnemies: 10
-  chanceToSpawn: 30
+  maxEnemies: 4
+  chanceToSpawn: 15
   width: 30
   height: 10
 --- !u!4 &2053006708

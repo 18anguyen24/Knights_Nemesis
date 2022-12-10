@@ -185,6 +185,7 @@ public class PlayerActions : UnitController
             {
                 //Debug.Log("Player is attempting an attack");
                 Attack();
+                source.Play();
                 GameState.PlayerTurn = false;
 
                 StartCoroutine(enemyLoop());

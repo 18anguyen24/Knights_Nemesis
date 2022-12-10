@@ -7,7 +7,6 @@ public class SethEnemyAction : UnitController, NPCInterface
     
     public GameObject attackArea1;
     public GameObject attackArea2;
-    
 
     public Transform Target;
 
@@ -21,12 +20,9 @@ public class SethEnemyAction : UnitController, NPCInterface
     private bool primed = false;
     private bool truant = true;
 
-    /*private GameObject activeAttack;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-    */
-
+    
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +62,7 @@ public class SethEnemyAction : UnitController, NPCInterface
 
         if (attacking)
         {
+            animator.SetBool("attacking", true);
             timer += Time.deltaTime;
 
             if (timer >= timeToAttack/Speed)
@@ -75,7 +72,9 @@ public class SethEnemyAction : UnitController, NPCInterface
                 activeAttack.SetActive(attacking);
                 if (activeAttack == attackArea2) {
                     OnDeath();
+                    XPDropped *= 2;
                 }
+                animator.SetBool("attacking", false);
             }
 
         }
@@ -91,6 +90,8 @@ public class SethEnemyAction : UnitController, NPCInterface
             {
                 Debug.Log("Priming: " + health);
                 primed = true;
+                animator.SetBool("primed", true);
+                //animator.SetTrigger("up");
             }
             else {
                 activeAttack = attackArea2; //Sets to attack 2
@@ -158,9 +159,38 @@ public class SethEnemyAction : UnitController, NPCInterface
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            
+
+            animator.ResetTrigger("Down");
+            animator.ResetTrigger("Side");
+            animator.ResetTrigger("Up");
+
+            if (YDistance < 0 - Mathf.Abs(XDistance))
+            {
+               
+                animator.SetTrigger("Down");
+                
+            }
+            else if (Mathf.Abs(XDistance) >= 0 + .75* Mathf.Abs(YDistance))
+            {
+                
+                animator.SetTrigger("Side");
+               
+                if (XDirection < 0) {
+                    spriteRenderer.flipX = true;
+                }
+            }
+            else {
+               
+                animator.SetTrigger("Up");
+                
+            }
             Move(XDirection, YDirection);
 
-            
+            if (XDistance >= 0)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
 
 

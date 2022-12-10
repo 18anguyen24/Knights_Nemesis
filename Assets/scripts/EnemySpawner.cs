@@ -49,7 +49,7 @@ public class EnemySpawner : MonoBehaviour
         enemyDrop += transform.position;
 
 
-        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsSpawning) && Random.Range(0, 100) < chanceToSpawn && GameState.Enemies.Count < maxEnemies)
+        if(!Physics2D.OverlapCircle(enemyDrop, .2f, WhatStopsSpawning) && Random.Range(0, 100) < chanceToSpawn && Vector3.Distance(enemyDrop, PlayerActions.player.transform.position) > 3 && GameState.Enemies.Count < maxEnemies)
         {
             int enemyType = (Random.Range(0, 99));
             
