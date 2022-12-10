@@ -72,6 +72,7 @@ public class SethEnemyAction : UnitController, NPCInterface
                 activeAttack.SetActive(attacking);
                 if (activeAttack == attackArea2) {
                     OnDeath();
+                    XPDropped *= 2;
                 }
                 animator.SetBool("attacking", false);
             }
@@ -158,34 +159,38 @@ public class SethEnemyAction : UnitController, NPCInterface
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
-            if (XDirection >= 0)
-            {
-                spriteRenderer.flipX = false;
-            }
+            
 
-            if (YDirection < 0)
+            animator.ResetTrigger("Down");
+            animator.ResetTrigger("Side");
+            animator.ResetTrigger("Up");
+
+            if (YDistance < 0 - Mathf.Abs(XDistance))
             {
-                Debug.Log("Moving down");
+               
                 animator.SetTrigger("Down");
-                //animator.ResetTrigger("Down");
+                
             }
-            else if (Mathf.Abs(XDirection) > 0)
+            else if (Mathf.Abs(XDistance) >= 0 + .75* Mathf.Abs(YDistance))
             {
-                Debug.Log("Moving sideways");
+                
                 animator.SetTrigger("Side");
-                //animator.ResetTrigger("Side");
+               
                 if (XDirection < 0) {
                     spriteRenderer.flipX = true;
                 }
             }
             else {
-                Debug.Log("Moving up");
+               
                 animator.SetTrigger("Up");
-                //animator.ResetTrigger("Up");
+                
             }
             Move(XDirection, YDirection);
 
-            
+            if (XDistance >= 0)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
 
 
