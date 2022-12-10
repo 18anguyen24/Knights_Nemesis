@@ -86,6 +86,14 @@ public class UnitController : MonoBehaviour
                     objectDashedThrough.transform.position, Time.deltaTime * moveSpeed * 10);
     }
 
+    public virtual void Dash2(GameObject unit)
+    {
+        Debug.Log(unit.transform.position - unit.transform.forward * 5);
+        Physics2D.IgnoreCollision(unit.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+        Vector3 save = unit.transform.position;
+        movePoint.transform.position = unit.transform.position - movePoint.transform.position + save - new Vector3(0, 1.5f);
+    }
+
     protected void Attack()
     {
         attacking = true;
