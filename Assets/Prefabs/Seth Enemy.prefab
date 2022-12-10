@@ -85,6 +85,8 @@ MonoBehaviour:
   Target: {fileID: 0}
   targetX: 0
   targetY: 0
+  animator: {fileID: 6315747654843690239}
+  spriteRenderer: {fileID: 7699987934280853602}
 --- !u!58 &6416676972496952817
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -111,6 +113,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7699987934280853603}
   - component: {fileID: 7699987934280853602}
+  - component: {fileID: 6315747654843690239}
   m_Layer: 0
   m_Name: Temp Sprite
   m_TagString: Untagged
@@ -126,8 +129,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7699987934280853596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 2.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 13, y: 13, z: 3.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 4623794521983582617}
@@ -174,8 +177,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d04953e6aa086e6479ad7fe2cd06ed7d, type: 3}
-  m_Color: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 0.78039217}
+  m_Sprite: {fileID: 436158209, guid: 2e691d8f6a38bc54f98da5e24e1cbba9, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -185,6 +188,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6315747654843690239
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699987934280853596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba461c9d68a147c4cb03d3fb7636f38d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9039032017089051858
 GameObject:
   m_ObjectHideFlags: 0

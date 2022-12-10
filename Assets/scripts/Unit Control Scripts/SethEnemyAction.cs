@@ -7,7 +7,6 @@ public class SethEnemyAction : UnitController, NPCInterface
     
     public GameObject attackArea1;
     public GameObject attackArea2;
-    
 
     public Transform Target;
 
@@ -21,12 +20,9 @@ public class SethEnemyAction : UnitController, NPCInterface
     private bool primed = false;
     private bool truant = true;
 
-    /*private GameObject activeAttack;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-    */
-
+    
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +62,7 @@ public class SethEnemyAction : UnitController, NPCInterface
 
         if (attacking)
         {
+            animator.SetBool("attacking", true);
             timer += Time.deltaTime;
 
             if (timer >= timeToAttack/Speed)
@@ -76,6 +73,7 @@ public class SethEnemyAction : UnitController, NPCInterface
                 if (activeAttack == attackArea2) {
                     OnDeath();
                 }
+                animator.SetBool("attacking", false);
             }
 
         }
@@ -91,6 +89,8 @@ public class SethEnemyAction : UnitController, NPCInterface
             {
                 Debug.Log("Priming: " + health);
                 primed = true;
+                animator.SetBool("primed", true);
+                //animator.SetTrigger("up");
             }
             else {
                 activeAttack = attackArea2; //Sets to attack 2
@@ -158,6 +158,31 @@ public class SethEnemyAction : UnitController, NPCInterface
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            if (XDirection >= 0)
+            {
+                spriteRenderer.flipX = false;
+            }
+
+            if (YDirection < 0)
+            {
+                Debug.Log("Moving down");
+                animator.SetTrigger("Down");
+                //animator.ResetTrigger("Down");
+            }
+            else if (Mathf.Abs(XDirection) > 0)
+            {
+                Debug.Log("Moving sideways");
+                animator.SetTrigger("Side");
+                //animator.ResetTrigger("Side");
+                if (XDirection < 0) {
+                    spriteRenderer.flipX = true;
+                }
+            }
+            else {
+                Debug.Log("Moving up");
+                animator.SetTrigger("Up");
+                //animator.ResetTrigger("Up");
+            }
             Move(XDirection, YDirection);
 
             
