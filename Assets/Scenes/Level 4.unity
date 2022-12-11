@@ -36883,7 +36883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: Level 4
-  nextLevel: Tutorial
+  nextLevel: Boss Room
 --- !u!1 &1333465756
 GameObject:
   m_ObjectHideFlags: 0
@@ -125223,7 +125223,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   maxEnemies: 15
-  chanceToSpawn: 40
+  chanceToSpawn: 20
   width: 75
   height: 75
 --- !u!4 &2053006708

@@ -39,6 +39,10 @@ public class BossActions : UnitController, NPCInterface
     private float timeToAttack = 0.25f;
     private float timer = 0f;
     */
+    //audio
+    public AudioSource source;
+    public AudioSource sourceSpear;
+
 
 
     // Start is called before the first frame update
@@ -121,12 +125,14 @@ public class BossActions : UnitController, NPCInterface
             int rnd = Random.Range(0, 10);
             if(rnd >= 5)
             {
+                sourceSpear.Play();
                 activeAttack = attackArea3; //Sets to attack 1
                 Dash2(player);
                 Attack();
             }
             else
             {
+                source.Play();
                 activeAttack = attackArea1; //Sets to attack 1
                 Attack();
             }

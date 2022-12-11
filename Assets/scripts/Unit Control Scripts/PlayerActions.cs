@@ -9,7 +9,7 @@ using TMPro;
 public class PlayerActions : UnitController
 {
 
-
+    
     //public variables
     public bool infiniteTurns = false;  //testing purposes
 
@@ -64,9 +64,13 @@ public class PlayerActions : UnitController
         //Allows access from other scripts
         PlayerActions.player = this;
         
-        //Spawns the player somewhere random
-        randomSpawn();
-
+        //Spawns the player somewhere random if it is not in the boss room
+        Scene currentScene = SceneManager.GetActiveScene ();
+        if (currentScene.name != "Boss Room")
+        {
+            Debug.Log(currentScene.name);
+            randomSpawn();
+        }
         movePoint.transform.parent = null;
 
         activeAttack = attackArea1;
@@ -302,7 +306,7 @@ public class PlayerActions : UnitController
             }
 
         }
-        Debug.Log(GameState.Enemies.Count);
+
         for (int i = 0; i < GameState.Enemies.Count; i++)
         {
             GameState.Enemies[i].NPCTurn();     //enemies move next, and if nearby will also have a time inbetween each movement

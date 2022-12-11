@@ -242,6 +242,8 @@ MonoBehaviour:
   targetY: 0
   player: {fileID: 0}
   PlayerMovePoint: {fileID: 0}
+  source: {fileID: 0}
+  sourceSpear: {fileID: 0}
 --- !u!1 &5988340434042230698
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c599129cf05ab146afc34b851c68ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 3
   PlayerAttack: 0
 --- !u!212 &5988340434042230700
 SpriteRenderer:
