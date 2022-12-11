@@ -21498,7 +21498,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2b901d3b2de7fdb4f8dfb33676b067b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba2c23e759f6b4f4490a43dd4f8bb8bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22325,7 +22325,6 @@ MonoBehaviour:
   attackArea1: {fileID: 1398238711}
   attackArea2: {fileID: 580704202}
   attackArea3: {fileID: 1492534584}
-  UnlockAttack3: {fileID: 579502703}
   Attack3UI: {fileID: 913339370}
   deathScreen: {fileID: 1433464937}
   Attack1Selected: {fileID: 1128240830}
