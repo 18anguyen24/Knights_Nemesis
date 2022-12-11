@@ -463,11 +463,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: RandSpawnX
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: RandSpawnY
-      value: 11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: PlayerLevel
@@ -21325,7 +21325,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2b901d3b2de7fdb4f8dfb33676b067b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ba2c23e759f6b4f4490a43dd4f8bb8bd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
