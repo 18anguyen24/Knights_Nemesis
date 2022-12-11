@@ -18,9 +18,6 @@ public class UnitController : MonoBehaviour
 
     public GameObject damageText;
 
-
-
-
     [SerializeField]
     public int health = 100;
     public int MAX_HEALTH;
@@ -28,14 +25,8 @@ public class UnitController : MonoBehaviour
     [SerializeField]
     public float XPDropped;
 
-    //contain variable for stats (attack, defense, xp etc...)
-
-
-
-    // Start is called before the first frame update
     void Start()
     {
-        //MAX_HEALTH = health;
         
     }
 
@@ -45,24 +36,22 @@ public class UnitController : MonoBehaviour
         
     }
 
+    //Takes in the number of tiles and tries to move to the tile at that location
     public virtual void Move(float X, float Y) {
         float AllowVertical = 1;
         float AllowHorizontal = 1;
         float AllowDiagonal = 1;
 
         if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(X, Y, 0), .2f, WhatStopsMovement))
-        {
-            //Debug.Log("Blocked from moving diagonal");
+        {       
             AllowDiagonal = 0;
         }
         if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(X, 0f, 0), .2f, WhatStopsMovement))
         {
-            //Debug.Log("Blocked from moving horizontal");
-            AllowHorizontal = 0;
+           AllowHorizontal = 0;
         }
         if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(0f, Y, 0), .2f, WhatStopsMovement))
         {
-            //Debug.Log("Blocked from moving vertical");
             AllowVertical = 0;
         }
 
@@ -70,6 +59,7 @@ public class UnitController : MonoBehaviour
         float MotionX = X * AllowHorizontal;
         float MotionY = Y * AllowVertical;
 
+        //Allows movement to slide along a wall, but if trying to move diagonal into a corner it wont pick a single direction
         if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
         {
             MotionX = 0;
@@ -111,6 +101,7 @@ public class UnitController : MonoBehaviour
 
     }
 
+    //Handles the damaging and healing for all units
     public void Damage(int amount)
     {
         if (amount < 0)

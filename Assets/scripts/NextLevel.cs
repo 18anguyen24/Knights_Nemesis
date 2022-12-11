@@ -7,7 +7,7 @@ public class NextLevel : MonoBehaviour
 {
     public string current;
     public string nextLevel;
-    // Start is called before the first frame update
+    
     void Start()
     {
         
@@ -16,6 +16,7 @@ public class NextLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Allows the player to restart at any point in a level
         if (Input.GetKeyDown(KeyCode.R))
         {
             GameState.clear();
@@ -24,6 +25,8 @@ public class NextLevel : MonoBehaviour
         }
     }
 
+    //Lets the player move to the next level
+    //Levels are manually set into the goals
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))

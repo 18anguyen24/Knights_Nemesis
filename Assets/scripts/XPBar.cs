@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class XPBar : MonoBehaviour
 {
+	//handles the UI for the XP bar
 	public Slider slider;
 	
 	void Update()
@@ -14,9 +15,4 @@ public class XPBar : MonoBehaviour
 
 	}
 
-	/*public void SetHealth(int health)
-	{
-		slider.value = health;
-
-	}*/
 }

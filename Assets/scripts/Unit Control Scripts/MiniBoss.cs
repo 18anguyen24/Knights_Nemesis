@@ -203,7 +203,7 @@ public class MiniBoss : UnitController, NPCInterface
         if (Player != null) {
             Player.Attack3UI.SetActive(true);
         }
-        for (int e = 0; e < 15; e++)
+        for (int e = 0; e < 19; e++)
         {
             Vector3 enemyDrop = new Vector3(2 * Mathf.Round(Random.Range(-1, 2)), 2 * Mathf.Round(Random.Range(-1, 2)), 0);
             enemyDrop += Player.transform.position;

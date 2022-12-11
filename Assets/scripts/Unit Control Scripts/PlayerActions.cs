@@ -11,20 +11,17 @@ public class PlayerActions : UnitController
 
 
     //public variables
-    public bool infiniteTurns = false;
+    public bool infiniteTurns = false;  //testing purposes
 
-    public int RandSpawnX;
+    public int RandSpawnX;  //Allows the player to be spawned within a certain area of each map
     public int RandSpawnY;
-    /*
-    public float moveSpeed = 5f;
-    public Transform movePoint;
-    public LayerMask WhatStopsMovement;
-    */
+    
+    //Gives the player 3 attacks
     public GameObject attackArea1;
     public GameObject attackArea2;
     public GameObject attackArea3;
 
-    public GameObject UnlockAttack3;
+    //Handles the UI attached to the player
     public GameObject Attack3UI;
 
     public Image deathScreen;
@@ -34,12 +31,12 @@ public class PlayerActions : UnitController
 
     public TextMeshProUGUI PlayerLevel;
 
+    //Sets the time between each units movement
     public float turnDelay;
 
     public EnemySpawner spawner;
 
     //for animations
-    Rigidbody2D rb;
     Animator animator;
     SpriteRenderer spriteRenderer;
 
@@ -48,36 +45,48 @@ public class PlayerActions : UnitController
 
     public static PlayerActions player;
 
+    //Allows controlable healing
     public int StepsToHeal;
     private int steps;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
+        //handles the  transitions between levels
         if (GameState.PlayerHP != 0) {
             health = GameState.PlayerHP;
             Debug.Log("Players Health: " + health);
         }
+
+        //Increases the players health to the proper amount
         MAX_HEALTH = MAX_HEALTH + (GameState.PlayerLevel * 5);
+
+        //Allows access from other scripts
         PlayerActions.player = this;
         
+        //Spawns the player somewhere random
         randomSpawn();
 
         movePoint.transform.parent = null;
 
         activeAttack = attackArea1;
 
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        //Second check to make sure the player always gets to start
         GameState.PlayerTurn = true;
 
+        //Shows the 3d attack if unlocked
         if (GameState.UnlockAttack3 == true) {
             Attack3UI.SetActive(true);
         }
+        
+        //Displays player level
         PlayerLevel.text = "Lvl: " + (GameState.PlayerLevel);
     }
 
+    //Finds a valid spawnpoint within the specifiec area and spawns the player there
     private void randomSpawn()
     {
         bool spawned = false;
@@ -96,27 +105,29 @@ public class PlayerActions : UnitController
         }
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        //Debug.Log(GameState.PlayerXP + "/" + GameState.XPtoLevel);
+        //Allows the player to level up whenever during the game
         if (GameState.PlayerXP >= GameState.XPtoLevel) {
-            //Debug.Log("Max health is now: " + MAX_HEALTH);
             GameState.PlayerLevel++;
             MAX_HEALTH += 5;
             GameState.PlayerXP = GameState.PlayerXP - GameState.XPtoLevel;
             GameState.XPtoLevel *= 1.3f;
-            Debug.Log("LEVEL UP");
             PlayerLevel.text = "Lvl: " + (GameState.PlayerLevel);
         }
+
+        //Allows for speedup of gameplay at anypoint
         Speed = 1;
         if (Input.GetMouseButton(0))
         {
             Speed = GameState.SpeedFactor;
         }
-        //Debug.Log("Speed " + Speed);
+
+        //Moves the player to the designated movepoint
         transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * moveSpeed * Time.deltaTime);
 
+        //Gives a timer to display the attack for a certain length of time
         if (attacking)
         {
             timer += Time.deltaTime;
@@ -130,22 +141,13 @@ public class PlayerActions : UnitController
 
         }
 
-        /*
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            GameState.clear();
-            SceneManager.LoadScene(0);
-            
-        }*/
-
-
-
+        //Debugging purposes
         if (infiniteTurns == true)
         {
             GameState.PlayerTurn = true;
         }
 
-        //this is a tedious way to do it but imma try it
+        //Sets the players attacks using the keys
         if (attacking == false) {
             if (Input.GetKey("1"))
             {
@@ -160,6 +162,8 @@ public class PlayerActions : UnitController
                 activeAttack = attackArea3;
             }
         }
+
+        //Handles the UI for displaying the proper attack
         if (activeAttack == attackArea1)
         {
             Attack1Selected.enabled = true;
@@ -179,11 +183,12 @@ public class PlayerActions : UnitController
             Attack3Selected.enabled = true;
         }
 
+        //Allows the player to rotate and/or attack without moving
         if (Input.GetMouseButton(1))
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                //Debug.Log("Player is attempting an attack");
+                
                 Attack();
                 source.Play();
                 GameState.PlayerTurn = false;
@@ -198,9 +203,9 @@ public class PlayerActions : UnitController
             //handles player movement and movement takes precedent over other actions
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
             {
-                GameState.PlayerHP = health;
+                GameState.PlayerHP = health;    //Saves the players HP at every step
 
-                if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to sprite, should be irrelevant soon
+                if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)  //makes sure the player has actually moved to its destination before initiating another move
                 {
                    
                     Move(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
@@ -214,6 +219,7 @@ public class PlayerActions : UnitController
 
                     spawner.newEnemy();
 
+                    //Heals every certain number of steps
                     steps++;
                     if (steps >= StepsToHeal)
                     {
@@ -227,13 +233,13 @@ public class PlayerActions : UnitController
             }
             else if (Input.GetKeyDown(KeyCode.Space))
             {
-                //Debug.Log("Player is attempting an attack");
                 Attack();
                 source.Play();
                 GameState.PlayerTurn = false;
 
                 StartCoroutine(enemyLoop());
             }
+            //Animation work
             else
             {
                 animator.SetBool("isMovingRight", false);
@@ -271,30 +277,25 @@ public class PlayerActions : UnitController
 
 
     }
-    /*
-    private void Attack()
-    {
-        attacking = true;
-        activeAttack.SetActive(attacking);
-    }*/
+    
 
     public override void OnDeath()
     {
         deathScreen.enabled = !deathScreen.enabled;
-        GameState.PlayerHP = MAX_HEALTH / 2;
-        Destroy(gameObject);
-        Destroy(movePoint);
-        Debug.Log("Player Died");
+        GameState.PlayerHP = MAX_HEALTH / 2;    //Saves half their max HP to be restarted with
+        GameState.PlayerXP = 0; //Removes their excess XP, no level penalty
+
+        gameObject.SetActive(false);
     }
 
-
+    //Called after every player turn
     IEnumerator enemyLoop()
     {
-        yield return new WaitForSeconds(turnDelay/Speed);
+        yield return new WaitForSeconds(turnDelay/Speed);   //Has a set time after the player
         //Debug.Log("Time Delay: " + turnDelay/Speed);
         for (int i = 0; i < GameState.NPCs.Count; i++)
         {
-            GameState.NPCs[i].NPCTurn();
+            GameState.NPCs[i].NPCTurn();    //NPCs move first, and if nearby will also have a time inbetween each movement
             if (Vector3.Distance(PlayerActions.player.transform.position, GameState.NPCs[i].NPCLocation()) < 5)
             {
                 yield return new WaitForSeconds(turnDelay / Speed);
@@ -304,17 +305,19 @@ public class PlayerActions : UnitController
         Debug.Log(GameState.Enemies.Count);
         for (int i = 0; i < GameState.Enemies.Count; i++)
         {
-            GameState.Enemies[i].NPCTurn();
+            GameState.Enemies[i].NPCTurn();     //enemies move next, and if nearby will also have a time inbetween each movement
             if (Vector3.Distance(PlayerActions.player.transform.position, GameState.Enemies[i].NPCLocation()) < 5)
             {
                 yield return new WaitForSeconds(turnDelay/Speed);
             }
             
         }
-        //Debug.Log("Number of Enemies: " + GameState.Enemies.Count);
+        
+        //After all moves have been made, the player will be allowed to make their next move
         GameState.PlayerTurn = true;
     }
 
+    //Frame work for a chest/dropped items mechanic, not in use
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Attack3"))

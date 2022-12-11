@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour
 {
-    //public PlayerActions action;
+    
     private Vector3 fakePoint;
     private float Heading;
     private float newHeading;
@@ -16,12 +16,12 @@ public class Rotator : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    //Allows the players pointer to move regardless of whether its the players turn or not
     void Update()
     {
         fakePoint = transform.position + new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
         newHeading = Mathf.Atan2(fakePoint.y - transform.position.y, fakePoint.x - transform.position.x);
-        //Debug.Log("The heading is " + newHeading);
+        
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f)
         {
             newHeading = Mathf.Rad2Deg * newHeading;

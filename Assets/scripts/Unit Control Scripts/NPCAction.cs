@@ -8,6 +8,7 @@ public class NPCAction : UnitController, NPCInterface
     //public GameObject attackArea1;
     //public GameObject attackArea2;
 
+    //Hooked to spawner to handle penalty for players
     public EnemySpawner spawner;
 
     public Vector3 Target;
@@ -23,7 +24,7 @@ public class NPCAction : UnitController, NPCInterface
     private int stepsneeded = 0;
 
     
-    // Start is called before the first frame update
+    
     void Start()
     {
         health = health + GameState.FloorNumber * 5;
@@ -32,19 +33,12 @@ public class NPCAction : UnitController, NPCInterface
 
         GameState.NPCs.Add(this);
 
-        //Only initializing target as player
-        //GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = new Vector3(0,.5f,0);
         
-
         movePoint.transform.parent = null;
 
         targetX = 0;
         targetY = 0;
-
-        //activeAttack = attackArea1;
-
-
     }
 
     // Update is called once per frame
@@ -61,22 +55,9 @@ public class NPCAction : UnitController, NPCInterface
         }
 
         transform.position = Vector3.MoveTowards(transform.position, movePoint.transform.position, Speed * Time.deltaTime);
-
-
-        if (attacking)
-        {
-            timer += Time.deltaTime;
-
-            if (timer >= timeToAttack)
-            {
-                timer = 0;
-                attacking = false;
-                activeAttack.SetActive(attacking);
-            }
-
-        }
-
     }
+
+    //Gives the NPC a random target within a 5 tile radius to walk towards
     private void randomTarget()
     {
         Target = transform.position + new Vector3(Mathf.Round(Random.Range(-5, 5)), Mathf.Round(Random.Range(-5, 5)), 0);
@@ -88,31 +69,25 @@ public class NPCAction : UnitController, NPCInterface
     public void NPCTurn()
     {
         MoveNPC();
-
+        //Only option for this NPC is to move
     }
 
 
 
 
-    private void MoveNPC()    //Currently finds the direction the player is in, then calls move to move in that direction 
-                                //Move is in UnitController, and will check for collision
+    private void MoveNPC()   
     {
-        //float MoveVertical = 1;
-        //float MoveHorizontal = 1;
-
-
+        
         float XDirection = 0;
         float YDirection = 0;
 
-        //Debug.Log("The x and Y distaces are " + XDistance + "," + YDistance);
-
-        //float XDistance = Target.position.x - transform.position.x;
+        
         if (XDistance != 0)
             XDirection = Mathf.Abs(XDistance) / XDistance;
-        //float YDistance = Target.position.y - transform.position.y;
+        
         if (YDistance != 0)
             YDirection = Mathf.Abs(YDistance) / YDistance;
-
+        /*
         if (Mathf.Abs(XDistance) > 3 * Mathf.Abs(YDistance))
         {
             //MoveVertical = 0;
@@ -122,14 +97,15 @@ public class NPCAction : UnitController, NPCInterface
             //MoveHorizontal = 0;
         }
 
-        //targetX = XDirection * MoveHorizontal;
-        //targetY = YDirection * MoveVertical;
+        targetX = XDirection * MoveHorizontal;
+        targetY = YDirection * MoveVertical;
+        */
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
-            
             Move(XDirection, YDirection);
             steps++;
+            //Walks a random number of steps before setting a new target
             if (steps >= stepsneeded) {
                 steps = 0;
                 stepsneeded = Random.Range(1, 4);
@@ -146,7 +122,7 @@ public class NPCAction : UnitController, NPCInterface
         GameState.NPCs.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
-        spawner.DEATH();
+        spawner.DEATH();        //Penalizes player for their sins
         GameState.PlayerXP += XPDropped;
     }
 

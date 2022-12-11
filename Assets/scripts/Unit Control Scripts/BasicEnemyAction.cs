@@ -2,45 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Only Enemy I plan to comment, this enemy has the basic mechanics that the rest of the enemies were built from
 public class BasicEnemyAction : UnitController, NPCInterface
 {
-    //public variables
-    /*
-    public float moveSpeed = 5f;
-    public GameObject movePoint;
-
-    public LayerMask WhatStopsMovement;
-    */
-
+    //Add the attacks
     public GameObject attackArea1;
     public GameObject attackArea2;
     
-
+    //The target the enemy will move towards and attack
     public Transform Target;
 
+    //Acessed by other scripts
     public float targetX;
     public float targetY;
 
-    //private Variables
     private float XDistance;
     private float YDistance;
 
-    /*private GameObject activeAttack;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-    */
-
-
-    // Start is called before the first frame update
     void Start()
     {
+        //Similar startup as player, scaling to the appropriate power
         health = health + GameState.FloorNumber * 5;
         MAX_HEALTH = health;
         XPDropped = XPDropped * (1 + .15f * GameState.FloorNumber);
 
+        //Added to the list of enemies that will be used
         GameState.Enemies.Add(this);
 
+        //Targets the players movepoint
         GameObject PlayerMovePoint = GameObject.FindWithTag("PlayerLocation");
         Target = PlayerMovePoint.transform;
         
@@ -50,19 +39,17 @@ public class BasicEnemyAction : UnitController, NPCInterface
         targetY = 0;
 
         activeAttack = attackArea1;
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Finds where the target is relative
         XDistance = Target.position.x - transform.position.x;
         YDistance = Target.position.y - transform.position.y;
 
-        
+        //Applies speedup to all animations
         Speed = 1;
-
         if (Input.GetMouseButton(0))
         {
             Speed = GameState.SpeedFactor;
@@ -90,7 +77,7 @@ public class BasicEnemyAction : UnitController, NPCInterface
     //Implement different Enemies controls here: this is the basic code for the current Enemy
     public void NPCTurn()
     {
-        if ((Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) || ((XDistance == 0) && Mathf.Abs(YDistance) == 2) || ((YDistance == 0) && Mathf.Abs(XDistance) == 2)) //Checks if the player is two diagonal tiles away
+        if ((Mathf.Abs(XDistance) == Mathf.Abs(YDistance) && Mathf.Abs(XDistance) == 2) || ((XDistance == 0) && Mathf.Abs(YDistance) == 2) || ((YDistance == 0) && Mathf.Abs(XDistance) == 2)) //Checks if the player is tiles away, either diagonal or straight
         {
             activeAttack = attackArea2; //Sets to attack 2
             Attack();   //Attacks
@@ -113,79 +100,35 @@ public class BasicEnemyAction : UnitController, NPCInterface
     private void MoveEnemy()    //Currently finds the direction the player is in, then calls move to move in that direction 
                                 //Move is in UnitController, and will check for collision
     {
-        //float MoveVertical = 1;
-        //float MoveHorizontal = 1;
-
-
+        
         float XDirection = 0;
         float YDirection = 0;
 
-        //Debug.Log("The x and Y distaces are " + XDistance + "," + YDistance);
-
-        //float XDistance = Target.position.x - transform.position.x;
+        //Creates a normalized X and Y direction to be used
         if (XDistance != 0)
             XDirection = Mathf.Abs(XDistance) / XDistance;
-        //float YDistance = Target.position.y - transform.position.y;
+        
         if (YDistance != 0)
             YDirection = Mathf.Abs(YDistance) / YDistance;
 
+        /* Currently not in use, the enemy will move diagonal if not exactly inline with the player
         if (Mathf.Abs(XDistance) > 3 * Mathf.Abs(YDistance))
         {
-            //MoveVertical = 0;
+            MoveVertical = 0;
         }
         if (Mathf.Abs(XDistance) * 3 < Mathf.Abs(YDistance))
         {
-            //MoveHorizontal = 0;
-        }
-
-        //targetX = XDirection * MoveHorizontal;
-        //targetY = YDirection * MoveVertical;
+            MoveHorizontal = 0;
+        }*/
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            //Only moves one unit at a time, so the directions are passed, and allow the universal move to handle the logic further
             Move(XDirection, YDirection);
-
-            /*
-            //Checks to see if motion is allowed first to prevent going through corners
-            float AllowVertical = 1;
-            float AllowHorizontal = 1;
-            float AllowDiagonal = 1;
-
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, 0f, 0), .2f, WhatStopsMovement))
-            {
-                AllowHorizontal = 0;
-            }
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(0f, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
-            {
-                AllowVertical = 0;
-            }
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
-            {
-                AllowDiagonal = 0;
-            }
-
-            float MotionX = XDirection * AllowHorizontal;
-            float MotionY = YDirection * AllowVertical;
-
-            if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
-            {
-                MotionX = 0;
-                MotionY = 0;
-            }
-
-            movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
-            */
         }
 
 
     }
-
-    /*
-    private void Attack()
-    {
-        attacking = true;
-        activeAttack.SetActive(attacking);
-    }*/
 
     public override void OnDeath()
     {

@@ -19,6 +19,7 @@ public class MiniBossRoom : MonoBehaviour
 
     }
 
+    //Locks the player into the room, then destroys itself so the player cant be locked in later
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.gameObject.CompareTag("Player"))
