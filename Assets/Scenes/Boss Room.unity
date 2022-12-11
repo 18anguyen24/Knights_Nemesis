@@ -480,7 +480,7 @@ PrefabInstance:
     - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: deathScreen
       value: 
-      objectReference: {fileID: 1433464937}
+      objectReference: {fileID: 2138996539}
     - target: {fileID: 1968835020979950767, guid: f9c119574894fbd40ba07f62e613486e, type: 3}
       propertyPath: Attack1Selected
       value: 
@@ -20936,7 +20936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &710619269
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21012,7 +21012,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &749931906
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21494,7 +21494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1128240829
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22421,7 +22421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1595922308
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23286,6 +23286,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowRef: {fileID: 2814702840200876936, guid: ad5e30714d33f9c4e80f8a3d36d92515, type: 3}
   ArrowLauncher: {fileID: 548375508}
+--- !u!114 &2138996539 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 939178955248808621, guid: 9446074562c90044c842255ab08e228e, type: 3}
+  m_PrefabInstance: {fileID: 2004031696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2181131850859580731
 PrefabInstance:
   m_ObjectHideFlags: 0
