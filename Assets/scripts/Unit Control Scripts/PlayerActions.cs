@@ -55,7 +55,6 @@ public class PlayerActions : UnitController
         //handles the  transitions between levels
         if (GameState.PlayerHP != 0) {
             health = GameState.PlayerHP;
-            Debug.Log("Players Health: " + health);
         }
 
         //Increases the players health to the proper amount
@@ -296,7 +295,6 @@ public class PlayerActions : UnitController
     IEnumerator enemyLoop()
     {
         yield return new WaitForSeconds(turnDelay/Speed);   //Has a set time after the player
-        //Debug.Log("Time Delay: " + turnDelay/Speed);
         for (int i = 0; i < GameState.NPCs.Count; i++)
         {
             GameState.NPCs[i].NPCTurn();    //NPCs move first, and if nearby will also have a time inbetween each movement

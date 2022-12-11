@@ -33,12 +33,9 @@ public class MiniBoss : UnitController, NPCInterface
     public PlayerActions Player;
     public GameObject TrashEnemies;
 
-    /*private GameObject activeAttack;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-    */
-
+    //for animations
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -148,7 +145,7 @@ public class MiniBoss : UnitController, NPCInterface
     }
 
 
-        private void MoveEnemy()    //Currently finds the direction the player is in, then calls move to move in that direction 
+    private void MoveEnemy()    //Currently finds the direction the player is in, then calls move to move in that direction 
                                 //Move is in UnitController, and will check for collision
     {
         //float MoveVertical = 1;
@@ -181,13 +178,45 @@ public class MiniBoss : UnitController, NPCInterface
 
         if (Vector3.Distance(transform.position, movePoint.transform.position) <= .05f)//should be unnecessary with multiple enemies
         {
+            animator.ResetTrigger("Down");
+            animator.ResetTrigger("Side");
+            animator.ResetTrigger("Up");
+
+            if (YDistance < 0 - Mathf.Abs(XDistance))
+            {
+
+                animator.SetTrigger("Down");
+
+            }
+            else if (Mathf.Abs(XDistance) >= 0 + .75 * Mathf.Abs(YDistance))
+            {
+
+                animator.SetTrigger("Side");
+
+                if (XDirection > 0)
+                {
+                    spriteRenderer.flipX = true;
+                }
+            }
+            else
+            {
+
+                animator.SetTrigger("Up");
+
+            }
             Move(XDirection, YDirection);
 
-            
+            if (XDistance <= 0)
+            {
+                spriteRenderer.flipX = false;
+            }
         }
 
-
+    
     }
+
+
+    
 
     
 
