@@ -14,7 +14,7 @@ public class BossActions : UnitController, NPCInterface
 
     public GameObject attackArea1;
     public GameObject attackArea2;
-    
+    public GameObject attackArea3;
 
     public Transform Target;
 
@@ -82,12 +82,24 @@ public class BossActions : UnitController, NPCInterface
         if (attacking)
         {
             timer += Time.deltaTime;
-
-            if (timer >= timeToAttack)
+            
+            if(activeAttack == attackArea3) //spear animation
             {
-                timer = 0;
-                attacking = false;
-                activeAttack.SetActive(attacking);
+                if (timer >= 0.75f)
+                {
+                    timer = 0;
+                    attacking = false;
+                    activeAttack.SetActive(attacking);
+                }
+            }
+            else //claymore animation
+            {
+                if (timer >= 0.5f)
+                {
+                    timer = 0;
+                    attacking = false;
+                    activeAttack.SetActive(attacking);
+                }
             }
 
         }
@@ -106,10 +118,19 @@ public class BossActions : UnitController, NPCInterface
         }
         else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
-            activeAttack = attackArea1; //Sets to attack 1
-            Attack();
-            Dash2(player);
-            //Dash(gameObject, PlayerMovePoint);
+            int rnd = Random.Range(0, 10);
+            if(rnd >= 5)
+            {
+                activeAttack = attackArea3; //Sets to attack 1
+                Dash2(player);
+                Attack();
+            }
+            else
+            {
+                activeAttack = attackArea1; //Sets to attack 1
+                Attack();
+            }
+
         }
         else
         {
@@ -167,47 +188,11 @@ public class BossActions : UnitController, NPCInterface
         {
             Move(XDirection, YDirection);
 
-            /*
-            //Checks to see if motion is allowed first to prevent going through corners
-            float AllowVertical = 1;
-            float AllowHorizontal = 1;
-            float AllowDiagonal = 1;
-
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, 0f, 0), .2f, WhatStopsMovement))
-            {
-                AllowHorizontal = 0;
-            }
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(0f, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
-            {
-                AllowVertical = 0;
-            }
-            if (Physics2D.OverlapCircle(movePoint.transform.position + new Vector3(XDirection * MoveHorizontal, YDirection * MoveVertical, 0), .2f, WhatStopsMovement))
-            {
-                AllowDiagonal = 0;
-            }
-
-            float MotionX = XDirection * AllowHorizontal;
-            float MotionY = YDirection * AllowVertical;
-
-            if (Mathf.Abs(MotionX) == Mathf.Abs(MotionY) && AllowDiagonal == 0)
-            {
-                MotionX = 0;
-                MotionY = 0;
-            }
-
-            movePoint.transform.position += new Vector3(MoveHorizontal * MotionX, MoveVertical * MotionY, 0);
-            */
+           
         }
 
 
     }
-
-    /*
-    private void Attack()
-    {
-        attacking = true;
-        activeAttack.SetActive(attacking);
-    }*/
 
     public override void OnDeath()
     {

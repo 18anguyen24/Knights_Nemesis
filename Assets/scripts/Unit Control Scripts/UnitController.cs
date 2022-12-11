@@ -80,18 +80,23 @@ public class UnitController : MonoBehaviour
         
     }
 
-    public virtual void Dash(GameObject objectDashing, GameObject objectDashedThrough)
-    {
-        movePoint.transform.position = Vector2.MoveTowards(objectDashing.transform.position, 
-                    objectDashedThrough.transform.position, Time.deltaTime * moveSpeed * 10);
-    }
 
     public virtual void Dash2(GameObject unit)
     {
-        Debug.Log(unit.transform.position - unit.transform.forward * 5);
-        Physics2D.IgnoreCollision(unit.GetComponent<Collider2D>(), GetComponent<Collider2D>());
-        Vector3 save = unit.transform.position;
-        movePoint.transform.position = unit.transform.position - movePoint.transform.position + save - new Vector3(0, 1.5f);
+
+        float XDistance = unit.transform.position.x - transform.position.x;
+        float YDistance = unit.transform.position.y - transform.position.y;
+
+        if (XDistance != 0)
+            XDistance = Mathf.Abs(XDistance) / XDistance;
+       
+        if (YDistance != 0)
+            YDistance = Mathf.Abs(YDistance) / YDistance;
+
+        Vector3 goalPoint = movePoint.transform.position + new Vector3(2 * XDistance, 2 * YDistance, 0);
+        movePoint.transform.position = goalPoint;
+
+        Debug.Log("TESTING DASH TURN");
     }
 
     protected void Attack()

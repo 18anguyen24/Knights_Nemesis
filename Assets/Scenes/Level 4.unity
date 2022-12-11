@@ -125211,19 +125211,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType1: {fileID: 3894792699822780570, guid: 281f720166d3ab44888f1f40634ae85e, type: 3}
-  type1SpawnRate: 10
+  type1SpawnRate: 5
   enemyType2: {fileID: 8480662993664445748, guid: 6fbadfe17e2dcd6448ae1e142188a74e, type: 3}
-  type2SpawnRate: 20
+  type2SpawnRate: 70
   enemyType3: {fileID: 3894792699822780570, guid: 2ca1a8d6637bbe94c811be5865922720, type: 3}
-  type3SpawnRate: 25
+  type3SpawnRate: 5
   enemyType4: {fileID: 6375558160036423888, guid: dac018ffae4fce14a97871b5f04411c9, type: 3}
-  type4SpawnRate: 25
+  type4SpawnRate: 10
   enemyType5: {fileID: 3648287766272362779, guid: f4cb383e2bc3e8545a3ac7e5bb2a32db, type: 3}
   WhatStopsSpawning:
     serializedVersion: 2
     m_Bits: 1792
   maxEnemies: 15
-  chanceToSpawn: 20
+  chanceToSpawn: 40
   width: 75
   height: 75
 --- !u!4 &2053006708

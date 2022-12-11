@@ -301,6 +301,7 @@ public class PlayerActions : UnitController
             }
 
         }
+        Debug.Log(GameState.Enemies.Count);
         for (int i = 0; i < GameState.Enemies.Count; i++)
         {
             GameState.Enemies[i].NPCTurn();
