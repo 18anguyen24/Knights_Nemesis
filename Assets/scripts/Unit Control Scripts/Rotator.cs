@@ -19,6 +19,15 @@ public class Rotator : MonoBehaviour
     //Allows the players pointer to move regardless of whether its the players turn or not
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            //newHeading = Heading + 45;
+            //changeHeading = newHeading - Heading;
+            transform.RotateAround(transform.position, Vector3.forward, 45);
+            Heading = Heading + 45;
+        }
+
+
         fakePoint = transform.position + new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0);
         newHeading = Mathf.Atan2(fakePoint.y - transform.position.y, fakePoint.x - transform.position.x);
         

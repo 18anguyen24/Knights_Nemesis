@@ -37,8 +37,8 @@ public class PlayerActions : UnitController
     public EnemySpawner spawner;
 
     //for animations
-    Animator animator;
-    SpriteRenderer spriteRenderer;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     //for audio
     public AudioSource source;
@@ -74,8 +74,8 @@ public class PlayerActions : UnitController
 
         activeAttack = attackArea1;
 
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        //animator = GetComponent<Animator>();
+        //spriteRenderer = GetComponent<SpriteRenderer>();
 
         //Second check to make sure the player always gets to start
         GameState.PlayerTurn = true;
