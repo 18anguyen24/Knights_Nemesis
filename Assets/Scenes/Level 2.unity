@@ -68351,6 +68351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC
       objectReference: {fileID: 0}
+    - target: {fileID: 7789357934542739998, guid: ed2673ccc5170524384401087122ac7b, type: 3}
+      propertyPath: spawner
+      value: 
+      objectReference: {fileID: 2053006707}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed2673ccc5170524384401087122ac7b, type: 3}
 --- !u!1001 &1636383077
@@ -68390,7 +68394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 939178955258707078, guid: 9446074562c90044c842255ab08e228e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 939178955258707078, guid: 9446074562c90044c842255ab08e228e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -68909,5 +68913,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

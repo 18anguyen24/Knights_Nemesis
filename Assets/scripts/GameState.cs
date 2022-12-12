@@ -15,9 +15,9 @@ public class GameState
     //Handles player stats to be maintained between levels
     public static int PlayerHP = 0;
     public static float PlayerXP = 0;
-    public static int PlayerLevel = 10;
+    public static int PlayerLevel = 0;
     public static float XPtoLevel = 50;
-    public static bool UnlockAttack3 = true;
+    public static bool UnlockAttack3 = false;
 
     public static int FloorNumber = 0;
 
