@@ -852,7 +852,7 @@ MonoBehaviour:
   WhatStopsSpawning:
     serializedVersion: 2
     m_Bits: 1792
-  maxEnemies: 0
+  maxEnemies: 5
   chanceToSpawn: 50
   width: 45
   height: 40

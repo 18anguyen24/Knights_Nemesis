@@ -24,6 +24,9 @@ public class SethEnemyAction : UnitController, NPCInterface
     public Animator animator;
     public SpriteRenderer spriteRenderer;
 
+    [SerializeField] AudioSource audioSource1;
+    AudioSource source;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,8 @@ public class SethEnemyAction : UnitController, NPCInterface
         targetY = 0;
 
         activeAttack = attackArea1;
+
+        source = Instantiate(audioSource1);
     }
 
     // Update is called once per frame
@@ -92,11 +97,12 @@ public class SethEnemyAction : UnitController, NPCInterface
                 primed = true;
                 animator.SetBool("primed", true);
                 //animator.SetTrigger("up");
+                source.Play();
             }
             else {
                 activeAttack = attackArea2; //Sets to attack 2
                 Attack();   //Attacks
-                
+                source.Play();
                 //OnDeath();
             }
         }

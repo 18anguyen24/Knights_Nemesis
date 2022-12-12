@@ -575,6 +575,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   targetX: 0
   targetY: 0
+  audioSource1: {fileID: 7010012943574127502, guid: 9669c5a6829fcc44eab3e8e2ccb73ddf, type: 3}
 --- !u!58 &1179473763779432906
 CircleCollider2D:
   m_ObjectHideFlags: 0

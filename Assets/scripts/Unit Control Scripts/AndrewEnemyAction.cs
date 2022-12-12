@@ -29,6 +29,9 @@ public class AndrewEnemyAction : UnitController, NPCInterface
     SpriteRenderer sr;
     Animator animator;
 
+    [SerializeField] AudioSource audioSource1;
+    AudioSource source;
+
 
 
     /*private GameObject activeAttack;
@@ -60,6 +63,8 @@ public class AndrewEnemyAction : UnitController, NPCInterface
         //setting up animation
         sr = GetComponentInChildren<SpriteRenderer>();
         animator = GetComponentInChildren<Animator>();
+
+        source = Instantiate(audioSource1);
     }
 
     // Update is called once per frame
@@ -106,6 +111,7 @@ public class AndrewEnemyAction : UnitController, NPCInterface
         {
             activeAttack = attackArea1; //Sets to attack 1
             Attack();   //Attacks
+            source.Play();
         }
         else
         {

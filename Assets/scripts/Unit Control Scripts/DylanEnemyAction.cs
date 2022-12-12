@@ -31,6 +31,8 @@ public class DylanEnemyAction : UnitController, NPCInterface
     private float timer = 0f;
     */
 
+    [SerializeField] AudioSource audioSource1;
+    AudioSource source;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,8 @@ public class DylanEnemyAction : UnitController, NPCInterface
         targetY = 0;
 
         activeAttack = attackArea1;
+
+        source = Instantiate(audioSource1);
     }
 
     // Update is called once per frame
@@ -89,6 +93,7 @@ public class DylanEnemyAction : UnitController, NPCInterface
         if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
             Attack();   //Attacks
+            source.Play();
         }
         else
         {

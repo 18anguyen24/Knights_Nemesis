@@ -19,6 +19,9 @@ public class BasicEnemyAction : UnitController, NPCInterface
     private float XDistance;
     private float YDistance;
 
+    [SerializeField] AudioSource audioSource1;
+    AudioSource source;
+
     void Start()
     {
         //Similar startup as player, scaling to the appropriate power
@@ -39,6 +42,8 @@ public class BasicEnemyAction : UnitController, NPCInterface
         targetY = 0;
 
         activeAttack = attackArea1;
+
+        source = Instantiate(audioSource1);
     }
 
     // Update is called once per frame
@@ -81,11 +86,13 @@ public class BasicEnemyAction : UnitController, NPCInterface
         {
             activeAttack = attackArea2; //Sets to attack 2
             Attack();   //Attacks
+            source.Play();
         }
         else if (Mathf.Abs(XDistance) <= 1 && Mathf.Abs(YDistance) <= 1)    //Checks if player is one tile away
         {
             activeAttack = attackArea1; //Sets to attack 1
             Attack();   //Attacks
+            source.Play();
         }
         else
         {

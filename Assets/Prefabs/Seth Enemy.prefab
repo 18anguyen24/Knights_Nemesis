@@ -87,6 +87,7 @@ MonoBehaviour:
   targetY: 0
   animator: {fileID: 6315747654843690239}
   spriteRenderer: {fileID: 7699987934280853602}
+  audioSource1: {fileID: 2065877062362609046, guid: 0d8a2605ec1b16149b4d663df9180b82, type: 3}
 --- !u!58 &6416676972496952817
 CircleCollider2D:
   m_ObjectHideFlags: 0

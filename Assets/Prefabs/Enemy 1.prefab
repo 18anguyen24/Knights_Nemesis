@@ -605,6 +605,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   targetX: 0
   targetY: 0
+  audioSource1: {fileID: 2065877062362609046, guid: 0d8a2605ec1b16149b4d663df9180b82, type: 3}
 --- !u!50 &1705401359196875571
 Rigidbody2D:
   serializedVersion: 4

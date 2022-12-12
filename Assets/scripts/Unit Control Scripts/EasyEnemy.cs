@@ -23,6 +23,9 @@ public class EasyEnemy : UnitController, NPCInterface
     private float XDistance;
     private float YDistance;
 
+    [SerializeField] AudioSource audioSource1;
+    AudioSource source;
+
     /*private GameObject activeAttack;
     private bool attacking = false;
     private float timeToAttack = 0.25f;
@@ -46,7 +49,7 @@ public class EasyEnemy : UnitController, NPCInterface
 
         activeAttack = attackArea1;
 
-
+        source = Instantiate(audioSource1);
     }
 
     // Update is called once per frame
@@ -89,6 +92,7 @@ public class EasyEnemy : UnitController, NPCInterface
         {
             activeAttack = attackArea1; //Sets to attack 1
             Attack();   //Attacks
+            source.Play();
         }
         else
         {
