@@ -18,9 +18,11 @@ Contributions:
     
   Dylan-
     General art assets - tilemap/level, sprites: own, miniboss, cat
+    Level 1 - created as an initial level for player to get used to controls after tutorial
+    UI - attack indication, attack 2 UI sprite, general layout
     Own enemy - created to make ranged hit and run a non-viable attack strategy while it is present but has low health to compensate
     Some balancing - own enemy, assisted with miniboss balancing to make it difficult for unleveled player, player damage amount
-    
+    Scripts - win, switching between title/death/win/etc, cleaning up player and boss (only applicable in boss level) UI in title and death, restarting, unlocking attack 3
     
   Ju-Hoon- 
 	Level 2 - created basic layout on the level
