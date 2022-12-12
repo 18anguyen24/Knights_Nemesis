@@ -229,7 +229,7 @@ MonoBehaviour:
   movePoint: {fileID: 5988340435222752977}
   WhatStopsMovement:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   damageText: {fileID: 910635060592470086, guid: 8f13880bf53245141922a66e90b0e991, type: 3}
   health: 500
   MAX_HEALTH: 0

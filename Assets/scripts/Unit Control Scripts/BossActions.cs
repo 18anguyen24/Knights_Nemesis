@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossActions : UnitController, NPCInterface
 {
@@ -205,7 +206,10 @@ public class BossActions : UnitController, NPCInterface
         GameState.Enemies.Remove(this);
         Destroy(gameObject);
         Destroy(movePoint);
+        GameState.clear();
+        SceneManager.LoadScene("End Scene");
         
+
     }
 
     public Vector3 NPCLocation()

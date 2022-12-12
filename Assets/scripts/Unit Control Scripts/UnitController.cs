@@ -10,7 +10,7 @@ public class UnitController : MonoBehaviour
     public LayerMask WhatStopsMovement;
     
     protected GameObject activeAttack;
-    protected bool attacking = false;
+    public bool attacking = false;
     protected float timeToAttack = 0.25f;
     protected float timer = 0f;
 
