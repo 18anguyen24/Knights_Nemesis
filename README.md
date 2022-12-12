@@ -17,6 +17,10 @@ Contributions:
     
     
   Dylan-
+    General art assets - tilemap/level, sprites: own, miniboss, cat
+    Own enemy - created to make ranged hit and run a non-viable attack strategy while it is present but has low health to compensate
+    Some balancing - own enemy, assisted with miniboss balancing to make it difficult for unleveled player, player damage amount
+    
     
   Ju-Hoon- 
 	Level 2 - created basic layout on the level

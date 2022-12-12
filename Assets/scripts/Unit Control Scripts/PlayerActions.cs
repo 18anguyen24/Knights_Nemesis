@@ -24,7 +24,9 @@ public class PlayerActions : UnitController
     //Handles the UI attached to the player
     public GameObject Attack3UI;
 
-    public Image deathScreen;
+    public GameObject deathScreen;
+    public GameObject playerInfo;
+    public GameObject attackUI;
     public Image Attack1Selected;
     public Image Attack2Selected;
     public Image Attack3Selected;
@@ -284,7 +286,9 @@ public class PlayerActions : UnitController
 
     public override void OnDeath()
     {
-        deathScreen.enabled = !deathScreen.enabled;
+        deathScreen.SetActive(true);
+        playerInfo.SetActive(false);
+        attackUI.SetActive(false);
         GameState.PlayerHP = MAX_HEALTH / 2;    //Saves half their max HP to be restarted with
         GameState.PlayerXP = 0; //Removes their excess XP, no level penalty
 
