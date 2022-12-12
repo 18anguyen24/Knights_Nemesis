@@ -21,8 +21,6 @@ public class Rotator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            //newHeading = Heading + 45;
-            //changeHeading = newHeading - Heading;
             transform.RotateAround(transform.position, Vector3.forward, 45);
             Heading = Heading + 45;
         }

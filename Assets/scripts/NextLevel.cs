@@ -31,7 +31,6 @@ public class NextLevel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Should load next level");
             GameState.FloorNumber++;
             GameState.clear();
             SceneManager.LoadScene(nextLevel);
