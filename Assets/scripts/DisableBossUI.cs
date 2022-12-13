@@ -15,7 +15,7 @@ public class DisableBossUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.activeSelf)
+        if (!player.activeSelf)
         {
             bossUI.SetActive(false);
         }
