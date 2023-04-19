@@ -3,6 +3,8 @@ Top Down, Grid Movement, and Turn Based game
 Inspired by Pokemon Mystery Dungeon and built in Unity
 Semester Project for CS 4700
 
+Playable at https://yawgmoth.github.io/CS4700/assets/games/KnightsNemesis/index.html
+
 
 Contributions:
   Andrew- 
